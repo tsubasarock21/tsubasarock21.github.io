@@ -1,0 +1,1 @@
+{"id":"./","name":"ゆる迷路","short_name":"ゆる迷路","description":"30の庭と3つの満月。星を集めて自分の庭を育てる迷路ゲーム。","lang":"ja","start_url":"./","scope":"./","display":"standalone","background_color":"#fbf8ef","theme_color":"#66896b","icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}

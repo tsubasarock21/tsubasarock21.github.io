@@ -1,0 +1,13 @@
+@tensorflow/tfjs
+Apache License 2.0; https://www.apache.org/licenses/LICENSE-2.0
+
+@tensorflow-models/coco-ssd
+Apache License 2.0; https://www.apache.org/licenses/LICENSE-2.0
+
+@tensorflow-models/body-pix
+Apache License 2.0; https://www.apache.org/licenses/LICENSE-2.0
+
+@tensorflow-models/face-detection
+Apache License 2.0; https://www.apache.org/licenses/LICENSE-2.0
+
+Bundled SSD MobileNet V2 weights: TensorFlow tfjs-models/savedmodel/ssd_mobilenet_v2. Conv/feature weights stored with 8-bit affine quantization; constants retained.

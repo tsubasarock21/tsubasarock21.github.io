@@ -1,0 +1,3517 @@
+{
+  "schemaVersion": 2,
+  "placement": [
+    {
+      "key": "math",
+      "label": "数学"
+    },
+    {
+      "key": "year2",
+      "label": "中学2年"
+    },
+    {
+      "key": "geometry",
+      "label": "三角形と四角形"
+    },
+    {
+      "key": "geometry_kind_applied",
+      "label": "応用"
+    }
+  ],
+  "entries": [
+    {
+      "id": 7,
+      "problem": {
+        "geo": "proof",
+        "title": "補助線から合同をつくる",
+        "level": "応用",
+        "target": "等しい二辺を、二つの三角形の合同で示す",
+        "question": "AB＝AC。Pは∠BACの二等分線上の内部の点。PB＝PCを示そう。APはまだ描いていません。",
+        "answer": "△ABP≡△ACPより、PB＝PC",
+        "steps": [
+          {
+            "q": "△ABPと△ACPを比べたい。共通の辺を補うなら？",
+            "options": [
+              {
+                "label": "AとPを結ぶ",
+                "id": "ap",
+                "correct": true,
+                "aux": "AP"
+              },
+              {
+                "label": "PとBCの中点Mを結ぶ",
+                "id": "pm",
+                "correct": false,
+                "aux": "PM"
+              },
+              {
+                "label": "PとACの中点Nを結ぶ",
+                "id": "pn",
+                "correct": false,
+                "aux": "PN"
+              }
+            ],
+            "reason": "比べる二つの三角形の共通の辺はAPです。AとPを結ぶと、AB・ACと、頂角の二等分を一緒に使えます。"
+          },
+          {
+            "q": "合同の根拠にする組み合わせを選んで",
+            "options": [
+              {
+                "label": "AB＝AC、APは共通、∠BAP＝∠PAC",
+                "id": "sas",
+                "correct": true,
+                "aux": null
+              },
+              {
+                "label": "AB＝AC、APは共通、∠BAP＝∠APC",
+                "id": "one",
+                "correct": false,
+                "aux": null
+              },
+              {
+                "label": "AB＝AC、APは共通、PB＝PC",
+                "id": "circular",
+                "correct": false,
+                "aux": null
+              }
+            ],
+            "reason": "等しい二辺と、その間の角を使います。PB＝PCは今から示す結論なので、根拠として先に使えません。"
+          },
+          {
+            "q": "この三組を使う合同条件は？",
+            "options": [
+              {
+                "label": "二組の辺と、その間の角がそれぞれ等しい",
+                "id": "sas",
+                "correct": true,
+                "aux": null
+              },
+              {
+                "label": "一組の辺と二組の角がそれぞれ等しい",
+                "id": "aaa",
+                "correct": false,
+                "aux": null
+              },
+              {
+                "label": "二組の辺と一組の角がそれぞれ等しい",
+                "id": "one",
+                "correct": false,
+                "aux": null
+              }
+            ],
+            "reason": "ABとAPの間の角が∠BAP、ACとAPの間の角が∠PACです。「その間の角」まで確認します。"
+          },
+          {
+            "q": "証明がつながっているか、確かめよう",
+            "options": [
+              {
+                "label": "A↔A、B↔C、P↔P。対応する辺よりPB＝PC",
+                "id": "verify",
+                "correct": true,
+                "aux": null
+              },
+              {
+                "label": "A↔C、B↔A、P↔P。対応する辺よりPB＝PC",
+                "id": "all",
+                "correct": false,
+                "aux": null
+              },
+              {
+                "label": "AB＝ACとAPが共通なので、残りの辺PBとPCも等しい",
+                "id": "look",
+                "correct": false,
+                "aux": null
+              }
+            ],
+            "reason": "△ABPと△ACPの頂点の対応を確かめます。PBに対応する辺はPC。合同な図形の対応する辺が等しいので結論につながります。"
+          }
+        ],
+        "directChoices": [
+          {
+            "label": "△ABPと△ACPは二辺とその間の角が等しく合同なので、PB＝PC",
+            "correct": true
+          },
+          {
+            "label": "AB＝ACとAPが共通なので、二組の辺だけで合同といえてPB＝PC",
+            "correct": false
+          },
+          {
+            "label": "△ABP≡△CAPより、対応する辺はPBとPCなのでPB＝PC",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "problem": {
+        "geo": "area",
+        "title": "高さを図に描いて比べる",
+        "level": "応用",
+        "target": "共通の底辺と平行線の間の高さで面積を比べる",
+        "question": "ABCDは平行四辺形。Eは辺AD上の点。△EBCと△ABCの面積が等しいことを示そう。",
+        "answer": "底辺BCが共通で高さも等しいので、面積は等しい",
+        "steps": [
+          {
+            "q": "底辺をBCにする。Eからの高さを見たいとき、引く線は？",
+            "options": [
+              {
+                "label": "EからBCに垂線EHを引く",
+                "id": "height",
+                "correct": true,
+                "aux": "EH"
+              },
+              {
+                "label": "対角線ACを引く",
+                "id": "ac",
+                "correct": false,
+                "aux": "AC"
+              },
+              {
+                "label": "対角線BDを引く",
+                "id": "bd",
+                "correct": false,
+                "aux": "BD"
+              }
+            ],
+            "reason": "底辺BCに対する高さは、頂点からBCの直線へ下ろした垂線の長さです。EHがその高さを表します。"
+          },
+          {
+            "q": "二つの三角形の高さについて、何が言える？",
+            "options": [
+              {
+                "label": "AとEはBCに平行なAD上にあるので、高さは等しい",
+                "id": "parallel",
+                "correct": true,
+                "aux": null
+              },
+              {
+                "label": "斜めの辺ABとEBが同じ長さなので等しい",
+                "id": "slant",
+                "correct": false,
+                "aux": null
+              },
+              {
+                "label": "EがADの中点でなければ高さは等しくない",
+                "id": "midpoint",
+                "correct": false,
+                "aux": null
+              }
+            ],
+            "reason": "AD∥BCで、AとEはともにAD上にあります。平行な二直線の間の距離は一定です。斜辺の長さやEが中点かどうかは使いません。"
+          },
+          {
+            "q": "面積の比較に使う式は？",
+            "options": [
+              {
+                "label": "どちらもBC×同じ高さ÷2",
+                "id": "area",
+                "correct": true,
+                "aux": null
+              },
+              {
+                "label": "どちらもBC×斜めの辺÷2",
+                "id": "edge",
+                "correct": false,
+                "aux": null
+              },
+              {
+                "label": "どちらも三辺の長さの合計",
+                "id": "perimeter",
+                "correct": false,
+                "aux": null
+              }
+            ],
+            "reason": "面積は底辺×高さ÷2です。三辺の和は周の長さです。斜めの辺を高さにしないよう注意します。"
+          },
+          {
+            "q": "理由を確かめよう。EをAD上で動かしたら？",
+            "options": [
+              {
+                "label": "底辺と高さが変わらないので、面積は変わらない",
+                "id": "verify",
+                "correct": true,
+                "aux": null
+              },
+              {
+                "label": "EがAから遠ざかるほど、必ず面積が増える",
+                "id": "grow",
+                "correct": false,
+                "aux": null
+              },
+              {
+                "label": "EをAD上で動かすとEBが変わるので、面積も変わる",
+                "id": "shape",
+                "correct": false,
+                "aux": null
+              }
+            ],
+            "reason": "EをAD上で動かしても、BCまでの垂直距離は一定です。形が変わっても面積が同じになることを、底辺と高さで説明できます。"
+          }
+        ],
+        "directChoices": [
+          {
+            "label": "底辺BCが共通で高さも等しいので、面積は等しい",
+            "correct": true
+          },
+          {
+            "label": "底辺BCが共通で斜めの辺ABとEBが等しいので、面積は等しい",
+            "correct": false
+          },
+          {
+            "label": "EがADの中点のときだけ、面積は等しい",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 116,
+      "problem": {
+        "title": "頂角の二等分線",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-08",
+          "title": "頂角の二等分線",
+          "group": "応用",
+          "question": "二等辺三角形ABCでAB＝AC。頂角Aの二等分線とBCの交点をDとする。AB＝AC、ADは共通、∠BAD＝∠CAD の3条件を使って、△ABDと△ACDの合同を示そう。",
+          "answer": "AB＝AC、AD＝AD、∠BAD＝∠CADより、2組の辺とその間の角",
+          "steps": [
+            {
+              "question": "まず、今回使う3条件のうち辺について確認できることは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "BD＝CD"
+                },
+                {
+                  "id": "c1",
+                  "text": "AB＝AC"
+                },
+                {
+                  "id": "c3",
+                  "text": "AB＝BD"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "二等辺三角形なのでAB＝AC。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "二等辺三角形なのでAB＝AC。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "ADについて使えることは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "AD＝BC"
+                },
+                {
+                  "id": "c3",
+                  "text": "AD＝BD"
+                },
+                {
+                  "id": "c1",
+                  "text": "AD＝AD（共通）"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "ADは共通辺。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "ADは共通辺。"
+              ]
+            },
+            {
+              "question": "角の二等分線から？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "∠BAD＝∠CAD"
+                },
+                {
+                  "id": "c2",
+                  "text": "∠B＝∠C＝90°"
+                },
+                {
+                  "id": "c3",
+                  "text": "∠ADB＝∠ADCが仮定"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "ADは∠Aを二等分する。",
+              "choiceFeedback": [
+                "ADは∠Aを二等分する。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "合同条件は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "3組の辺"
+                },
+                {
+                  "id": "c1",
+                  "text": "2組の辺とその間の角"
+                },
+                {
+                  "id": "c3",
+                  "text": "1組の辺と両端の角"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "2組の辺とその間の角がそれぞれ等しいがそろう。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "2組の辺とその間の角がそれぞれ等しいがそろう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "この3条件から合同を示したあと、別の性質を使った証明方法があってもよい？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "よい。数学的に正しい別の証明も成立する"
+              },
+              {
+                "id": "c2",
+                "text": "よくない。証明方法は必ず1通りだけ"
+              },
+              {
+                "id": "c3",
+                "text": "図と違う順番ならすべて誤り"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "問題で指定した3条件からは『2組の辺とその間の角』を使うが、別の正しい根拠から合同を示す方法まで誤りになるわけではない。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter5/batch1/rev10-figures/C5-08.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "AB＝AC、ADは共通、∠BAD＝∠CAD の3条件だけを使うと、△ABDと△ACDはどの合同条件に当てはまる？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "2組の辺とその間の角がそれぞれ等しい"
+              },
+              {
+                "id": "c2",
+                "text": "1組の辺とその両端の角がそれぞれ等しい"
+              },
+              {
+                "id": "c3",
+                "text": "3組の辺がそれぞれ等しい"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "ここで明示した3条件だけなら、2組の辺とその間の角がそれぞれ等しい。別の性質を追加して示す別解とは区別する。",
+              "その選択が問題文の条件をすべて満たすか、根拠を一つずつ確認しよう。",
+              "その選択が問題文の条件をすべて満たすか、根拠を一つずつ確認しよう。"
+            ],
+            "explanation": "ここで明示した3条件だけなら、2組の辺とその間の角がそれぞれ等しい。別の性質を追加して示す別解とは区別する。"
+          },
+          "flowPolicy": "第1・2章と同じ学習ツリーを意識した教材原稿。基礎→確認→応用の順。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 117,
+      "problem": {
+        "title": "二等辺三角形の性質を証明へ使う",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-09",
+          "title": "二等辺三角形の性質を証明へ使う",
+          "group": "応用",
+          "question": "AB＝ACの二等辺三角形ABCで、∠B＝58°。頂角Aから底辺BCへ線分ADを引き、BD＝CDであることも分かっている。∠BADを求めよう。",
+          "answer": "32°",
+          "steps": [
+            {
+              "question": "まず∠Cは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "64°"
+                },
+                {
+                  "id": "c3",
+                  "text": "122°"
+                },
+                {
+                  "id": "c1",
+                  "text": "58°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "底角は等しい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "底角は等しい。"
+              ]
+            },
+            {
+              "question": "∠Aは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "180−58−58＝64°"
+                },
+                {
+                  "id": "c2",
+                  "text": "58°"
+                },
+                {
+                  "id": "c3",
+                  "text": "122°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "三角形の内角和から64°。",
+              "choiceFeedback": [
+                "三角形の内角和から64°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "AB＝AC、BD＝CD、AD共通なので△ABDと△ACDは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "角3組だけで合同"
+                },
+                {
+                  "id": "c1",
+                  "text": "3組の辺が等しく合同"
+                },
+                {
+                  "id": "c3",
+                  "text": "合同ではない"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "3組の辺がそれぞれ等しいで合同。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "3組の辺がそれぞれ等しいで合同。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "合同からADは∠Aを二等分するので∠BADは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "64°"
+                },
+                {
+                  "id": "c3",
+                  "text": "58°"
+                },
+                {
+                  "id": "c1",
+                  "text": "64÷2＝32°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "対応する角が等しい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する角が等しい。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "∠BAD＋∠CADは？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "58°"
+              },
+              {
+                "id": "c1",
+                "text": "32＋32＝64°"
+              },
+              {
+                "id": "c3",
+                "text": "180°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "頂角64°に戻る。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "頂角64°に戻る。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [
+            "180-58*2=64",
+            "64/2=32"
+          ],
+          "direct": {
+            "question": "AB＝ACの二等辺三角形ABCで、∠B＝58°。頂角Aから底辺BCへ線分ADを引き、BD＝CDであることも分かっている。∠BADを求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "32°"
+              },
+              {
+                "id": "c2",
+                "text": "64°"
+              },
+              {
+                "id": "c3",
+                "text": "58°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "底角は等しい。 三角形の内角和から64°。 3組の辺がそれぞれ等しいで合同。 対応する角が等しい。",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「32°」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "flowPolicy": "第1・2章と同じ学習ツリーを意識した教材原稿。基礎→確認→応用の順。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 118,
+      "problem": {
+        "title": "二等辺三角形の連鎖",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-10",
+          "title": "二等辺三角形の連鎖",
+          "group": "応用",
+          "question": "AB＝ACの二等辺三角形ABCで∠A＝120°。辺BC上の点DについてAD＝DCである。∠CADを求めよう。",
+          "answer": "30°",
+          "steps": [
+            {
+              "question": "△ABCの底角∠Cは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "30°"
+                },
+                {
+                  "id": "c2",
+                  "text": "60°"
+                },
+                {
+                  "id": "c3",
+                  "text": "120°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "(180−120)÷2＝30°。",
+              "choiceFeedback": [
+                "(180−120)÷2＝30°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "Dは辺BC上。AD＝DCより等しい角は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "∠DAC＝∠ACD"
+                },
+                {
+                  "id": "c2",
+                  "text": "∠DAC＝∠ADC"
+                },
+                {
+                  "id": "c3",
+                  "text": "∠ADC＝∠ACD"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "辺ADの対角は∠ACD、辺DCの対角は∠DAC。",
+              "choiceFeedback": [
+                "辺ADの対角は∠ACD、辺DCの対角は∠DAC。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "∠CADは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "30°"
+                },
+                {
+                  "id": "c2",
+                  "text": "60°"
+                },
+                {
+                  "id": "c3",
+                  "text": "90°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "CDとCBは同じ向きなので∠ACD＝30°。よって∠CAD＝30°。",
+              "choiceFeedback": [
+                "CDとCBは同じ向きなので∠ACD＝30°。よって∠CAD＝30°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "△ADCで∠CAD＝30°なら、∠ADCは？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "120°"
+              },
+              {
+                "id": "c2",
+                "text": "30°"
+              },
+              {
+                "id": "c3",
+                "text": "60°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "180−30−30＝120°。頂角120°のうち残る∠BADは90°で矛盾しない。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "180−30−30＝120°。頂角120°のうち残る∠BADは90°で矛盾しない。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter5/batch1/rev10-figures/C5-10.svg"
+          },
+          "mathChecks": [
+            "(180-40)/2=70"
+          ],
+          "direct": {
+            "question": "AB＝ACの二等辺三角形ABCで∠A＝120°。辺BC上の点DについてAD＝DCである。∠CADを求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "30°"
+              },
+              {
+                "id": "c2",
+                "text": "60°"
+              },
+              {
+                "id": "c3",
+                "text": "90°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "(180−120)÷2＝30°。 辺ADの対角は∠ACD、辺DCの対角は∠DAC。 CDとCBは同じ向きなので∠ACD＝30°。よって∠CAD＝30°。",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「30°」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "flowPolicy": "第1・2章と同じ学習ツリーを意識した教材原稿。基礎→確認→応用の順。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 119,
+      "problem": {
+        "title": "逆を使って二等辺三角形を見抜く",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-11",
+          "title": "逆を使って二等辺三角形を見抜く",
+          "group": "応用",
+          "question": "△ABCで∠A＝72°、∠B＝54°である。どの2辺が等しいか。",
+          "answer": "AB＝AC",
+          "steps": [
+            {
+              "question": "∠Cは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "72°"
+                },
+                {
+                  "id": "c1",
+                  "text": "180−72−54＝54°"
+                },
+                {
+                  "id": "c3",
+                  "text": "126°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "∠C＝54°。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "∠C＝54°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "等しい角は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "∠A＝∠B"
+                },
+                {
+                  "id": "c3",
+                  "text": "∠A＝∠C"
+                },
+                {
+                  "id": "c1",
+                  "text": "∠B＝∠C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "BとCがともに54°。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "BとCがともに54°。"
+              ]
+            },
+            {
+              "question": "その向かい側の辺は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "ACとAB"
+                },
+                {
+                  "id": "c2",
+                  "text": "BCとAC"
+                },
+                {
+                  "id": "c3",
+                  "text": "BCとAB"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "∠Bの対辺AC、∠Cの対辺AB。",
+              "choiceFeedback": [
+                "∠Bの対辺AC、∠Cの対辺AB。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "したがって？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "AB＝BC"
+                },
+                {
+                  "id": "c1",
+                  "text": "AB＝AC"
+                },
+                {
+                  "id": "c3",
+                  "text": "AC＝BC"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "等しい角の対辺は等しい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "等しい角の対辺は等しい。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "AB＝ACなら底角は？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "∠Bと∠C"
+              },
+              {
+                "id": "c2",
+                "text": "∠Aと∠B"
+              },
+              {
+                "id": "c3",
+                "text": "∠Aと∠C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "元の54°、54°と一致する。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "元の54°、54°と一致する。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [
+            "180-72-54=54"
+          ],
+          "direct": {
+            "question": "△ABCで∠A＝72°、∠B＝54°である。どの2辺が等しいか。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "AB＝BC"
+              },
+              {
+                "id": "c3",
+                "text": "AC＝BC"
+              },
+              {
+                "id": "c1",
+                "text": "AB＝AC"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "問題の条件から導かれる結論は「AB＝AC」。"
+            ],
+            "explanation": "∠C＝54°。 BとCがともに54°。 ∠Bの対辺AC、∠Cの対辺AB。 等しい角の対辺は等しい。"
+          },
+          "flowPolicy": "第1・2章と同じ学習ツリーを意識した教材原稿。基礎→確認→応用の順。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 127,
+      "problem": {
+        "title": "直角三角形の合同から辺を示す",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-19",
+          "title": "直角三角形の合同から辺を示す",
+          "group": "応用",
+          "question": "△ABCで、DはBC上の点。AD⊥BC、AB＝ACである。△ABDと△ACDが合同であることを利用してBD＝CDを示そう。",
+          "answer": "斜辺AB＝AC、AD共通より直角三角形の合同。したがってBD＝CD",
+          "steps": [
+            {
+              "question": "△ABDと△ACDはどちらもどこが直角？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "A"
+                },
+                {
+                  "id": "c3",
+                  "text": "BとC"
+                },
+                {
+                  "id": "c1",
+                  "text": "D"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AD⊥BCなので∠ADB＝∠ADC＝90°。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "AD⊥BCなので∠ADB＝∠ADC＝90°。"
+              ]
+            },
+            {
+              "question": "それぞれの斜辺は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "ABとAC"
+                },
+                {
+                  "id": "c2",
+                  "text": "ADとAD"
+                },
+                {
+                  "id": "c3",
+                  "text": "BDとCD"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "直角Dの向かい側が斜辺。",
+              "choiceFeedback": [
+                "直角Dの向かい側が斜辺。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "斜辺について？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "AB＝AD"
+                },
+                {
+                  "id": "c1",
+                  "text": "AB＝AC"
+                },
+                {
+                  "id": "c3",
+                  "text": "AC＝CD"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "仮定から等しい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "仮定から等しい。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "他の1辺について？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "BD＝CDを先に使う"
+                },
+                {
+                  "id": "c3",
+                  "text": "AB＝BD"
+                },
+                {
+                  "id": "c1",
+                  "text": "AD＝AD（共通）"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "共通辺ADを使う。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "共通辺ADを使う。"
+              ]
+            },
+            {
+              "question": "合同後の結論は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "BD＝CD"
+                },
+                {
+                  "id": "c2",
+                  "text": "AB＝BD"
+                },
+                {
+                  "id": "c3",
+                  "text": "∠A＝90°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "対応する辺は等しい。",
+              "choiceFeedback": [
+                "対応する辺は等しい。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "BD＝CDを合同を示す前の根拠に使っていない？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "使っている"
+              },
+              {
+                "id": "c3",
+                "text": "使ってよい"
+              },
+              {
+                "id": "c1",
+                "text": "使っていない"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "結論を先に仮定しない。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "結論を先に仮定しない。"
+            ]
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter5/batch2/rev10-figures/C5-19.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "△ABCで、DはBC上の点。AD⊥BC、AB＝ACである。△ABDと△ACDが合同であることを利用してBD＝CDを示そう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "AB＝AC、AD共通、Dが直角→斜辺と他の1辺で合同→BD＝CD"
+              },
+              {
+                "id": "c2",
+                "text": "BD＝CDを仮定して3組の辺がそれぞれ等しい→BD＝CD"
+              },
+              {
+                "id": "c3",
+                "text": "Dが直角であるだけで合同→BD＝CD"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "AD⊥BCなので∠ADB＝∠ADC＝90°。 直角Dの向かい側が斜辺。 仮定から等しい。 共通辺ADを使う。 対応する辺は等しい。",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「AB＝AC、AD共通、Dが直角→斜辺と他の1辺で合同→BD＝CD」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。直角三角形では斜辺を先に特定し、合同条件を混同しない。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 128,
+      "problem": {
+        "title": "直角三角形の合同から角を示す",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-20",
+          "title": "直角三角形の合同から角を示す",
+          "group": "応用",
+          "question": "∠B＝∠C＝90°の△ABDと△ACEで、AD＝AE、∠DAB＝∠EACである。2つの三角形が合同なら、対応する辺について何が言えるか。",
+          "answer": "AB＝AC、BD＝CE",
+          "steps": [
+            {
+              "question": "直角三角形の斜辺は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "ABとAC"
+                },
+                {
+                  "id": "c1",
+                  "text": "ADとAE"
+                },
+                {
+                  "id": "c3",
+                  "text": "BDとCE"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "直角B、Cの向かい側がAD、AE。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "直角B、Cの向かい側がAD、AE。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "斜辺と何が等しい？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "他の1辺BD＝CEが仮定"
+                },
+                {
+                  "id": "c3",
+                  "text": "面積"
+                },
+                {
+                  "id": "c1",
+                  "text": "1つの鋭角∠DAB＝∠EAC"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "斜辺と1鋭角の条件。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "斜辺と1鋭角の条件。"
+              ]
+            },
+            {
+              "question": "合同から対応する辺は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "AB＝AC、BD＝CE"
+                },
+                {
+                  "id": "c2",
+                  "text": "AB＝BD"
+                },
+                {
+                  "id": "c3",
+                  "text": "AD＝BD"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "合同な三角形の対応する辺は等しい。",
+              "choiceFeedback": [
+                "合同な三角形の対応する辺は等しい。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "結論の辺の等しさは合同の後に導いている？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "はい"
+              },
+              {
+                "id": "c2",
+                "text": "いいえ"
+              },
+              {
+                "id": "c3",
+                "text": "順番は関係ない"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "合同を根拠として対応辺の等しさを示す。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "合同を根拠として対応辺の等しさを示す。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "∠B＝∠C＝90°の△ABDと△ACEで、AD＝AE、∠DAB＝∠EACである。2つの三角形が合同なら、対応する辺について何が言えるか。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "AB＝AC、BD＝CE"
+              },
+              {
+                "id": "c2",
+                "text": "AB＝CE、BD＝AC"
+              },
+              {
+                "id": "c3",
+                "text": "AB＝AD、BD＝AE"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "直角B、Cの向かい側がAD、AE。 斜辺と1鋭角の条件。 合同な三角形の対応する辺は等しい。",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「AB＝AC、BD＝CE」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。直角三角形では斜辺を先に特定し、合同条件を混同しない。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 129,
+      "problem": {
+        "title": "二等辺三角形＋直角三角形",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-21",
+          "title": "二等辺三角形＋直角三角形",
+          "group": "応用",
+          "question": "AB＝ACの二等辺三角形ABCで、AからBCへ垂線ADを引いた。∠B＝61°のとき、∠BADを求めよう。",
+          "answer": "29°",
+          "steps": [
+            {
+              "question": "△ABDはDが直角。∠B＝61°なので∠BADは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "180−61"
+                },
+                {
+                  "id": "c1",
+                  "text": "180−90−61"
+                },
+                {
+                  "id": "c3",
+                  "text": "90＋61"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "直角三角形の2つの鋭角の和は90°。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "直角三角形の2つの鋭角の和は90°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "計算すると？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "119°"
+                },
+                {
+                  "id": "c3",
+                  "text": "151°"
+                },
+                {
+                  "id": "c1",
+                  "text": "29°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "90−61＝29°。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "90−61＝29°。"
+              ]
+            },
+            {
+              "question": "AB＝ACから△ABDと△ACDも合同なので、ADは頂角を二等分する。この結果と矛盾しない？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "矛盾しない"
+                },
+                {
+                  "id": "c2",
+                  "text": "矛盾する"
+                },
+                {
+                  "id": "c3",
+                  "text": "判断不能"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "底角Cも61°なので頂角Aは58°、その半分が29°。",
+              "choiceFeedback": [
+                "底角Cも61°なので頂角Aは58°、その半分が29°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "頂角Aを別経路で求めると？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "61＋61＝122°"
+              },
+              {
+                "id": "c1",
+                "text": "180−61−61＝58°、半分で29°"
+              },
+              {
+                "id": "c3",
+                "text": "90−61＝19°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "2通りの解法で29°に一致する。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "2通りの解法で29°に一致する。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [
+            "90-61=29",
+            "180-61-61=58",
+            "58/2=29"
+          ],
+          "direct": {
+            "question": "AB＝ACの二等辺三角形ABCで、AからBCへ垂線ADを引いた。∠B＝61°のとき、∠BADを求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "29°"
+              },
+              {
+                "id": "c2",
+                "text": "58°"
+              },
+              {
+                "id": "c3",
+                "text": "61°"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「29°」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "直角三角形の2つの鋭角の和は90°。 90−61＝29°。 底角Cも61°なので頂角Aは58°、その半分が29°。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。直角三角形では斜辺を先に特定し、合同条件を混同しない。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 130,
+      "problem": {
+        "title": "どの合同条件を使うか選ぶ",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-22",
+          "title": "どの合同条件を使うか選ぶ",
+          "group": "応用",
+          "question": "直角三角形PQR、XYZで∠Q＝∠Y＝90°、PR＝XZ。候補「PQ＝XY」「∠P＝∠X」のうち、単独で追加して合同を示せるものはどれか。",
+          "answer": "PQ＝XY または ∠P＝∠X",
+          "steps": [
+            {
+              "question": "PRとXZは何？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "直角をつくる辺"
+                },
+                {
+                  "id": "c1",
+                  "text": "斜辺"
+                },
+                {
+                  "id": "c3",
+                  "text": "高さ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "直角Q、Yの向かい側。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "直角Q、Yの向かい側。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "『斜辺と他の1辺』を使うなら追加条件の例は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "∠Q＝∠Yをもう一度"
+                },
+                {
+                  "id": "c3",
+                  "text": "面積が等しい"
+                },
+                {
+                  "id": "c1",
+                  "text": "PQ＝XY"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "斜辺に加えて他の1辺が等しければよい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "斜辺に加えて他の1辺が等しければよい。"
+              ]
+            },
+            {
+              "question": "『斜辺と1つの鋭角』を使うなら？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "∠P＝∠X"
+                },
+                {
+                  "id": "c2",
+                  "text": "∠Q＝∠Yだけ"
+                },
+                {
+                  "id": "c3",
+                  "text": "PR＝PQ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "斜辺に加えて1鋭角が等しければよい。",
+              "choiceFeedback": [
+                "斜辺に加えて1鋭角が等しければよい。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "PQ＝XYと∠P＝∠Xは、どちらも単独でPR＝XZに追加すれば合同を確定できる？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "どちらもできない"
+              },
+              {
+                "id": "c3",
+                "text": "両方同時に必要"
+              },
+              {
+                "id": "c1",
+                "text": "できる"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "それぞれ別の直角三角形の合同条件を完成させる。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "それぞれ別の直角三角形の合同条件を完成させる。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "直角三角形PQR、XYZで∠Q＝∠Y＝90°、PR＝XZ。候補「PQ＝XY」「∠P＝∠X」のうち、単独で追加して合同を示せるものはどれか。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "直角だけ"
+              },
+              {
+                "id": "c1",
+                "text": "PQ＝XY または ∠P＝∠X"
+              },
+              {
+                "id": "c3",
+                "text": "角Qだけ"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "問題の条件から導かれる結論は「PQ＝XY または ∠P＝∠X」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "直角Q、Yの向かい側。 斜辺に加えて他の1辺が等しければよい。 斜辺に加えて1鋭角が等しければよい。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。直角三角形では斜辺を先に特定し、合同条件を混同しない。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 139,
+      "problem": {
+        "title": "平行四辺形の性質を組み合わせる",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-31",
+          "title": "平行四辺形の性質を組み合わせる",
+          "group": "応用",
+          "question": "平行四辺形ABCDで、AB＝8cm、BC＝5cm、∠A＝72°である。CD、AD、∠B、∠Cを求めよう。",
+          "answer": "CD＝8cm、AD＝5cm、∠B＝108°、∠C＝72°",
+          "steps": [
+            {
+              "question": "対辺の長さからCDは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "5cm"
+                },
+                {
+                  "id": "c3",
+                  "text": "13cm"
+                },
+                {
+                  "id": "c1",
+                  "text": "8cm"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AB＝CD。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "AB＝CD。"
+              ]
+            },
+            {
+              "question": "ADは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "5cm"
+                },
+                {
+                  "id": "c2",
+                  "text": "8cm"
+                },
+                {
+                  "id": "c3",
+                  "text": "3cm"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "BC＝AD。",
+              "choiceFeedback": [
+                "BC＝AD。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "隣り合う角から∠Bは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "72°"
+                },
+                {
+                  "id": "c1",
+                  "text": "180−72＝108°"
+                },
+                {
+                  "id": "c3",
+                  "text": "36°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "隣角の和は180°。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "隣角の和は180°。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "対角から∠Cは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "108°"
+                },
+                {
+                  "id": "c3",
+                  "text": "144°"
+                },
+                {
+                  "id": "c1",
+                  "text": "72°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "∠A＝∠C。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "∠A＝∠C。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "4つの角の和は？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "180°"
+              },
+              {
+                "id": "c3",
+                "text": "540°"
+              },
+              {
+                "id": "c1",
+                "text": "72＋108＋72＋108＝360°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "四角形の内角和360°とも一致する。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "四角形の内角和360°とも一致する。"
+            ]
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter5/batch3/batch3-figures/C5-31.svg"
+          },
+          "mathChecks": [
+            "180-72=108",
+            "72+108+72+108=360"
+          ],
+          "direct": {
+            "question": "平行四辺形ABCDで、AB＝8cm、BC＝5cm、∠A＝72°である。CD、AD、∠B、∠Cを求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "CD＝8cm、AD＝5cm、∠B＝108°、∠C＝72°"
+              },
+              {
+                "id": "c2",
+                "text": "CD＝5cm、AD＝8cm、∠B＝108°、∠C＝72°"
+              },
+              {
+                "id": "c3",
+                "text": "CD＝8cm、AD＝5cm、∠B＝72°、∠C＝108°"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "AB＝CD。 BC＝AD。 隣角の和は180°。 ∠A＝∠C。",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「CD＝8cm、AD＝5cm、∠B＝108°、∠C＝72°」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。平行四辺形の『性質』と『平行四辺形になるための条件』を区別する。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 140,
+      "problem": {
+        "title": "対角線と合同",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-32",
+          "title": "対角線と合同",
+          "group": "応用",
+          "question": "平行四辺形ABCDに対角線ACを引く。△ABCと△CDAが合同であることを、辺の関係から示そう。",
+          "answer": "AB＝CD、BC＝AD、AC＝CAより3組の辺がそれぞれ等しい",
+          "steps": [
+            {
+              "question": "平行四辺形の対辺から？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "AB＝CD、BC＝AD"
+                },
+                {
+                  "id": "c2",
+                  "text": "AB＝BC"
+                },
+                {
+                  "id": "c3",
+                  "text": "AC＝BD"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "2組の対辺がそれぞれ等しい。",
+              "choiceFeedback": [
+                "2組の対辺がそれぞれ等しい。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "ACは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "BDと等しい"
+                },
+                {
+                  "id": "c1",
+                  "text": "共通辺なのでAC＝CA"
+                },
+                {
+                  "id": "c3",
+                  "text": "0"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "両三角形が同じ対角線ACを共有する。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "両三角形が同じ対角線ACを共有する。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "合同条件は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "角3組"
+                },
+                {
+                  "id": "c3",
+                  "text": "斜辺と1辺"
+                },
+                {
+                  "id": "c1",
+                  "text": "3組の辺がそれぞれ等しい"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "3組の辺がそれぞれ等しいで合同。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "3組の辺がそれぞれ等しいで合同。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "合同から∠BACと対応して等しい角は？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "∠DCA"
+              },
+              {
+                "id": "c2",
+                "text": "∠CDA"
+              },
+              {
+                "id": "c3",
+                "text": "∠CAD"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "対応はA(ABC)↔C(CDA)、B↔D、C↔A。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応はA(ABC)↔C(CDA)、B↔D、C↔A。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "平行四辺形ABCDに対角線ACを引く。△ABCと△CDAが合同であることを、辺の関係から示そう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "AB＝CD、BC＝AD、AC共通→3組の辺がそれぞれ等しいで合同"
+              },
+              {
+                "id": "c2",
+                "text": "AC＝BDを使い3組の辺がそれぞれ等しいで合同"
+              },
+              {
+                "id": "c3",
+                "text": "対角線ACを引くだけで合同"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "2組の対辺がそれぞれ等しい。 両三角形が同じ対角線ACを共有する。 3組の辺がそれぞれ等しいで合同。",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「AB＝CD、BC＝AD、AC共通→3組の辺がそれぞれ等しいで合同」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。平行四辺形の『性質』と『平行四辺形になるための条件』を区別する。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 141,
+      "problem": {
+        "title": "1組の対辺から判定する",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-33",
+          "title": "1組の対辺から判定する",
+          "group": "応用",
+          "question": "四角形ABCDでAB∥CD、AB＝CDである。既知の平行四辺形の判定条件を使うと、ABCDは何といえるか。",
+          "answer": "平行四辺形",
+          "steps": [
+            {
+              "question": "この時点で平行四辺形の判定条件を満たしている？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "満たしていない"
+                },
+                {
+                  "id": "c1",
+                  "text": "満たしている"
+                },
+                {
+                  "id": "c3",
+                  "text": "対角線の長さが必要"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "1組の対辺が平行で等しいことは十分条件。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "1組の対辺が平行で等しいことは十分条件。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "したがって結論は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "正方形"
+                },
+                {
+                  "id": "c3",
+                  "text": "ひし形"
+                },
+                {
+                  "id": "c1",
+                  "text": "ABCDは平行四辺形"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "判定条件から平行四辺形。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "判定条件から平行四辺形。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "合同を使う別証明を考えても、最後は何を示せばよい？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "4辺が全部等しいこと"
+              },
+              {
+                "id": "c1",
+                "text": "もう1組の対辺も平行など、平行四辺形の条件"
+              },
+              {
+                "id": "c3",
+                "text": "対角線が必ず等しいこと"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "定義や判定条件へつなげる。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "定義や判定条件へつなげる。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "四角形ABCDでAB∥CD、AB＝CDである。既知の平行四辺形の判定条件を使うと、ABCDは何といえるか。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "平行四辺形"
+              },
+              {
+                "id": "c2",
+                "text": "長方形"
+              },
+              {
+                "id": "c3",
+                "text": "判定不能"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「平行四辺形」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "1組の対辺が平行で等しいことは十分条件。 判定条件から平行四辺形。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。平行四辺形の『性質』と『平行四辺形になるための条件』を区別する。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 142,
+      "problem": {
+        "title": "対角線の交点を使う証明",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-34",
+          "title": "対角線の交点を使う証明",
+          "group": "応用",
+          "question": "四角形ABCDの対角線AC、BDの交点OについてAO＝OC、BO＝ODである。△AOBと△CODの合同を使ってAB∥CDを示すとき、合同条件は何か。",
+          "answer": "2組の辺とその間の角",
+          "steps": [
+            {
+              "question": "仮定から？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "AO＝OC、BO＝OD"
+                },
+                {
+                  "id": "c2",
+                  "text": "AB＝CDが仮定"
+                },
+                {
+                  "id": "c3",
+                  "text": "AC＝BDが仮定"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "対角線が互いに二等分されている。",
+              "choiceFeedback": [
+                "対角線が互いに二等分されている。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "∠AOBと∠CODは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "錯角"
+                },
+                {
+                  "id": "c1",
+                  "text": "対頂角で等しい"
+                },
+                {
+                  "id": "c3",
+                  "text": "必ず90°"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "交わる2直線の対頂角。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "交わる2直線の対頂角。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "合同条件は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "3組の辺"
+                },
+                {
+                  "id": "c3",
+                  "text": "1組の辺と両端の角"
+                },
+                {
+                  "id": "c1",
+                  "text": "2組の辺とその間の角"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AO・BOとOC・OD、その間の角が等しい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "AO・BOとOC・OD、その間の角が等しい。"
+              ]
+            },
+            {
+              "question": "合同から得られる角の等しさを平行線の判定につなげると？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "AB∥CDを示せる"
+                },
+                {
+                  "id": "c2",
+                  "text": "AB⊥CD"
+                },
+                {
+                  "id": "c3",
+                  "text": "AB＝BCだけ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "錯角が等しいことを示して平行を導ける。",
+              "choiceFeedback": [
+                "錯角が等しいことを示して平行を導ける。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "同様にAD∥BCも示せれば？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "正方形"
+              },
+              {
+                "id": "c3",
+                "text": "三角形になる"
+              },
+              {
+                "id": "c1",
+                "text": "ABCDは平行四辺形"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "2組の対辺がそれぞれ平行になる。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "2組の対辺がそれぞれ平行になる。"
+            ]
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter5/batch3/batch3-figures/C5-29.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "四角形ABCDの対角線AC、BDの交点OについてAO＝OC、BO＝ODである。△AOBと△CODの合同を使ってAB∥CDを示すとき、合同条件は何か。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "3組の辺がそれぞれ等しい"
+              },
+              {
+                "id": "c1",
+                "text": "2組の辺とその間の角がそれぞれ等しい"
+              },
+              {
+                "id": "c3",
+                "text": "1組の辺とその両端の角がそれぞれ等しい"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "問題の条件から導かれる結論は「2組の辺とその間の角がそれぞれ等しい」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "対角線が互いに二等分されている。 交わる2直線の対頂角。 AO・BOとOC・OD、その間の角が等しい。 錯角が等しいことを示して平行を導ける。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。平行四辺形の『性質』と『平行四辺形になるための条件』を区別する。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 151,
+      "problem": {
+        "title": "平行線と面積の計算",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-43",
+          "title": "平行線と面積の計算",
+          "group": "応用",
+          "question": "AB＝10cm。A、Bは直線m上、P、Qはmに平行な直線ℓ上にあり、2直線間の距離は6cmである。△PABと△QABの面積を求めよう。",
+          "answer": "どちらも30cm²",
+          "steps": [
+            {
+              "question": "底辺は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "10cm"
+                },
+                {
+                  "id": "c2",
+                  "text": "6cm"
+                },
+                {
+                  "id": "c3",
+                  "text": "16cm"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AB＝10cm。",
+              "choiceFeedback": [
+                "AB＝10cm。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "高さは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "10cm"
+                },
+                {
+                  "id": "c1",
+                  "text": "6cm"
+                },
+                {
+                  "id": "c3",
+                  "text": "3cm"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "平行な2直線間の距離が高さ。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "平行な2直線間の距離が高さ。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "三角形の面積は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "10×6＝60cm²"
+                },
+                {
+                  "id": "c3",
+                  "text": "10＋6＝16cm²"
+                },
+                {
+                  "id": "c1",
+                  "text": "10×6÷2＝30cm²"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "底辺×高さ÷2。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "底辺×高さ÷2。"
+              ]
+            },
+            {
+              "question": "Qについても？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "30cm²"
+                },
+                {
+                  "id": "c2",
+                  "text": "60cm²"
+                },
+                {
+                  "id": "c3",
+                  "text": "位置によって変わる"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "高さが同じなので等積。",
+              "choiceFeedback": [
+                "高さが同じなので等積。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "2つの面積の差は？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "30cm²"
+              },
+              {
+                "id": "c3",
+                "text": "60cm²"
+              },
+              {
+                "id": "c1",
+                "text": "0cm²"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "どちらも30cm²。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "どちらも30cm²。"
+            ]
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter5/batch4/batch4-figures/C5-43.svg"
+          },
+          "mathChecks": [
+            "10*6/2=30"
+          ],
+          "direct": {
+            "question": "AB＝10cm。A、Bは直線m上、P、Qはmに平行な直線ℓ上にあり、2直線間の距離は6cmである。△PABと△QABの面積を求めよう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "60cm²"
+              },
+              {
+                "id": "c1",
+                "text": "30cm²"
+              },
+              {
+                "id": "c3",
+                "text": "16cm²"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "問題の条件から導かれる結論は「30cm²」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "AB＝10cm。 平行な2直線間の距離が高さ。 底辺×高さ÷2。 高さが同じなので等積。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。長方形・ひし形・正方形は平行四辺形との包含関係を意識し、平行線と面積では『底辺と高さ』を根拠に考える。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 152,
+      "problem": {
+        "title": "平行四辺形と三角形の面積",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-44",
+          "title": "平行四辺形と三角形の面積",
+          "group": "応用",
+          "question": "平行四辺形ABCDの面積が48cm²である。対角線ACで2つの三角形に分けたとき、△ABCの面積を求めよう。",
+          "answer": "24cm²",
+          "steps": [
+            {
+              "question": "対角線ACでできる△ABCと△CDAは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "面積だけ違う"
+                },
+                {
+                  "id": "c1",
+                  "text": "合同"
+                },
+                {
+                  "id": "c3",
+                  "text": "相似ではない"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "平行四辺形の対辺と共通辺から3組の辺がそれぞれ等しいで合同。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "平行四辺形の対辺と共通辺から3組の辺がそれぞれ等しいで合同。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "合同な2つの三角形の面積は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "一方が2倍"
+                },
+                {
+                  "id": "c3",
+                  "text": "比較できない"
+                },
+                {
+                  "id": "c1",
+                  "text": "等しい"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "合同なので面積も等しい。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "合同なので面積も等しい。"
+              ]
+            },
+            {
+              "question": "48cm²を2等分すると？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "24cm²"
+                },
+                {
+                  "id": "c2",
+                  "text": "96cm²"
+                },
+                {
+                  "id": "c3",
+                  "text": "12cm²"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "48÷2＝24。",
+              "choiceFeedback": [
+                "48÷2＝24。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "24＋24は？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "48cm²"
+              },
+              {
+                "id": "c2",
+                "text": "24cm²"
+              },
+              {
+                "id": "c3",
+                "text": "96cm²"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "元の平行四辺形の面積に戻る。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "元の平行四辺形の面積に戻る。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [
+            "48/2=24"
+          ],
+          "direct": {
+            "question": "平行四辺形ABCDの面積が48cm²である。対角線ACで2つの三角形に分けたとき、△ABCの面積を求めよう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "48cm²"
+              },
+              {
+                "id": "c3",
+                "text": "12cm²"
+              },
+              {
+                "id": "c1",
+                "text": "24cm²"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "問題の条件から導かれる結論は「24cm²」。"
+            ],
+            "explanation": "平行四辺形の対辺と共通辺から3組の辺がそれぞれ等しいで合同。 合同なので面積も等しい。 48÷2＝24。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。長方形・ひし形・正方形は平行四辺形との包含関係を意識し、平行線と面積では『底辺と高さ』を根拠に考える。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 153,
+      "problem": {
+        "title": "平行線を使った面積の総合",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-45",
+          "title": "平行線を使った面積の総合",
+          "group": "応用",
+          "question": "AB∥DCの四角形ABCDがある。△ABCと△ABDは共通の底辺ABをもつ。CとDがABに平行な直線上にあるとき、2つの三角形の面積について何がいえるか。",
+          "answer": "△ABCと△ABDの面積は等しい",
+          "steps": [
+            {
+              "question": "2つの三角形の共通の底辺は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "CD"
+                },
+                {
+                  "id": "c1",
+                  "text": "AB"
+                },
+                {
+                  "id": "c3",
+                  "text": "AC"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "どちらもABを底辺にできる。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "どちらもABを底辺にできる。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "CとDからABへの高さは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "Cだけ大きい"
+                },
+                {
+                  "id": "c3",
+                  "text": "Dだけ大きい"
+                },
+                {
+                  "id": "c1",
+                  "text": "等しい"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AB∥CDなので平行線間の距離が共通の高さ。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "AB∥CDなので平行線間の距離が共通の高さ。"
+              ]
+            },
+            {
+              "question": "したがって？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "面積は等しい"
+                },
+                {
+                  "id": "c2",
+                  "text": "△ABCが2倍"
+                },
+                {
+                  "id": "c3",
+                  "text": "△ABDが2倍"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "同じ底辺・同じ高さ。",
+              "choiceFeedback": [
+                "同じ底辺・同じ高さ。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "この結論にAC＝BDは必要？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "必要"
+              },
+              {
+                "id": "c1",
+                "text": "必要ない"
+              },
+              {
+                "id": "c3",
+                "text": "AC＝BDなら面積0"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "面積の等しさは底辺と高さだけで示せる。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "面積の等しさは底辺と高さだけで示せる。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "AB∥DCの四角形ABCDがある。△ABCと△ABDは共通の底辺ABをもつ。CとDがABに平行な直線上にあるとき、2つの三角形の面積について何がいえるか。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "等しい"
+              },
+              {
+                "id": "c2",
+                "text": "必ず異なる"
+              },
+              {
+                "id": "c3",
+                "text": "辺ACの長さ次第"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "問題の条件から導かれる結論は「等しい」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "どちらもABを底辺にできる。 AB∥CDなので平行線間の距離が共通の高さ。 同じ底辺・同じ高さ。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。長方形・ひし形・正方形は平行四辺形との包含関係を意識し、平行線と面積では『底辺と高さ』を根拠に考える。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "multipleMethodPolicy": {
+            "acceptEquivalentReasoning": true,
+            "notes": [
+              "図形の別経路"
+            ],
+            "rule": "条件から正しく導ける別解・同値表現を誤り扱いしない。"
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    },
+    {
+      "id": 154,
+      "problem": {
+        "title": "等積変形で未知の面積を求める",
+        "level": "応用",
+        "skipIntro": true,
+        "authored": {
+          "id": "C5-46",
+          "title": "等積変形で未知の面積を求める",
+          "group": "応用",
+          "question": "△ABCの面積が36cm²である。点PはAを通りBCに平行な直線上にある。△PBCの面積はいくらか。",
+          "answer": "36cm²",
+          "steps": [
+            {
+              "question": "△ABCと△PBCの底辺は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "ABとPB"
+                },
+                {
+                  "id": "c1",
+                  "text": "どちらもBC"
+                },
+                {
+                  "id": "c3",
+                  "text": "ACとPC"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "BCが共通。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "BCが共通。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            },
+            {
+              "question": "AとPからBCへの高さは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "Pが2倍"
+                },
+                {
+                  "id": "c3",
+                  "text": "Aが2倍"
+                },
+                {
+                  "id": "c1",
+                  "text": "同じ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AとPはBCに平行な同一直線上。",
+              "choiceFeedback": [
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "AとPはBCに平行な同一直線上。"
+              ]
+            },
+            {
+              "question": "したがって△PBCの面積は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "36cm²"
+                },
+                {
+                  "id": "c2",
+                  "text": "72cm²"
+                },
+                {
+                  "id": "c3",
+                  "text": "18cm²"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "等積変形なので36cm²。",
+              "choiceFeedback": [
+                "等積変形なので36cm²。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+                "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+              ]
+            }
+          ],
+          "verification": {
+            "question": "Pをさらに横へ動かしても？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "増える"
+              },
+              {
+                "id": "c3",
+                "text": "減る"
+              },
+              {
+                "id": "c1",
+                "text": "36cm²のまま"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "平行線上なら高さは一定。",
+            "purpose": "正解経路の理解確認・振り返り",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "対応する辺・角、平行線の性質、図形の定義のどこを取り違えたか、図に印を付けて確認しよう。",
+              "平行線上なら高さは一定。"
+            ]
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "△ABCの面積が36cm²である。点PはAを通りBCに平行な直線上にある。△PBCの面積はいくらか。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "72cm²"
+              },
+              {
+                "id": "c1",
+                "text": "36cm²"
+              },
+              {
+                "id": "c3",
+                "text": "18cm²"
+              }
+            ],
+            "correctChoice": "c1",
+            "choiceFeedback": [
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。",
+              "問題の条件から導かれる結論は「36cm²」。",
+              "対応する辺・角、平行線の性質、四角形の条件のどこを取り違えたか、図に印を付けて確認しよう。"
+            ],
+            "explanation": "BCが共通。 AとPはBCに平行な同一直線上。 等積変形なので36cm²。"
+          },
+          "flowPolicy": "第1・2章と同じ基礎→確認→応用ツリー。長方形・ひし形・正方形は平行四辺形との包含関係を意識し、平行線と面積では『底辺と高さ』を根拠に考える。誤答後に正しい中間値へ黙って切り替えない。",
+          "learningIntent": "複数の情報から使う知識・手順を選択させる。",
+          "reflectionPrompt": "答えだけでなく、どの条件を根拠にその手順を選んだか説明できるか確認しよう。",
+          "difficultyDesign": {
+            "level": 3,
+            "expectation": "複数の条件を整理し、使う性質・公式を自分で選択する。"
+          },
+          "visualReview": {
+            "status": "要確認",
+            "policy": "図が解法の本質なら図を追加。文章だけで空間関係を暗記させる問題にはしない。"
+          },
+          "masteryCheck": {
+            "prompt": "正解したあと、答えを見ずに『なぜその考え方を使ったか』を1文で説明できる？",
+            "successCriterion": "計算結果ではなく、問題文の条件と使った性質・式を結び付けて説明できる。"
+          },
+          "chapter12Benchmark": {
+            "status": "REV8比較済み",
+            "criteria": [
+              "誤答後に前提を黙って正答へ戻さない",
+              "解く目的のない式変形・整理を必須にしない",
+              "学習目標に対して自然な解法を優先する",
+              "誤答は実際に起こるミスで、条件だけで即消去できる異常値を避ける",
+              "画面にまだ出ていない式番号・条件を参照しない",
+              "検算の問いは実際に選んだ式・値と一致させる",
+              "複数の正しい方法がある場合は一方を誤り扱いしない",
+              "展開・通分・立式など意味のある区切りだけ残す",
+              "問いと答えの表記を一致させる"
+            ]
+          },
+          "solutionAcceptance": {
+            "principle": "一つの模範解法に固定しない",
+            "accept": [
+              "数学的に同値な式・表現",
+              "条件から正しく導かれる別解",
+              "順序だけが異なる正しい推論"
+            ],
+            "reject": [
+              "問題文にない条件を追加した推論",
+              "偶然正答値になっただけの誤った途中式"
+            ]
+          },
+          "candidateVerificationRequirement": {
+            "status": "requires-integration",
+            "rule": "実アプリの検算では実際に選んだ候補を保持して元条件へ代入する。下記verificationは固定の振り返り問題であり、候補別の検算機能の実装ではない。"
+          },
+          "qualityRevision": "REV10"
+        }
+      }
+    }
+  ]
+}

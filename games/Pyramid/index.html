@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ja">
+  <head><script>globalThis.LabPageConfig={game:"Pyramid",version:"0.7.0"};if(["tsubasarock21.github.io","tsubasarock21.github.io"].includes(location.hostname))document.write('<script src="/lab-system/metrics-v2.js?v=2.0.0&_metrics=2"><\/script>')</script>
+    <script>globalThis.LabPageConfig={"game":"Pyramid","version":"0.7.0"};</script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f4eddc" />
+    <meta property="og:image" content="thumbnail.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="image_src" href="thumbnail.jpg" />
+    <title>石を積む｜おっさんとピラミッドを作る無料放置ゲーム｜Tsubasa_Rock_LAB</title>
+    
+    <link rel="stylesheet" href="style.css?v=0.7.0" />
+    <link rel="stylesheet" href="responsive.css?v=0.7.0" /><link rel="stylesheet" href="leaders.css?v=0.7.0" /><link rel="stylesheet" href="playfield.css?v=0.7.0" /><link rel="stylesheet" href="modes.css?v=0.7.0" />
+  
+<meta name="description" content="かわいいおっさんを雇い、給料とごはんを配ってピラミッドを建設する放置ゲーム。おっさんを運んで仕事を邪魔したり、UFOに手伝ってもらったり。完成したピラミッドに王の名前を刻もう。">
+<link rel="canonical" href="https://tsubasarock21.github.io/games/Pyramid/">
+<meta property="og:title" content="石を積む｜おっさんとピラミッドを作る無料放置ゲーム｜Tsubasa_Rock_LAB">
+<meta property="og:description" content="かわいいおっさんを雇い、給料とごはんを配ってピラミッドを建設する放置ゲーム。おっさんを運んで仕事を邪魔したり、UFOに手伝ってもらったり。完成したピラミッドに王の名前を刻もう。">
+<meta property="og:url" content="https://tsubasarock21.github.io/games/Pyramid/">
+<meta property="og:type" content="website">
+<meta name="twitter:title" content="石を積む｜おっさんとピラミッドを作る無料放置ゲーム｜Tsubasa_Rock_LAB">
+<meta name="twitter:description" content="かわいいおっさんを雇い、給料とごはんを配ってピラミッドを建設する放置ゲーム。おっさんを運んで仕事を邪魔したり、UFOに手伝ってもらったり。完成したピラミッドに王の名前を刻もう。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"石を積む","url":"https://tsubasarock21.github.io/games/Pyramid/","description":"かわいいおっさんを雇い、給料とごはんを配ってピラミッドを建設する放置ゲーム。おっさんを運んで仕事を邪魔したり、UFOに手伝ってもらったり。完成したピラミッドに王の名前を刻もう。","applicationCategory":"GameApplication","operatingSystem":"Web browser","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@type":"Person","name":"Tsubasa-Rock"}}</script>
+</head>
+  <body class="booting"><div id="loadStatus" class="load-status" role="status"><span id="loadMessage">現場とカードを準備しています…</span><button id="retryLoad" type="button" hidden>読み直す</button></div>
+    <main class="app">
+      <header>
+        <a class="brand" href="./" aria-label="石を積む"
+          ><span class="brand-mark" aria-hidden="true"
+            ><svg viewBox="0 0 40 40">
+              <path d="M3 31 20 6 37 31Z" fill="#c5813e" />
+              <path d="m20 6 3 25h14Z" fill="#875d37" />
+              <path
+                d="M1 34h38"
+                stroke="#36665c"
+                stroke-width="2"
+              /></svg></span
+          ><span>石を<b>積む</b></span></a
+        ><button
+          class="role name-button"
+          id="rename"
+          aria-label="王の名前を変更する"
+        >
+          王様・オーナー<br /><b id="playerLabel">名前を決める</b>
+        </button>
+      </header>
+      <div class="intro">
+        <span class="eyebrow">A VERY SLOW MONUMENT</span>
+        <h1>石を積む。<br class="mobile" />おっさんを眺める。</h1>
+        <p>偉大な工事も、今日の一個から。</p>
+      </div>
+      <section class="mode-panel" aria-label="ゲームモード">
+        <div class="mode-switch"><button id="modeNormal" type="button" aria-pressed="true">通常モード</button><button id="modeTimer" type="button" aria-pressed="false">タイマーモード</button></div>
+        <p id="modeDescription">おっさんを雇い、お世話しながらピラミッドを建てます。</p>
+        <div id="timerSettings" class="timer-settings" hidden><h2>完成までの時間</h2><div class="timer-presets"><button type="button" data-minutes="5">5分</button><button type="button" data-minutes="15">15分</button><button type="button" data-minutes="25">25分</button><button type="button" data-minutes="45">45分</button><button type="button" data-minutes="60">60分</button></div><label for="timerMinutes">自由に設定<input id="timerMinutes" type="number" min="1" max="1440" step="1" value="25" inputmode="numeric">分</label><p id="timerError" role="alert" hidden>1～1440の整数で入力してください。</p><p>一時停止・再開できます。時間を変える時はリセットしてください。<br>画面を閉じても経過時間を反映します。完了音は画面に戻った時に鳴ります。</p></div>
+      </section>
+      <div class="game-layout">
+        <section class="site-card" aria-label="ピラミッドの建設現場">
+          <div class="scene-top">
+            <span class="live-dot"></span
+            ><strong id="clockLabel">建設 1日目</strong
+            ><span id="phaseLabel" class="phase-label">昼のお仕事</span>
+          </div>
+          <div class="scene-wrap"><div id="skyClock" class="sky-clock" aria-label="夜まで90秒"><strong id="skySeconds">90</strong><small id="skyLabel">夜まで</small></div><div id="timerDisplay" class="timer-display" hidden><small id="timerState">完成まで</small><strong id="timerClock">25:00</strong><span id="timerDurationLabel">設定 25分</span></div>
+          <div class="crew-summary scene-crew">
+            <div>
+              <span>在籍のおっさん</span
+              ><strong id="crewCount">12<small>人</small></strong>
+            </div>
+            <div>
+              <span>ただいま稼働中</span
+              ><strong id="activeCount">12<small>人</small></strong>
+            </div>
+          </div>
+
+            <canvas
+              id="scene"
+              aria-label="小さな作業員が石を運び、ピラミッドを積み上げていく建設現場"
+            ></canvas
+            ><button id="ufo" hidden aria-label="UFOをタップして特典をもらう">
+              <svg viewBox="0 0 80 52" aria-hidden="true">
+                <ellipse
+                  cx="40"
+                  cy="36"
+                  rx="33"
+                  ry="10"
+                  fill="#b2c4c1"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <path
+                  d="M24 29c0-27 32-27 32 0"
+                  fill="#b6f3db"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="40"
+                  cy="29"
+                  rx="38"
+                  ry="8"
+                  fill="#74968a"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <circle cx="19" cy="32" r="3" fill="#fff5a5" />
+                <circle cx="40" cy="35" r="3" fill="#fff5a5" />
+                <circle cx="61" cy="32" r="3" fill="#fff5a5" /></svg
+              ><span>TAP!</span>
+            </button>
+            <button id="ufo1" hidden aria-label="UFOをタップして特典をもらう">
+              <svg viewBox="0 0 80 52" aria-hidden="true">
+                <ellipse
+                  cx="40"
+                  cy="36"
+                  rx="33"
+                  ry="10"
+                  fill="#b2c4c1"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <path
+                  d="M24 29c0-27 32-27 32 0"
+                  fill="#b6f3db"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="40"
+                  cy="29"
+                  rx="38"
+                  ry="8"
+                  fill="#74968a"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <circle cx="19" cy="32" r="3" fill="#fff5a5" />
+                <circle cx="40" cy="35" r="3" fill="#fff5a5" />
+                <circle cx="61" cy="32" r="3" fill="#fff5a5" /></svg
+              ><span>TAP!</span>
+            </button>
+            <button id="ufo2" hidden aria-label="UFOをタップして特典をもらう">
+              <svg viewBox="0 0 80 52" aria-hidden="true">
+                <ellipse
+                  cx="40"
+                  cy="36"
+                  rx="33"
+                  ry="10"
+                  fill="#b2c4c1"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <path
+                  d="M24 29c0-27 32-27 32 0"
+                  fill="#b6f3db"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="40"
+                  cy="29"
+                  rx="38"
+                  ry="8"
+                  fill="#74968a"
+                  stroke="#315d5c"
+                  stroke-width="2"
+                />
+                <circle cx="19" cy="32" r="3" fill="#fff5a5" />
+                <circle cx="40" cy="35" r="3" fill="#fff5a5" />
+                <circle cx="61" cy="32" r="3" fill="#fff5a5" /></svg
+              ><span>TAP!</span>
+            </button>
+            <aside id="workerSpeech" class="worker-speech" hidden aria-live="polite">
+              <small id="speechKind">おっさんのひとこと</small>
+              <p id="workerLine"></p>
+              <div><a id="speechGame" href="/" target="_blank" rel="noopener" hidden>ラボで見る ↗</a><button id="speechClose" type="button" aria-label="おっさんを仕事に戻す">仕事に戻る</button></div>
+            </aside>
+            <div class="night-note" id="nightNote" hidden>
+              本日の業務は終了しました。<small
+                >おっさんたちは、寝ています。</small
+              >
+            </div>
+            <div class="complete-badge" id="completeBadge" hidden>
+              <strong id="completedKing"></strong
+              ><small>ピラミッド、完成。</small>
+            </div>
+            <nav id="timerActions" class="scene-actions" aria-label="タイマー操作" hidden><button id="timerMain" class="scene-action timer-primary" aria-label="タイマーを開始"><span class="round-icon" aria-hidden="true">▶</span><strong>開始</strong></button><button id="timerReset" class="scene-action" aria-label="タイマーをリセット"><span class="round-icon" aria-hidden="true">↺</span><strong>リセット</strong></button></nav>
+            <nav class="scene-actions" aria-label="今日のお世話">
+              <button id="hire" class="scene-action hire" aria-label="おっさんを雇う" aria-describedby="hireHint"><span class="round-icon" aria-hidden="true">＋</span><strong>募集</strong><span class="action-arrow" aria-hidden="true">↗</span></button>
+              <button id="feed" class="scene-action feed" aria-label="ごはんを配る" aria-describedby="feedHint"><span class="round-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
+                <path
+                  d="M4 21q-1-13 13-13 13 1 12 13l-3 5H7Z"
+                  fill="#d6a15a"
+                  stroke="#8d663c"
+                />
+                <path
+                  d="m10 12 3 6m3-8 3 6m3-4 2 5"
+                  stroke="#f5d9a2"
+                  stroke-width="2"
+                /></svg></span><strong>ご飯</strong><span class="action-arrow" aria-hidden="true">→</span></button>
+              <button id="pay" class="scene-action pay" aria-label="給料を配る" aria-describedby="payHint"><span class="round-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
+                <path d="M12 9h9l5 14q0 5-10 5T6 23Z" fill="#d1aa60" />
+                <path d="m12 9-2-6 7 2 6-2-2 6" fill="#d1aa60" />
+                <path
+                  d="M11 10h11M16 14v10m-3-7 3-3 3 3"
+                  fill="none"
+                  stroke="#6a603d"
+                  stroke-width="1.5"
+                /></svg></span><strong>給料</strong><span class="action-arrow" aria-hidden="true">→</span></button>
+            </nav>
+          </div>
+          <div class="scene-bottom">
+            <span id="sceneCaption">今日も、地道にやっております。</span
+            ><span id="phaseCountdown">夜まで 90秒</span>
+          </div>
+          <div class="journal" aria-live="polite">
+            <span class="eyebrow">現場からのひとこと</span>
+            <p id="notice">責任者さん、お待ちしておりました。</p>
+          </div>
+          <div class="progress-section">
+            <div class="progress-heading">
+              <strong>ピラミッド完成まで</strong
+              ><b id="progressPercent">0.00<span>%</span></b>
+            </div>
+            <p id="buildMilestone" class="build-milestone"></p><div class="progress-track"><i id="progressFill"></i></div>
+            <div class="progress-detail">
+              <span><b id="stoneCount">0</b> / 100,000 個</span
+              ><span id="rateLabel">昼に石を積みます</span>
+            </div>
+          </div>
+        </section>
+        <section class="leader-office" aria-label="王室建設局"><p class="owner-line" id="leaderOwner"></p><h2>現場リーダー</h2><div class="leader-current"><div><b id="leaderName"></b><small id="leaderOrigin"></small></div></div><p id="leaderStatus"></p><button id="openLeaders">所持カード・人物録を見る <small id="leaderCount"></small></button><p class="leader-rules">王様はオーナー。2基目以降は序盤に一回、登用の便りが届きます。任命後は完成まで変更できません。魅力で募集がわずかに上振れします。作業速度への直接補正はありません。</p></section><aside class="game-ad" aria-label="広告">
+          
+          <div class="ad-banner"><script src="https://adm.shinobi.jp/s/b9de21441f6c26fbd75b5f98578aec13"></script></div>
+        </aside>
+        <aside class="office">
+          <div class="office-heading">
+            <span class="eyebrow">FOREMAN'S DESK</span>
+            <h2>現場の手引き</h2>
+            <p>操作の説明と、お世話の記録。</p>
+          </div>
+          <p id="campLabel" class="camp-label">布のテント 1張</p>
+          <p id="hireBonus" class="hire-bonus" hidden></p>
+          <div class="action-explanations"><h3>毎日のお世話</h3><p><b>募集</b><span id="hireHint">1日1回、1～1,000人やってきます。</span></p><p><b>ご飯</b><span id="feedHint">パンと飲み物で、ひと休み。</span></p><p><b>給料</b><span id="payHint">本日分のお給料、忘れずに。</span></p></div>
+          <div class="care-note">
+            <span id="careLabel" hidden></span
+            ><small>1日＝2分。夜の30秒は作業をお休み。</small>
+          </div>
+        </aside>
+      </div>
+      <p class="play-note">作業員・現場リーダー・時々訪れる王様を、掴んで動かせます。リーダーと王様は持ち場へ戻ります。寝ている作業員を運ぶと、翌日は拗ね休み。</p>
+      <nav class="game-tools" aria-label="ゲーム操作">
+        <button id="shareGame" type="button">シェア</button>
+        <button id="restartGame" type="button">ふりだしに戻る</button>
+      </nav>
+      <p id="gameShareNotice" role="status" class="play-note"></p>
+      <dialog id="restartDialog">
+        <h2>この現場をやり直しますか？</h2>
+        <p>今の現場の石・人数・宿営地・経過時間をリセットします。王の名前・完成済みの履歴・所持カードは残ります。同じ現場の登用抽選はやり直しません。</p>
+        <button id="cancelRestart" type="button" class="quiet">やめる</button>
+        <button id="confirmRestart" type="button" class="solid">ふりだしに戻る</button>
+      </dialog>
+      <section class="sound-panel" aria-label="音の設定">
+        <button id="soundToggle" type="button" aria-pressed="true">音：オン</button>
+        <label for="soundVolume">音量</label>
+        <input id="soundVolume" type="range" min="0" max="100" step="1" value="45" />
+        <output id="soundValue" for="soundVolume">45%</output>
+        <small id="soundStatus" role="status">最初のボタン操作から音が出ます。</small>
+      </section>
+      <section id="monuments" class="monuments" hidden>
+        <div>
+          <span class="eyebrow">王たちの足あと</span>
+          <h2>できあがった、ピラミッド。</h2>
+        </div>
+        <div id="monumentList" class="monument-list"></div>
+      </section>
+      <details class="rules">
+        <summary>この現場の、ゆるくないルール <span>＋</span></summary>
+        <div>
+          <p><b>石を積む暮らし</b><br>王様は建設のオーナーです。おっさんたちを眺め、好きなペースで10万個の石を積みましょう。完成すると、ピラミッドの石に王の名前が刻まれます。完成を祝い、次の現場へ進みます。</p>
+          <p><b>通常モードの一日</b><br>ゲーム内1日は現実の2分。昼90秒は工事、夜30秒はお休みです。募集は一日一回、1〜1,000人が加わります。リーダーの魅力で、人数がわずかに上振れすることがあります。</p>
+          <p><b>食事は毎日</b><br>食事を配らずにゲーム内1日が経つごとに、仕事の能率が1％ずつ下がります。下限は70％。一度ご飯を配れば、その場で100％まで回復します。ご飯は一日一回、資金を気にせず配れます。</p>
+          <p><b>給料は離職を防ぐ</b><br>給料をゲーム内30日（現実60分）配らないと、在籍人数の約3分の1が離職します。未払いのままだと、その後も30日ごとに離職が続きます。給料を配ると、次の離職までの30日を数え直します。給料も一日一回、資金を気にせず配れます。</p>
+          <p><b>留守中の現場</b><br>画面を閉じている間も、昼の建設と食事・給料の経過時間を反映します。仕事の能率は食事の状態で決まり、画面に戻っただけでは回復しません。ご飯を配って、また100％にしてあげましょう。</p>
+          <p><b>夜のUFO</b><br>UFOをタップすると、翌日の募集人数2倍、翌日の募集が1,000人固定、石を少し積む、のいずれかで手伝ってくれます。2倍は最大2,000人で、翌日の募集一回だけ。2日目以降は、2〜3機が現れるUFOラッシュもあり、ラッシュ中は各機が石を積んでくれます。採用特典は重ねても倍々には増えません。</p>
+          <p><b>現場リーダーとカード</b><br>最初の現場はリーダー不在です。2基目以降は建設開始の序盤にカードが一枚届きます。所持カードから任命したリーダーは、完成まで担当固定です。カードは次の現場へ引き継ぎ、任命は現場ごとに選び直します。通常カード99種類が揃うと、100枚目の特典が加わります。</p>
+          <p><b>タイマーモード</b><br>設定した時間でピラミッドが完成します。食事・給料・人数・夜・UFOで完成時刻は変わりません。一時停止と再開ができ、次のタイマーは自分のタイミングで始めます。</p>
+          <p><b>記録とおっさん</b><br>名前・完成記録・所持カードは、このブラウザーにモードごとに保存されます。画面の作業員一人は約100人分で、とても大人数の時は一部を表示します。作業員を掴んで運ぶと、戻るまで担当分の作業は止まります。寝ている作業員を運ぶと翌日は拗ね休みです。歴史を参考にしたフィクションです。</p>
+        </div>
+      </details>
+      <footer>
+        <span
+          >石を積む <b>v0.7.0</b>
+          <a
+            href="https://tsubasarock21.github.io/"
+            style="color: inherit; margin-left: 8px"
+            >ラボへ戻る</a
+          ></span
+        ><span>石は、逃げません。</span>
+      </footer>
+      <p id="storageWarning" class="storage-warning" hidden>
+        このブラウザでは保存できません。閉じると進捗が失われます。
+      </p>
+    </main>
+    <dialog id="welcome">
+      <span class="eyebrow">おかえりなさい、責任者。</span>
+      <h2>留守中も、<br />ぼちぼち進めました。</h2>
+      <p id="offlineReport"></p>
+      <button id="closeWelcome" class="solid">現場に戻る →</button>
+    </dialog>
+    <dialog id="win">
+      <span class="eyebrow">MONUMENT COMPLETE</span>
+      <h2 id="winTitle">王の名を、石に。</h2>
+      <p>おっさんたちが、やり遂げました。</p>
+      <div class="win-record">
+        <span>完成まで</span><strong id="winTime"></strong
+        ><small id="winCrew"></small>
+      </div>
+      <p id="completionNote"></p>
+      <p id="nextCountdown"></p>
+      <button id="nextSite" class="solid">次のピラミッド現場へ →</button
+      ><img id="completedPreview" class="completed-preview" alt="王の名を彫り込んだ完成ピラミッドの画像" hidden><a id="saveCompletedImage" class="share-image-link" target="_blank" rel="noopener" hidden>完成画像を保存</a><button id="shareResult" class="quiet">完成をシェア</button>
+      <p id="shareNotice" role="status"></p>
+    </dialog>
+    <dialog id="nameDialog">
+      <span class="eyebrow">はじめに、王の名前を。</span>
+      <h2>あなたの名を、<br />ピラミッドに。</h2>
+      <form id="nameForm">
+        <label for="nameInput">王の名前</label>
+        <div class="name-field">
+          <input
+            id="nameInput"
+            name="king"
+            maxlength="16"
+            placeholder="例：つばさ"
+            required
+            autocomplete="off"
+          /><span>王</span>
+        </div>
+        <p>
+          完成した石に「○○王」と刻みます。<br />名前はこのブラウザに保存されます。
+        </p>
+        <p id="nameError" role="alert" hidden>名前を入力してください。</p>
+        <button type="submit" class="solid" id="startSite">
+          この名前で、工事を始める →
+        </button>
+      </form>
+    </dialog>
+<dialog id="leaderCollection" class="leader-dialog"><div class="dialog-heading"><h2>王室の現場リーダー <small id="leaderCollectionCount"></small></h2><button id="closeLeaders">閉じる</button></div><div id="leaderList" class="leader-grid"></div></dialog>
+<dialog id="leaderCardDialog" class="leader-dialog" aria-label="リーダーを任命"><div id="leaderCardContent"></div><div class="appointment-actions"><button id="appointLeader" type="button">任命する</button><button id="closeLeaderCard" type="button">戻る</button></div></dialog>
+<dialog id="leaderArrival" class="leader-dialog"><div class="dialog-heading"><h2 id="arrivalTitle"></h2></div><p id="arrivalText"></p><div class="arrival-portrait"><img id="arrivalCardImage" alt=""></div><p id="arrivalName"></p><p>カードが加わっても、まだ任命されていません。誰に任せるかは王様が決めます。</p><div class="arrival-actions"><button id="arrivalView">人物録と任命を見る</button><button id="arrivalLater">あとで決める</button></div></dialog>
+    <script src="bootstrap.js?v=0.7.0&_metrics=2"></script>
+  </body>
+</html>

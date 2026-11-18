@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ホロパズル</title>
+<style>html,body{margin:0;padding:0;background:transparent}body{text-align:center;overflow-x:auto}#ad-content{display:flow-root;min-height:50px}#ad-content>div{margin-left:auto;margin-right:auto}</style></head>
+<body><div id="ad-content">
+<!-- Same AdMax unit as the top of the Lab home. -->
+<script src="https://adm.shinobi.jp/s/b9de21441f6c26fbd75b5f98578aec13"></script>
+</div><script>
+(()=>{const box=document.getElementById('ad-content');let previous=0,queued=false;
+function measure(){queued=false;const h=Math.min(600,Math.max(50,Math.ceil(box.getBoundingClientRect().height),box.scrollHeight));if(h===previous)return;previous=h;parent.postMessage({type:'horo-gallery-ad-size',height:h},location.origin)}
+function schedule(){if(!queued){queued=true;requestAnimationFrame(measure)}}
+new MutationObserver(schedule).observe(box,{subtree:true,childList:true,attributes:true});
+if(globalThis.ResizeObserver)new ResizeObserver(schedule).observe(box);
+window.addEventListener('load',schedule);window.addEventListener('resize',schedule);schedule();
+})();
+</script></body></html>

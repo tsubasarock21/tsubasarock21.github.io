@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 2,
+  "version": "0.18.1",
+  "packs": [
+    {
+      "path": "data/addition.json?v=7eb70bf44cfdb192"
+    },
+    {
+      "path": "data/expressions-practice.json?v=3c01b72dc1d22b69"
+    },
+    {
+      "path": "data/expressions-check.json?v=2c71e2cbd2828710"
+    },
+    {
+      "path": "data/expressions-word.json?v=af68ae2de9c1873e"
+    },
+    {
+      "path": "data/expressions-advanced.json?v=e423e7f3aed50dab"
+    },
+    {
+      "path": "data/systems-substitution.json?v=d61654963a75949e"
+    },
+    {
+      "path": "data/systems-check.json?v=b164e7e26a90174a"
+    },
+    {
+      "path": "data/systems-word.json?v=0788187e54310154"
+    },
+    {
+      "path": "data/systems-advanced.json?v=b3a7f901e7d668ab"
+    },
+    {
+      "path": "data/classified-parallel-basic.json?v=b69dc407cd123f08"
+    },
+    {
+      "path": "data/classified-parallel-check.json?v=0c5d760bf030749f"
+    },
+    {
+      "path": "data/classified-parallel-applied.json?v=f4ad137170fa7b8e"
+    },
+    {
+      "path": "data/classified-parallel-word.json?v=5e1732fd18c9d3d7"
+    },
+    {
+      "path": "data/classified-parallel-advanced.json?v=764ede269eefbcd6"
+    },
+    {
+      "path": "data/classified-geometry-basic.json?v=dcd2106aec14c033"
+    },
+    {
+      "path": "data/classified-geometry-check.json?v=1ef7c5a3d9bdf433"
+    },
+    {
+      "path": "data/classified-geometry-applied.json?v=3bb7adab726d45f7"
+    },
+    {
+      "path": "data/classified-geometry-word.json?v=2000bbdaff1b2759"
+    },
+    {
+      "path": "data/classified-geometry-advanced.json?v=319d1eb0703508f4"
+    },
+    {
+      "path": "data/classified-probability-basic.json?v=a5949bce4532a251"
+    },
+    {
+      "path": "data/classified-probability-check.json?v=04b936a61c30cfac"
+    },
+    {
+      "path": "data/classified-probability-applied.json?v=6ae73f07f867b4d6"
+    },
+    {
+      "path": "data/classified-probability-word.json?v=d58438780e1c0072"
+    },
+    {
+      "path": "data/classified-probability-advanced.json?v=6f0063f8f7b6d9c5"
+    },
+    {
+      "path": "data/classified-data-basic.json?v=b0ffd53621512149"
+    },
+    {
+      "path": "data/classified-data-check.json?v=7044b934662c67ac"
+    },
+    {
+      "path": "data/classified-data-applied.json?v=dee92098f6c7d232"
+    },
+    {
+      "path": "data/classified-data-word.json?v=3fb3ac5ebe520778"
+    },
+    {
+      "path": "data/classified-data-advanced.json?v=4bba05c5bb376360"
+    },
+    {
+      "path": "data/classified-challenge-challenge.json?v=32d4c8686a26eb96"
+    },
+    {
+      "path": "data/classified-linear-basic.json?v=20783257b422e86d"
+    },
+    {
+      "path": "data/classified-linear-check.json?v=e84fd9b963e1e0ef"
+    },
+    {
+      "path": "data/classified-linear-word.json?v=2ae72903d2a33260"
+    },
+    {
+      "path": "data/classified-linear-advanced.json?v=4e920dbee83efb40"
+    }
+  ],
+  "scripts": [
+    "assets/answer-choices.js?v=1ee4cafa782e0e47",
+    "assets/core.js?v=4481418287ef00f3",
+    "assets/geometry.js?v=440fa663aeff961c",
+    "assets/navigation.js?v=26dd267deef6f92f",
+    "assets/expressions.js?v=eb89ec2c6f3ebcb1",
+    "assets/share.js?v=ae0f9d0d572485c4",
+    "assets/systems.js?v=483a23fb1798a044",
+    "assets/direct.js?v=9211d6a57f725ec0",
+    "assets/authored.js?v=0b5fb1a18fe86cba",
+    "assets/catalog-entry.js?v=7f745485db945919"
+  ],
+  "tree": [
+    {
+      "key": "math",
+      "label": "数学",
+      "children": [
+        {
+          "key": "year1",
+          "label": "中学1年"
+        },
+        {
+          "key": "year2",
+          "label": "中学2年",
+          "children": [
+            {
+              "key": "expressions",
+              "label": "式の計算",
+              "children": [
+                {
+                  "key": "expr_practice",
+                  "label": "練習"
+                },
+                {
+                  "key": "expr_check",
+                  "label": "確認"
+                },
+                {
+                  "key": "expr_word",
+                  "label": "文章題"
+                },
+                {
+                  "key": "expr_advanced",
+                  "label": "難問"
+                }
+              ]
+            },
+            {
+              "key": "algebra",
+              "label": "連立方程式",
+              "children": [
+                {
+                  "key": "addition",
+                  "label": "加減法"
+                },
+                {
+                  "key": "sys_substitution",
+                  "label": "代入法"
+                },
+                {
+                  "key": "sys_check",
+                  "label": "確認"
+                },
+                {
+                  "key": "sys_word",
+                  "label": "文章題"
+                },
+                {
+                  "key": "sys_advanced",
+                  "label": "難問"
+                }
+              ]
+            },
+            {
+              "key": "linear",
+              "label": "1次関数"
+            },
+            {
+              "key": "parallel",
+              "label": "平行と合同"
+            },
+            {
+              "key": "geometry",
+              "label": "三角形と四角形"
+            },
+            {
+              "key": "probability",
+              "label": "確率"
+            },
+            {
+              "key": "data",
+              "label": "データの比較"
+            }
+          ]
+        },
+        {
+          "key": "year3",
+          "label": "中学3年"
+        }
+      ]
+    }
+  ],
+  "columns": [
+    "教科",
+    "学年",
+    "単元",
+    "内容",
+    "問題"
+  ]
+}

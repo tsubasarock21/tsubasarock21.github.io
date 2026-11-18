@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300">
+<rect width="440" height="300" fill="white"/>
+<polygon points="90,70 360,70 340,230 70,230" fill="none" stroke="#222" stroke-width="3"/>
+
+<text x="73" y="60" font-size="19">A</text><text x="365" y="60" font-size="19">D</text>
+<text x="48" y="252" font-size="19">B</text><text x="345" y="252" font-size="19">C</text>
+</svg>

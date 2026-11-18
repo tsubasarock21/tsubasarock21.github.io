@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 320">
+<rect width="440" height="320" fill="white"/>
+<polygon points="220,40 65,265 375,265" fill="none" stroke="#222" stroke-width="4"/>
+<text x="211" y="30" font-size="21">A</text><text x="43" y="288" font-size="21">B</text><text x="383" y="288" font-size="21">C</text>
+<circle cx="220" cy="40" r="7" fill="#222"/><text x="238" y="63" font-size="18">P</text>
+<path d="M218 60 L125 195" stroke="#777" stroke-width="2" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#777"/></marker></defs>
+</svg>

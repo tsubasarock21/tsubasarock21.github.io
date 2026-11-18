@@ -1,0 +1,1837 @@
+{
+  "schemaVersion": 2,
+  "placement": [
+    {
+      "key": "math",
+      "label": "数学"
+    },
+    {
+      "key": "year2",
+      "label": "中学2年"
+    },
+    {
+      "key": "linear",
+      "label": "1次関数"
+    },
+    {
+      "key": "linear_kind_basic",
+      "label": "基礎"
+    }
+  ],
+  "entries": [
+    {
+      "id": 275,
+      "problem": {
+        "title": "変化の割合",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-03",
+          "title": "変化の割合",
+          "group": "基礎",
+          "question": "一次関数 y＝−3x＋7 の変化の割合を求めよう。",
+          "answer": "−3",
+          "steps": [
+            {
+              "question": "xが1増えるとyはどう変わる？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "3減る"
+                },
+                {
+                  "id": "c2",
+                  "text": "3増える"
+                },
+                {
+                  "id": "c3",
+                  "text": "7増える"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "xの係数が−3なので、変化の割合は−3。"
+            }
+          ],
+          "verification": {
+            "question": "x＝0とx＝2を使って確かめると？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "(1−7)÷(2−0)＝−3"
+              },
+              {
+                "id": "c2",
+                "text": "(7−1)÷2＝3"
+              },
+              {
+                "id": "c3",
+                "text": "1−7＝−6だけで終える"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "yの増加量をxの増加量で割る。"
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "一次関数 y＝−3x＋7 の変化の割合を求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "−3"
+              },
+              {
+                "id": "c2",
+                "text": "3"
+              },
+              {
+                "id": "c3",
+                "text": "7"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "xの係数が−3なので、変化の割合は−3。"
+          }
+        }
+      }
+    },
+    {
+      "id": 276,
+      "problem": {
+        "title": "傾きと切片",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-04",
+          "title": "傾きと切片",
+          "group": "基礎",
+          "question": "y＝4x−2 のグラフの傾きと切片を答えよう。",
+          "answer": "傾き4、切片−2",
+          "steps": [
+            {
+              "question": "傾きと切片の組は？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "傾き4、切片2"
+                },
+                {
+                  "id": "c2",
+                  "text": "傾き−2、切片4"
+                },
+                {
+                  "id": "c1",
+                  "text": "傾き4、切片−2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "y＝ax＋b のaが傾き、bが切片。"
+            }
+          ],
+          "verification": {
+            "question": "x＝0とx＝1で確認すると？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "yは2から6へ4増える"
+              },
+              {
+                "id": "c1",
+                "text": "yは−2から2へ4増える"
+              },
+              {
+                "id": "c3",
+                "text": "yは4から2へ2減る"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x＝0で−2、x＝1で2。"
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "y＝4x−2 のグラフの傾きと切片を答えよう。",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "傾き4、切片2"
+              },
+              {
+                "id": "c2",
+                "text": "傾き−2、切片4"
+              },
+              {
+                "id": "c1",
+                "text": "傾き4、切片−2"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "y＝ax＋b のaが傾き、bが切片。"
+          }
+        }
+      }
+    },
+    {
+      "id": 277,
+      "problem": {
+        "title": "正の傾きのグラフ",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-05",
+          "title": "正の傾きのグラフ",
+          "group": "基礎",
+          "question": "y＝2x-3 のグラフを選ぼう。",
+          "answer": "y＝2x-3の直線",
+          "steps": [
+            {
+              "question": "グラフを選ぶ前に、まず何を確認すると絞り込みやすい？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "切片と傾き（または通る点）"
+                },
+                {
+                  "id": "c2",
+                  "text": "線の色だけ"
+                },
+                {
+                  "id": "c3",
+                  "text": "図の大きさだけ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "一次関数は切片と傾き、または通る2点を確認すればグラフを判断できる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "A"
+                },
+                {
+                  "id": "c1",
+                  "text": "B"
+                },
+                {
+                  "id": "c3",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "点(0, -3)と(1, -1)を通る。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ直線上の2点を元の式に代入すると？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "片方だけ満たせばよい"
+              },
+              {
+                "id": "c3",
+                "text": "x軸に交わればよい"
+              },
+              {
+                "id": "c1",
+                "text": "2点とも元の式を満たす"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, -3)と(1, -1)を通る。 元の方程式にもそれぞれ代入して確認する。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "a": 2.0,
+                "b": -3.0
+              },
+              "points": [
+                [
+                  0,
+                  -3
+                ],
+                [
+                  1,
+                  -1
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "y＝2x-3 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "A"
+              },
+              {
+                "id": "c1",
+                "text": "B"
+              },
+              {
+                "id": "c3",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, -3)と(1, -1)を通る。"
+          },
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/C3-05-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/C3-05-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/C3-05-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 278,
+      "problem": {
+        "title": "負の傾きのグラフ",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-06",
+          "title": "負の傾きのグラフ",
+          "group": "基礎",
+          "question": "y＝-3x＋2 のグラフを選ぼう。",
+          "answer": "y＝-3x＋2の直線",
+          "steps": [
+            {
+              "question": "グラフを選ぶ前に、まず何を確認すると絞り込みやすい？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "切片と傾き（または通る点）"
+                },
+                {
+                  "id": "c2",
+                  "text": "線の色だけ"
+                },
+                {
+                  "id": "c3",
+                  "text": "図の大きさだけ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "一次関数は切片と傾き、または通る2点を確認すればグラフを判断できる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "A"
+                },
+                {
+                  "id": "c3",
+                  "text": "B"
+                },
+                {
+                  "id": "c2",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "点(0, 2)と(1, -1)を通る。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ直線上の2点を元の式に代入すると？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "2点とも元の式を満たす"
+              },
+              {
+                "id": "c2",
+                "text": "片方だけ満たせばよい"
+              },
+              {
+                "id": "c3",
+                "text": "x軸に交わればよい"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, 2)と(1, -1)を通る。 元の方程式にもそれぞれ代入して確認する。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "a": -3.0,
+                "b": 2.0
+              },
+              "points": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  -1
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "y＝-3x＋2 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "A"
+              },
+              {
+                "id": "c3",
+                "text": "B"
+              },
+              {
+                "id": "c2",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, 2)と(1, -1)を通る。"
+          },
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/C3-06-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/C3-06-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/C3-06-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 279,
+      "problem": {
+        "title": "分数の傾きのグラフ",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-07",
+          "title": "分数の傾きのグラフ",
+          "group": "基礎",
+          "question": "y＝2/3x＋1 のグラフを選ぼう。",
+          "answer": "y＝2/3x＋1の直線",
+          "steps": [
+            {
+              "question": "この式では、どちらの座標が一定になる？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y座標"
+                },
+                {
+                  "id": "c2",
+                  "text": "x座標"
+                },
+                {
+                  "id": "c3",
+                  "text": "xとyの両方"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "y＝一定の式では、どの点でもy座標が同じなので横の直線になる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "A"
+                },
+                {
+                  "id": "c2",
+                  "text": "B"
+                },
+                {
+                  "id": "c3",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "点(0, 1)と(3, 3)を通る。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ直線上の2点を元の式に代入すると？",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "x軸に交わればよい"
+              },
+              {
+                "id": "c2",
+                "text": "片方だけ満たせばよい"
+              },
+              {
+                "id": "c1",
+                "text": "2点とも元の式を満たす"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, 1)と(3, 3)を通る。 元の方程式にもそれぞれ代入して確認する。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "a": 0.6666666666666666,
+                "b": 1.0
+              },
+              "points": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  3
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "y＝2/3x＋1 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "A"
+              },
+              {
+                "id": "c2",
+                "text": "B"
+              },
+              {
+                "id": "c3",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, 1)と(3, 3)を通る。"
+          },
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/C3-07-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/C3-07-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/C3-07-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 280,
+      "problem": {
+        "title": "グラフから式",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-08",
+          "title": "グラフから式",
+          "group": "基礎",
+          "question": "グラフには点(0, 1)、(2, 5)を通る直線が描かれている。 一次関数の式を求めよう。",
+          "answer": "y＝2x＋1",
+          "steps": [
+            {
+              "question": "傾きはどれ？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "4"
+                },
+                {
+                  "id": "c1",
+                  "text": "2"
+                },
+                {
+                  "id": "c2",
+                  "text": "-2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "傾き＝yの増加量÷xの増加量＝(5−(1))÷(2−(0))＝2。"
+            },
+            {
+              "question": "傾きが2で点(0, 1)を通るとき、切片bは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "3"
+                },
+                {
+                  "id": "c3",
+                  "text": "-1"
+                },
+                {
+                  "id": "c1",
+                  "text": "1"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "1＝2×(0)＋b より、b＝1。"
+            },
+            {
+              "question": "条件を満たす式はどれ？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "y＝-2x＋1"
+                },
+                {
+                  "id": "c1",
+                  "text": "y＝2x＋1"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝2x＋3"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "求めた傾きと切片を y＝ax＋b に入れる。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ式を元の条件と照合するとき、確認する内容は？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "2点の両方を通る"
+              },
+              {
+                "id": "c2",
+                "text": "切片だけを確認する"
+              },
+              {
+                "id": "c3",
+                "text": "式にxとyがあればよい"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x＝0のときy＝1、x＝2のときy＝5。傾きは2。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/C3-08.svg"
+          },
+          "mathChecks": [
+            {
+              "kind": "line",
+              "a": "2",
+              "b": "1",
+              "points": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  5
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "グラフには点(0, 1)、(2, 5)を通る直線が描かれている。 一次関数の式を求めよう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝-2x＋1"
+              },
+              {
+                "id": "c1",
+                "text": "y＝2x＋1"
+              },
+              {
+                "id": "c3",
+                "text": "y＝2x＋3"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾きは「yの増加量÷xの増加量」で求める。1＝2×(0)＋b より、b＝1。 その計算で得た傾きと切片を y＝ax＋b に入れる。 上の計算で得られる傾きと切片を y＝ax＋b に入れる。"
+          }
+        }
+      }
+    },
+    {
+      "id": 281,
+      "problem": {
+        "title": "グラフから式",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-09",
+          "title": "グラフから式",
+          "group": "基礎",
+          "question": "グラフには点(0, −2)、(4, −4)を通る直線が描かれている。 一次関数の式を求めよう。",
+          "answer": "y＝-1/2x-2",
+          "steps": [
+            {
+              "question": "傾きはどれ？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "1/2"
+                },
+                {
+                  "id": "c3",
+                  "text": "3/2"
+                },
+                {
+                  "id": "c1",
+                  "text": "-1/2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "傾き＝yの増加量÷xの増加量＝(-4−(-2))÷(4−(0))＝-1/2。"
+            },
+            {
+              "question": "傾きが-1/2で点(0, -2)を通るとき、切片bは？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "-4"
+                },
+                {
+                  "id": "c2",
+                  "text": "0"
+                },
+                {
+                  "id": "c1",
+                  "text": "-2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "-2＝-1/2×(0)＋b より、b＝-2。"
+            },
+            {
+              "question": "条件を満たす式はどれ？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "y＝1/2x-2"
+                },
+                {
+                  "id": "c1",
+                  "text": "y＝-1/2x-2"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝-1/2x"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "求めた傾きと切片を y＝ax＋b に入れる。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ式を元の条件と照合するとき、確認する内容は？",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "式にxとyがあればよい"
+              },
+              {
+                "id": "c1",
+                "text": "2点の両方を通る"
+              },
+              {
+                "id": "c2",
+                "text": "切片だけを確認する"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x＝0のときy＝-2、x＝4のときy＝-4。傾きは-1/2。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/C3-09.svg"
+          },
+          "mathChecks": [
+            {
+              "kind": "line",
+              "a": "-1/2",
+              "b": "-2",
+              "points": [
+                [
+                  0,
+                  -2
+                ],
+                [
+                  4,
+                  -4
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "グラフには点(0, −2)、(4, −4)を通る直線が描かれている。 一次関数の式を求めよう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝1/2x-2"
+              },
+              {
+                "id": "c1",
+                "text": "y＝-1/2x-2"
+              },
+              {
+                "id": "c3",
+                "text": "y＝-1/2x"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾きは「yの増加量÷xの増加量」で求める。-2＝-1/2×(0)＋b より、b＝-2。 その計算で得た傾きと切片を y＝ax＋b に入れる。 上の計算で得られる傾きと切片を y＝ax＋b に入れる。"
+          }
+        }
+      }
+    },
+    {
+      "id": 282,
+      "problem": {
+        "title": "傾きと1点から式",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-10",
+          "title": "傾きと1点から式",
+          "group": "基礎",
+          "question": "変化の割合が3で、x＝2のときy＝1になる。 一次関数の式を求めよう。",
+          "answer": "y＝3x-5",
+          "steps": [
+            {
+              "question": "傾きが3で点(2, 1)を通るとき、切片bは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "-3"
+                },
+                {
+                  "id": "c1",
+                  "text": "-5"
+                },
+                {
+                  "id": "c3",
+                  "text": "-7"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "1＝3×(2)＋b より、b＝-5。"
+            },
+            {
+              "question": "条件を満たす式はどれ？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "y＝3x-3"
+                },
+                {
+                  "id": "c2",
+                  "text": "y＝-3x-5"
+                },
+                {
+                  "id": "c1",
+                  "text": "y＝3x-5"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "求めた傾きと切片を y＝ax＋b に入れる。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ式を元の条件と照合するとき、確認する内容は？",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "式にxとyがあればよい"
+              },
+              {
+                "id": "c2",
+                "text": "切片だけを確認する"
+              },
+              {
+                "id": "c1",
+                "text": "指定の傾きと、指定の点を通ること"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x＝2のときy＝1。傾きは3。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "line",
+              "a": "3",
+              "b": "-5",
+              "points": [
+                [
+                  2,
+                  1
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "変化の割合が3で、x＝2のときy＝1になる。 一次関数の式を求めよう。",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "y＝3x-3"
+              },
+              {
+                "id": "c2",
+                "text": "y＝-3x-5"
+              },
+              {
+                "id": "c1",
+                "text": "y＝3x-5"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾きは「yの増加量÷xの増加量」で求める。1＝3×(2)＋b より、b＝-5。 その計算で得た傾きと切片を y＝ax＋b に入れる。 上の計算で得られる傾きと切片を y＝ax＋b に入れる。"
+          }
+        }
+      }
+    },
+    {
+      "id": 283,
+      "problem": {
+        "title": "2点から式",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-11",
+          "title": "2点から式",
+          "group": "基礎",
+          "question": "直線が2点 (-3, 1)、(3, 5) を通る。 一次関数の式を求めよう。",
+          "answer": "y＝2/3x＋3",
+          "steps": [
+            {
+              "question": "傾きはどれ？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "8/3"
+                },
+                {
+                  "id": "c2",
+                  "text": "-2/3"
+                },
+                {
+                  "id": "c1",
+                  "text": "2/3"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "傾き＝yの増加量÷xの増加量＝(5−(1))÷(3−(-3))＝2/3。"
+            },
+            {
+              "question": "傾きが2/3で点(-3, 1)を通るとき、切片bは？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "1"
+                },
+                {
+                  "id": "c2",
+                  "text": "5"
+                },
+                {
+                  "id": "c1",
+                  "text": "3"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "1＝2/3×(-3)＋b より、b＝3。"
+            },
+            {
+              "question": "条件を満たす式はどれ？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "y＝-2/3x＋3"
+                },
+                {
+                  "id": "c1",
+                  "text": "y＝2/3x＋3"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝2/3x＋5"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "求めた傾きと切片を y＝ax＋b に入れる。"
+            }
+          ],
+          "verification": {
+            "question": "選んだ式を元の条件と照合するとき、確認する内容は？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "2点の両方を通る"
+              },
+              {
+                "id": "c3",
+                "text": "式にxとyがあればよい"
+              },
+              {
+                "id": "c2",
+                "text": "切片だけを確認する"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x＝-3のときy＝1、x＝3のときy＝5。傾きは2/3。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "line",
+              "a": "2/3",
+              "b": "3",
+              "points": [
+                [
+                  -3,
+                  1
+                ],
+                [
+                  3,
+                  5
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "直線が2点 (-3, 1)、(3, 5) を通る。 一次関数の式を求めよう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝-2/3x＋3"
+              },
+              {
+                "id": "c1",
+                "text": "y＝2/3x＋3"
+              },
+              {
+                "id": "c3",
+                "text": "y＝2/3x＋5"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾きは「yの増加量÷xの増加量」で求める。1＝2/3×(-3)＋b より、b＝3。 その計算で得た傾きと切片を y＝ax＋b に入れる。 上の計算で得られる傾きと切片を y＝ax＋b に入れる。"
+          }
+        }
+      }
+    },
+    {
+      "id": 284,
+      "problem": {
+        "title": "方程式からグラフ",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-12",
+          "title": "方程式からグラフ",
+          "group": "基礎",
+          "question": "x＋2y＝−4 のグラフを選ぼう。",
+          "answer": "y＝-1/2x-2の直線",
+          "steps": [
+            {
+              "question": "この式では、どちらの座標が一定になる？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y座標"
+                },
+                {
+                  "id": "c2",
+                  "text": "x座標"
+                },
+                {
+                  "id": "c3",
+                  "text": "xとyの両方"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "y＝一定の式では、どの点でもy座標が同じなので横の直線になる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "A"
+                },
+                {
+                  "id": "c3",
+                  "text": "B"
+                },
+                {
+                  "id": "c1",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "点(0, -2)と(2, -3)を通る。"
+            }
+          ],
+          "verification": {
+            "question": "選んだグラフが元の方程式を表すか、どう確かめる？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "異なる2点の座標を元の方程式に代入する"
+              },
+              {
+                "id": "c2",
+                "text": "x軸と交わることだけを確かめる"
+              },
+              {
+                "id": "c3",
+                "text": "原点を通ることだけを確かめる"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "正答のグラフでは、点(0, -2)と点(4, -4)を代入して、0＋2×(−2)＝−4、4＋2×(−4)＝−4。直線を表す方程式なので、異なる2点で確かめられる。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "a": -0.5,
+                "b": -2.0
+              },
+              "points": [
+                [
+                  0,
+                  -2
+                ],
+                [
+                  2,
+                  -3
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "x＋2y＝−4 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "A"
+              },
+              {
+                "id": "c3",
+                "text": "B"
+              },
+              {
+                "id": "c1",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, -2)と(2, -3)を通る。"
+          },
+          "sourceEquation": [
+            "1",
+            "2",
+            "-4"
+          ],
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-12-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-12-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-12-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 285,
+      "problem": {
+        "title": "方程式からグラフ",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-13",
+          "title": "方程式からグラフ",
+          "group": "基礎",
+          "question": "(1/3)x＋(1/2)y＝1 のグラフを選ぼう。",
+          "answer": "y＝-2/3x＋2の直線",
+          "steps": [
+            {
+              "question": "この式では、どちらの座標が一定になる？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y座標"
+                },
+                {
+                  "id": "c2",
+                  "text": "x座標"
+                },
+                {
+                  "id": "c3",
+                  "text": "xとyの両方"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "y＝一定の式では、どの点でもy座標が同じなので横の直線になる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "A"
+                },
+                {
+                  "id": "c3",
+                  "text": "B"
+                },
+                {
+                  "id": "c2",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "点(0, 2)と(3, 0)を通る。"
+            }
+          ],
+          "verification": {
+            "question": "選んだグラフが元の方程式を表すか、どう確かめる？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "異なる2点の座標を元の方程式に代入する"
+              },
+              {
+                "id": "c3",
+                "text": "原点を通ることだけを確かめる"
+              },
+              {
+                "id": "c2",
+                "text": "x軸と交わることだけを確かめる"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "正答のグラフでは、点(0, 2)と点(3, 0)を代入して、0÷3＋2÷2＝1、3÷3＋0÷2＝1。直線を表す方程式なので、異なる2点で確かめられる。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "a": -0.6666666666666666,
+                "b": 2.0
+              },
+              "points": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  0
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "(1/3)x＋(1/2)y＝1 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "A"
+              },
+              {
+                "id": "c3",
+                "text": "B"
+              },
+              {
+                "id": "c2",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, 2)と(3, 0)を通る。"
+          },
+          "sourceEquation": [
+            "1/3",
+            "1/2",
+            "1"
+          ],
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-13-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-13-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-13-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 286,
+      "problem": {
+        "title": "横の直線",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-14",
+          "title": "横の直線",
+          "group": "基礎",
+          "question": "2y＋8＝0 のグラフを選ぼう。",
+          "answer": "y＝-4の直線",
+          "steps": [
+            {
+              "question": "グラフを選ぶ前に、まず何を確認すると絞り込みやすい？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "切片と傾き（または通る点）"
+                },
+                {
+                  "id": "c2",
+                  "text": "線の色だけ"
+                },
+                {
+                  "id": "c3",
+                  "text": "図の大きさだけ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "一次関数は切片と傾き、または通る2点を確認すればグラフを判断できる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "A"
+                },
+                {
+                  "id": "c2",
+                  "text": "B"
+                },
+                {
+                  "id": "c3",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "点(0, -4)と(1, -4)を通る。"
+            }
+          ],
+          "verification": {
+            "question": "選んだグラフが元の方程式を表すか、どう確かめる？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "異なる2点の座標を元の方程式に代入する"
+              },
+              {
+                "id": "c3",
+                "text": "原点を通ることだけを確かめる"
+              },
+              {
+                "id": "c2",
+                "text": "x軸と交わることだけを確かめる"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "正答のグラフでは、点(0, -4)と点(2, -4)を代入して、どちらの点でも2×(−4)＋8＝0。直線を表す方程式なので、異なる2点で確かめられる。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "a": 0.0,
+                "b": -4.0
+              },
+              "points": [
+                [
+                  0,
+                  -4
+                ],
+                [
+                  1,
+                  -4
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "2y＋8＝0 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "A"
+              },
+              {
+                "id": "c2",
+                "text": "B"
+              },
+              {
+                "id": "c3",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "点(0, -4)と(1, -4)を通る。"
+          },
+          "sourceEquation": [
+            "0",
+            "2",
+            "-8"
+          ],
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-14-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-14-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-14-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 287,
+      "problem": {
+        "title": "縦の直線",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-15",
+          "title": "縦の直線",
+          "group": "基礎",
+          "question": "3x−6＝0 のグラフを選ぼう。",
+          "answer": "x＝2の縦の直線",
+          "steps": [
+            {
+              "question": "グラフを選ぶ前に、まず何を確認すると絞り込みやすい？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "切片と傾き（または通る点）"
+                },
+                {
+                  "id": "c2",
+                  "text": "線の色だけ"
+                },
+                {
+                  "id": "c3",
+                  "text": "図の大きさだけ"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "一次関数は切片と傾き、または通る2点を確認すればグラフを判断できる。"
+            },
+            {
+              "question": "条件を満たすグラフはどれ？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "A"
+                },
+                {
+                  "id": "c1",
+                  "text": "B"
+                },
+                {
+                  "id": "c2",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "どの点でもx座標が2。yの値は自由なので縦の直線。"
+            }
+          ],
+          "verification": {
+            "question": "選んだグラフが元の方程式を表すか、どう確かめる？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "x軸と交わることだけを確かめる"
+              },
+              {
+                "id": "c1",
+                "text": "異なる2点の座標を元の方程式に代入する"
+              },
+              {
+                "id": "c3",
+                "text": "原点を通ることだけを確かめる"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "正答のグラフでは、点(2, -2)と点(2, 2)を代入して、どちらの点でも3×2−6＝0。直線を表す方程式なので、異なる2点で確かめられる。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "graph",
+              "spec": {
+                "x": 2
+              },
+              "points": [
+                [
+                  2,
+                  -2
+                ],
+                [
+                  2,
+                  2
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "3x−6＝0 のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "A"
+              },
+              {
+                "id": "c1",
+                "text": "B"
+              },
+              {
+                "id": "c2",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "どの点でもx座標が2。yの値は自由なので縦の直線。"
+          },
+          "sourceEquation": [
+            "3",
+            "0",
+            "6"
+          ],
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-15-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-15-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/batch2-graphs/C3-15-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 288,
+      "problem": {
+        "title": "グラフで連立方程式",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-16",
+          "title": "2直線の交点から連立方程式を読む",
+          "group": "基礎",
+          "question": "図には x＋2y＝6 と x−y＝0 の2直線が描かれている。交点を読み取り、連立方程式の解を求めよう。",
+          "answer": "x＝2、y＝2",
+          "steps": [
+            {
+              "question": "まず、2直線が交わる点のx座標を図から読むと？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "(0,6)と(3,0)"
+                },
+                {
+                  "id": "c3",
+                  "text": "(0,−3)と(−6,0)"
+                },
+                {
+                  "id": "c1",
+                  "text": "(0,3)と(6,0)"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "連立方程式の解は2直線の交点の座標。まずx座標を読む。"
+            },
+            {
+              "question": "x−y＝0を満たす直線は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "(0,0)と(2,−2)を通る"
+                },
+                {
+                  "id": "c1",
+                  "text": "(0,0)と(2,2)を通る"
+                },
+                {
+                  "id": "c3",
+                  "text": "(0,1)と(2,3)を通る"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "xとyの値が等しい点を結ぶ。"
+            },
+            {
+              "question": "2直線の交点から読める解は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "x＝2、y＝2"
+                },
+                {
+                  "id": "c3",
+                  "text": "x＝3、y＝0"
+                },
+                {
+                  "id": "c2",
+                  "text": "x＝−2、y＝−2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "描いた2直線は(2,2)で交わる。"
+            }
+          ],
+          "verification": {
+            "question": "候補(2,2)を元の2式に代入した結果は？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "2＋2×2＝6、2−2＝0"
+              },
+              {
+                "id": "c2",
+                "text": "2＋2×2＝4、2−2＝0"
+              },
+              {
+                "id": "c3",
+                "text": "2＋2×2＝6、2−2＝4"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "両方の式が成り立つため、交点は連立方程式の解である。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/batch2-graphs/C3-16.svg"
+          },
+          "mathChecks": [
+            {
+              "kind": "intersection",
+              "lines": [
+                [
+                  "-1/2",
+                  "3"
+                ],
+                [
+                  "1",
+                  "0"
+                ]
+              ],
+              "point": [
+                "2",
+                "2"
+              ]
+            }
+          ],
+          "direct": {
+            "question": "図には x＋2y＝6 と x−y＝0 の2直線が描かれている。交点を読み取り、連立方程式の解を求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "x＝2、y＝2"
+              },
+              {
+                "id": "c2",
+                "text": "x＝−2、y＝−2"
+              },
+              {
+                "id": "c3",
+                "text": "x＝3、y＝0"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "描いた2直線は(2,2)で交わる。"
+          }
+        }
+      }
+    },
+    {
+      "id": 289,
+      "problem": {
+        "title": "軸との交点から交点を求める",
+        "level": "基礎",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-17",
+          "title": "軸との交点から交点を求める",
+          "group": "基礎",
+          "question": "直線ℓは(−4, 0)、(0, 4)を通り、直線mは(−1, 0)、(0, −2)を通る。ℓとmの交点を求めよう。",
+          "answer": "(−2,2)",
+          "steps": [
+            {
+              "question": "ℓとmの式の組は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "ℓ：y＝−x＋4、m：y＝2x−2"
+                },
+                {
+                  "id": "c1",
+                  "text": "ℓ：y＝x＋4、m：y＝−2x−2"
+                },
+                {
+                  "id": "c3",
+                  "text": "ℓ：y＝x−4、m：y＝−2x＋2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "ℓの傾きは(4−0)÷(0−(−4))＝1、切片4。mの傾きは(−2−0)÷(0−(−1))＝−2、切片−2。"
+            },
+            {
+              "question": "2つの式のyを等しくして求める交点は？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "(−1,3)"
+                },
+                {
+                  "id": "c1",
+                  "text": "(−2,2)"
+                },
+                {
+                  "id": "c2",
+                  "text": "(2,−2)"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "x＋4＝−2x−2から3x＝−6、x＝−2。y＝2。"
+            }
+          ],
+          "verification": {
+            "question": "交点(−2,2)を2つの式で確かめると？",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "ℓ：−2＋4＝−2、m：−2×(−2)−2＝2"
+              },
+              {
+                "id": "c1",
+                "text": "ℓ：−2＋4＝2、m：−2×(−2)−2＝2"
+              },
+              {
+                "id": "c2",
+                "text": "ℓ：−2＋4＝2、m：−2×(−2)−2＝−6"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "両方の直線上にあることを確認する。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/batch2-graphs/C3-17.svg"
+          },
+          "mathChecks": [
+            {
+              "kind": "intersection",
+              "lines": [
+                [
+                  "1",
+                  "4"
+                ],
+                [
+                  "-2",
+                  "-2"
+                ]
+              ],
+              "point": [
+                "-2",
+                "2"
+              ]
+            }
+          ],
+          "direct": {
+            "question": "直線ℓは(−4, 0)、(0, 4)を通り、直線mは(−1, 0)、(0, −2)を通る。ℓとmの交点を求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "(−2,2)"
+              },
+              {
+                "id": "c2",
+                "text": "(2,−2)"
+              },
+              {
+                "id": "c3",
+                "text": "(−1,3)"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x＋4＝−2x−2から3x＝−6、x＝−2。y＝2。"
+          }
+        }
+      }
+    }
+  ]
+}

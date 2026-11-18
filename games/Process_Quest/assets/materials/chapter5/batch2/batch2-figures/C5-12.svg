@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280">
+<rect width="500" height="280" fill="white"/>
+<polygon points="60,220 60,60 220,220" fill="none" stroke="#222" stroke-width="3"/>
+<path d="M60 200 L80 200 L80 220" fill="none" stroke="#222" stroke-width="2"/>
+<text x="43" y="52" font-size="19">A</text><text x="38" y="244" font-size="19">B</text><text x="225" y="244" font-size="19">C</text>
+<polygon points="290,220 290,60 450,220" fill="none" stroke="#222" stroke-width="3"/>
+<path d="M290 200 L310 200 L310 220" fill="none" stroke="#222" stroke-width="2"/>
+<text x="273" y="52" font-size="19">D</text><text x="268" y="244" font-size="19">E</text><text x="455" y="244" font-size="19">F</text>
+</svg>

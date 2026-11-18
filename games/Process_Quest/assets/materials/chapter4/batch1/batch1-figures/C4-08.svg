@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-label="三角形の外角の図">
+<rect width="420" height="300" fill="white"/>
+<polyline points="60,240 275,240 180,55 340,240" fill="none" stroke="#222" stroke-width="3"/>
+<text x="82" y="220" font-size="20">44°</text><text x="190" y="92" font-size="20">73°</text>
+<text x="286" y="220" font-size="22">x</text>
+</svg>

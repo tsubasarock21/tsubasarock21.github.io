@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280">
+<rect width="520" height="280" fill="white"/>
+<polygon points="45,220 215,220 130,55" fill="none" stroke="#222" stroke-width="3"/>
+<polygon points="300,220 470,220 385,55" fill="none" stroke="#222" stroke-width="3"/>
+<text x="122" y="45" font-size="18">A</text><text x="25" y="238" font-size="18">B</text><text x="218" y="238" font-size="18">C</text>
+<text x="377" y="45" font-size="18">D</text><text x="280" y="238" font-size="18">E</text><text x="473" y="238" font-size="18">F</text>
+<text x="100" y="145" font-size="16">対応</text><text x="355" y="145" font-size="16">対応</text>
+</svg>

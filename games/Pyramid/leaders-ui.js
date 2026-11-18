@@ -1,0 +1,40 @@
+/* Readable two-sided personnel cards. Values live in data, not image lettering. */
+(()=>{'use strict';const M=PyramidModel,byId=id=>document.getElementById(id);
+function elem(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+function card(c,options={}){const shell=elem('article','personnel-card is-front');shell.style.setProperty('--leader-color',c.color);shell.classList.toggle('full-art',c.imageLayout==='full');const front=elem('section','card-front'),back=elem('section','card-back');back.hidden=true;
+ const head=elem('header');head.append(elem('small','card-category',c.number===100?'No.100 · 九十九人の先の出会い':'No.'+String(c.number).padStart(3,'0')+' · 現場リーダー'),elem('h3','',c.name),elem('p','card-origin','出身地：'+c.origin));
+ const picture=elem('div','card-portrait'),image=elem('img');image.src=c.image;image.alt=c.name+'の現場での姿';picture.append(image);
+ const stats=elem('div','card-stats');stats.append(elem('span','','魅力'),elem('strong','',String(c.charm)),elem('small','','/ 100'));
+ const action=elem('div','card-action');action.append(elem('small','','固有アクション'),elem('h4','',c.action),elem('p','',c.line));
+ front.append(head,picture,stats,action);
+ const dossier=elem('header');dossier.append(elem('small','','王室建設局／人物覚書'),elem('h3','',c.name),elem('p','',c.origin+'出身 · '+c.age+'歳 · '+c.job));back.append(dossier);
+ const seal=elem('div','dossier-seal','登用記録');back.append(seal);
+ const story=elem('div','dossier-story');c.story.forEach(p=>story.append(elem('p','',p)));back.append(story);
+ const facts=elem('dl','dossier-facts');for(const [k,v]of c.facts)facts.append(elem('dt','',k),elem('dd','',v));back.append(facts);
+ const letter=elem('blockquote','dossier-letter');letter.append(elem('small','','鞄に残っていた、未送付の一文'),elem('p','',c.letter));back.append(letter);
+ const badge=elem('span','card-face-hint');badge.setAttribute('aria-hidden','true');badge.append(elem('b','face-front','表'),elem('span','face-arrow','↔'),elem('b','face-back','裏'));
+ const flip=elem('button','card-flip','裏面：人物録を読む');flip.type='button';flip.setAttribute('aria-pressed','false');let turning=false;
+ function changeFace(){const toBack=back.hidden;front.hidden=toBack;back.hidden=!toBack;shell.classList.toggle('is-front',!toBack);shell.classList.toggle('is-back',toBack);flip.textContent=toBack?'表面へ戻る':'裏面：人物録を読む';flip.setAttribute('aria-pressed',String(toBack));if(options.tap){shell.setAttribute('aria-pressed',String(toBack));shell.setAttribute('aria-label',c.name+'のカード、'+(toBack?'裏面':'表面')+'。タップで'+(toBack?'表面':'裏面')+'へ');}const dialog=shell.closest('dialog');if(dialog)dialog.scrollTop=0;}
+ function animate(className,duration){return new Promise(resolve=>{let timer;const finish=()=>{clearTimeout(timer);shell.removeEventListener('animationend',onEnd);shell.classList.remove(className);resolve();},onEnd=e=>{if(e.target===shell)finish()};shell.addEventListener('animationend',onEnd);shell.classList.add(className);timer=setTimeout(finish,duration+90);});}
+ async function turn(){if(turning)return;if(globalThis.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches){changeFace();return;}turning=true;try{await animate('is-turning-out',170);changeFace();await animate('is-turning-in',210);}finally{turning=false;}}
+ badge.onclick=e=>{e.stopPropagation();void turn()};flip.onclick=turn;picture.onclick=turn;picture.tabIndex=0;picture.setAttribute('role','button');picture.setAttribute('aria-label',c.name+'のカードを裏返す');picture.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();void turn()}};
+ if(options.tap){shell.append(front,back,badge);picture.onclick=null;picture.removeAttribute('tabindex');picture.removeAttribute('role');picture.removeAttribute('aria-label');shell.tabIndex=0;shell.setAttribute('role','button');shell.setAttribute('aria-label',c.name+'のカード、表面。タップで裏面へ');shell.setAttribute('aria-pressed','false');shell.onclick=()=>{if(globalThis.getSelection?.().toString())return;void turn()};shell.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();void turn()}};}else shell.append(front,back,badge,flip);return shell;
+}
+rootExport();function rootExport(){globalThis.PyramidLeaderCards={card,renderGallery(target){target.replaceChildren(...M.LEADERS.map(card))}}}
+const A=globalThis.PyramidApp;if(!A)return;
+let viewing=null,renderKey='',eventKey='';
+function collection(){const s=A.state,key=JSON.stringify([s.leaderCards,s.leaderId,s.siteNumber]);if(key===renderKey)return;renderKey=key;const box=byId('leaderList');box.replaceChildren();for(const c of M.LEADERS){const own=s.leaderCards[c.id]||0,b=elem('button',own?'leader-tile':'leader-tile locked');b.type='button';b.classList.toggle('full-art',c.imageLayout==='full');b.disabled=!own;if(own){const portrait=elem('div','tile-portrait'),img=elem('img');img.src=c.image;img.alt='';portrait.append(img);b.append(portrait,elem('b','',c.name),elem('span','',c.origin+' · 魅力 '+c.charm),elem('small','',s.leaderId===c.id?'この現場を担当中':'所持 '+own+'枚'));b.onclick=()=>openCard(c.id)}else b.append(elem('b','','？'),elem('span','',c.number===100?'99種類収集の特典':'未登用'));if(c.number===100)b.classList.add('bonus-tile');box.append(b)}byId('leaderCollectionCount').textContent=M.ownedLeaderCount(s)+' / '+M.CARD_LIMIT+'種類';}
+function openCard(id){const c=M.leader(id);if(!c)return;viewing=id;byId('leaderCardContent').replaceChildren(card(c,{tap:true}));refreshCard();if(!byId('leaderCardDialog').open)byId('leaderCardDialog').showModal();}
+function refreshCard(){const s=A.state,allowed=s.started&&s.siteNumber>=2&&!M.completed(s)&&!s.leaderId&&s.leaderCards[viewing];byId('appointLeader').disabled=!allowed;}
+byId('openLeaders').onclick=()=>{collection();byId('leaderCollection').showModal()};byId('closeLeaders').onclick=()=>byId('leaderCollection').close();byId('closeLeaderCard').onclick=()=>byId('leaderCardDialog').close();
+byId('appointLeader').onclick=()=>{A.now();if(M.appointLeader(A.state,viewing)){const c=M.leader(viewing);A.save();byId('leaderCardDialog').close();byId('leaderCollection').close();A.notice(c.name+'を現場リーダーに任命しました。');renderKey='';A.update()}else refreshCard()};
+function acknowledge(){A.state.leaderEvent=null;M.nextBonusEvent(A.state);byId('leaderArrival').close();A.save()}
+byId('arrivalLater').onclick=acknowledge;byId('arrivalView').onclick=()=>{const id=A.state.leaderEvent?.id;acknowledge();if(id)openCard(id)};byId('leaderArrival').addEventListener('cancel',e=>{e.preventDefault();acknowledge()});
+const update=A.update;A.update=()=>{update();const s=A.state,c=M.leader(s.leaderId);const fresh=M.drawLeader(s),bonus=M.awardLeaderBonus(s),queued=s.pendingBonus&&!s.leaderEvent&&M.nextBonusEvent(s);if(fresh||bonus||queued)A.save();
+ byId('leaderName').textContent=c?c.name:s.leaderId?'カードデータの再読込待ち':'リーダー不在';byId('leaderOrigin').textContent=c?'出身地：'+c.origin:'';byId('leaderOrigin').hidden=!c;
+ byId('leaderStatus').textContent=c?'完成まで担当固定 · '+c.action:'';byId('leaderStatus').hidden=!c;
+ byId('leaderOwner').textContent=(s.playerName?M.royalName(s):'王様')+'の建設事業';byId('leaderCount').textContent=M.ownedLeaderCount(s)+' / '+M.CARD_LIMIT+'種類';
+ byId('buildMilestone').textContent=['基礎工事 · ひとつずつ、地面から','25％ · 足場が組み上がりました','50％ · 上層への運搬路が開通','75％ · 頂上作業が始まりました','完成 · 王の名を石に刻みました'][M.constructionStage(s)];collection();if(byId('leaderCardDialog').open)refreshCard();
+ if(s.leaderEvent&&M.leader(s.leaderEvent.id)&&!document.hidden&&!document.querySelector('dialog[open]')){const e=s.leaderEvent,c=M.leader(e.id),key=s.siteNumber+':'+e.id+':'+e.isNew;byId('arrivalTitle').textContent=e.bonus?'九十九人の先から、星の客人':e.isNew?'王室建設局への登用願い':'馴染みの顔から、続投願い';byId('arrivalText').textContent=e.bonus?'通常カード99種類の収集、おめでとうございます。100枚目の特別なリーダーが加わりました。':e.isNew?c.origin+'から来た'+c.name+'が、現場の取りまとめ役を志願しました。所持カードに加わりました。':c.name+'から再び便りが届きました。同じカードを受け取りました。魅力の数値は変わりません。';byId('arrivalName').textContent=c.name+' · 魅力 '+c.charm;byId('arrivalCardImage').src=c.image;byId('arrivalCardImage').parentElement.classList.toggle('full-art',c.imageLayout==='full');byId('arrivalCardImage').alt=c.name;eventKey=key;byId('leaderArrival').showModal();}
+};
+})();

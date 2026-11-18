@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 300" role="img" aria-label="三角形の角度の図">
+<rect width="380" height="300" fill="white"/>
+<polygon points="60,245 315,245 205,45" fill="none" stroke="#222" stroke-width="3"/>
+<text x="82" y="225" font-size="20">48°</text><text x="270" y="225" font-size="20">67°</text>
+<text x="196" y="85" font-size="22">x</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 330">
+<rect width="460" height="330" fill="white"/>
+<polygon points="230,35 55,275 405,275" fill="none" stroke="#222" stroke-width="4"/>
+<circle cx="230" cy="35" r="7" fill="#222"/>
+<text x="217" y="25" font-size="20">A</text><text x="35" y="298" font-size="20">B</text><text x="412" y="298" font-size="20">C</text>
+<text x="245" y="60" font-size="17">START</text>
+</svg>

@@ -1,0 +1,1022 @@
+{
+  "schemaVersion": 2,
+  "placement": [
+    {
+      "key": "math",
+      "label": "数学"
+    },
+    {
+      "key": "year2",
+      "label": "中学2年"
+    },
+    {
+      "key": "linear",
+      "label": "1次関数"
+    },
+    {
+      "key": "linear_kind_advanced",
+      "label": "難問"
+    }
+  ],
+  "entries": [
+    {
+      "id": 305,
+      "problem": {
+        "title": "x軸上で交わる直線",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-33",
+          "title": "x軸上で交わる直線",
+          "group": "難問",
+          "question": "点(−2, 3)を通り、直線y＝x−4とx軸上の同じ点で交わる。 一次関数の式を求めよう。",
+          "answer": "y＝-1/2x＋2",
+          "steps": [
+            {
+              "question": "直線y＝x−4とx軸の交点は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "(4, 0)"
+                },
+                {
+                  "id": "c2",
+                  "text": "(0, −4)"
+                },
+                {
+                  "id": "c3",
+                  "text": "(−4, 0)"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "x軸上ではy＝0。0＝x−4よりx＝4。"
+            },
+            {
+              "question": "傾きはどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "-1/2"
+                },
+                {
+                  "id": "c3",
+                  "text": "3/2"
+                },
+                {
+                  "id": "c2",
+                  "text": "1/2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "傾き＝yの増加量÷xの増加量＝(0−(3))÷(4−(-2))＝-1/2。"
+            },
+            {
+              "question": "傾きが-1/2で点(-2, 3)を通るとき、切片bは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "2"
+                },
+                {
+                  "id": "c2",
+                  "text": "4"
+                },
+                {
+                  "id": "c3",
+                  "text": "0"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "3＝-1/2×(-2)＋b より、b＝2。"
+            },
+            {
+              "question": "条件を満たす式はどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y＝-1/2x＋2"
+                },
+                {
+                  "id": "c2",
+                  "text": "y＝1/2x＋2"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝-1/2x＋4"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "求めた傾きと切片を y＝ax＋b に入れる。"
+            }
+          ],
+          "verification": {
+            "question": "求めた直線が元の2条件を満たすことを確認すると？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "x＝−2でy＝3、x＝4でy＝0"
+              },
+              {
+                "id": "c2",
+                "text": "x＝−2でy＝3だけ確認すればよい"
+              },
+              {
+                "id": "c3",
+                "text": "切片が2なので、x軸との交点も(2,0)"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "y＝−(1/2)x＋2に代入すると、(−2,3)と(4,0)を通る。y＝x−4も(4,0)を通るので、x軸上の同じ点で交わる。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "line",
+              "a": "-1/2",
+              "b": "2",
+              "points": [
+                [
+                  -2,
+                  3
+                ],
+                [
+                  4,
+                  0
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "点(−2, 3)を通り、直線y＝x−4とx軸上の同じ点で交わる。 一次関数の式を求めよう。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝1/2x＋2",
+                "value": [
+                  "1/2",
+                  2
+                ]
+              },
+              {
+                "id": "c3",
+                "text": "y＝-1/2x＋4",
+                "value": [
+                  "-1/2",
+                  4
+                ]
+              },
+              {
+                "id": "c1",
+                "text": "y＝-1/2x＋2",
+                "value": [
+                  "-1/2",
+                  2
+                ]
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾きは「yの増加量÷xの増加量」で求める。3＝-1/2×(-2)＋b より、b＝2。 その計算で得た傾きと切片を y＝ax＋b に入れる。 上の計算で得られる傾きと切片を y＝ax＋b に入れる。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。"
+        }
+      }
+    },
+    {
+      "id": 306,
+      "problem": {
+        "title": "交点を通る平行線",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-34",
+          "title": "交点を通る平行線",
+          "group": "難問",
+          "question": "直線y＝xとy＝−x＋4の交点を通り、y＝3x＋1に平行。 一次関数の式を求めよう。",
+          "answer": "y＝3x-4",
+          "steps": [
+            {
+              "question": "最初の2直線の交点は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "(4, 0)"
+                },
+                {
+                  "id": "c3",
+                  "text": "(0, 4)"
+                },
+                {
+                  "id": "c1",
+                  "text": "(2, 2)"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "x＝−x＋4よりx＝2、y＝2。"
+            },
+            {
+              "question": "平行という条件から、求める直線の傾きは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "1"
+                },
+                {
+                  "id": "c1",
+                  "text": "3"
+                },
+                {
+                  "id": "c3",
+                  "text": "−1"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "y＝3x＋1と平行なので、傾きは3。"
+            },
+            {
+              "question": "傾きが3で点(2, 2)を通るとき、切片bは？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "-6"
+                },
+                {
+                  "id": "c1",
+                  "text": "-4"
+                },
+                {
+                  "id": "c2",
+                  "text": "-2"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "2＝3×(2)＋b より、b＝-4。"
+            },
+            {
+              "question": "条件を満たす式はどれ？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y＝3x-4"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝3x-2"
+                },
+                {
+                  "id": "c2",
+                  "text": "y＝-3x-4"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "求めた傾きと切片を y＝ax＋b に入れる。"
+            }
+          ],
+          "verification": {
+            "question": "交点を通り、指定の直線に平行であることを確認すると？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "x＝2でy＝2なら、傾きは何でもよい"
+              },
+              {
+                "id": "c3",
+                "text": "切片が1であれば平行になる"
+              },
+              {
+                "id": "c1",
+                "text": "x＝2でy＝2、傾きは3"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "y＝3x−4にx＝2を入れるとy＝2。傾き3はy＝3x＋1と一致する。"
+          },
+          "visual": null,
+          "mathChecks": [
+            {
+              "kind": "line",
+              "a": "3",
+              "b": "-4",
+              "points": [
+                [
+                  2,
+                  2
+                ]
+              ]
+            }
+          ],
+          "direct": {
+            "question": "直線y＝xとy＝−x＋4の交点を通り、y＝3x＋1に平行。 一次関数の式を求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "y＝3x-4",
+                "value": [
+                  3,
+                  -4
+                ]
+              },
+              {
+                "id": "c2",
+                "text": "y＝-3x-4",
+                "value": [
+                  -3,
+                  -4
+                ]
+              },
+              {
+                "id": "c3",
+                "text": "y＝3x-2",
+                "value": [
+                  3,
+                  -2
+                ]
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾きは「yの増加量÷xの増加量」で求める。2＝3×(2)＋b より、b＝-4。 その計算で得た傾きと切片を y＝ax＋b に入れる。 上の計算で得られる傾きと切片を y＝ax＋b に入れる。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。"
+        }
+      }
+    },
+    {
+      "id": 307,
+      "problem": {
+        "title": "動点：AB上の面積",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-35",
+          "title": "動点：AB上の面積",
+          "group": "難問",
+          "question": "∠B＝90°、AB＝6 cm、BC＝4 cm。点PはAからBを通ってCへ辺上を移動する。Aからの移動距離をx cm、△APCの面積をy cm²とする。PがAB上にあるときの式と区間は？ PがAにあるときの面積は0とする。Bでは0ではない。",
+          "answer": "y＝2x、0≦x≦6",
+          "steps": [
+            {
+              "question": "底辺APと高さは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "底辺x、高さ4"
+                },
+                {
+                  "id": "c2",
+                  "text": "底辺6、高さx"
+                },
+                {
+                  "id": "c3",
+                  "text": "底辺x、高さ6"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AB上ではAP＝xで、CからABへの高さはBC＝4。"
+            },
+            {
+              "question": "面積と区間は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y＝2x、0≦x≦6"
+                },
+                {
+                  "id": "c2",
+                  "text": "y＝4x、0≦x≦6"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝2x、0≦x≦10"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "x×4÷2＝2x。ABの長さは6。"
+            }
+          ],
+          "verification": {
+            "question": "PがBにあるとき、AB上の式とBC上の式は同じ面積になる？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "どちらも12になり、つながる"
+              },
+              {
+                "id": "c2",
+                "text": "一方が0になる"
+              },
+              {
+                "id": "c3",
+                "text": "値が一致しない"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "Bではx＝6。AB上の y＝2x は12、BC上の y＝−3x＋30 も12。区間の境目で値が一致する。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/batch4-graphs/C3-35.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "∠B＝90°、AB＝6 cm、BC＝4 cm。点PはAからBを通ってCへ辺上を移動する。Aからの移動距離をx cm、△APCの面積をy cm²とする。PがAB上にあるときの式と区間は？ 端点では面積を0として扱う。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝4x、0≦x≦6",
+                "value": {
+                  "a": 4,
+                  "b": 0,
+                  "domain": [
+                    0,
+                    6
+                  ]
+                }
+              },
+              {
+                "id": "c3",
+                "text": "y＝2x、0≦x≦10",
+                "value": {
+                  "a": 2,
+                  "b": 0,
+                  "domain": [
+                    0,
+                    10
+                  ]
+                }
+              },
+              {
+                "id": "c1",
+                "text": "y＝2x、0≦x≦6",
+                "value": {
+                  "a": 2,
+                  "b": 0,
+                  "domain": [
+                    0,
+                    6
+                  ]
+                }
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "x×4÷2＝2x。ABの長さは6。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。"
+        }
+      }
+    },
+    {
+      "id": 308,
+      "problem": {
+        "title": "動点：BC上の面積",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-36",
+          "title": "動点：BC上の面積",
+          "group": "難問",
+          "question": "∠B＝90°、AB＝6 cm、BC＝4 cm。PはA→B→Cへ移動する。xはAからの移動距離（cm）。PがBC上にあるとき、△APCの面積y（cm²）の式と区間は？ PがCに着いたときの面積は0とする。",
+          "answer": "y＝−3x＋30、6≦x≦10",
+          "steps": [
+            {
+              "question": "PCの長さは？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "4−x cm"
+                },
+                {
+                  "id": "c1",
+                  "text": "10−x cm"
+                },
+                {
+                  "id": "c3",
+                  "text": "x−6 cm"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "BP＝x−6なので、PC＝4−(x−6)＝10−x。"
+            },
+            {
+              "question": "底辺PC、高さ6で面積を求めると？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "y＝3x−18、6≦x≦10"
+                },
+                {
+                  "id": "c2",
+                  "text": "y＝−3x＋12、6≦x≦10"
+                },
+                {
+                  "id": "c1",
+                  "text": "y＝−3x＋30、6≦x≦10"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "(10−x)×6÷2＝−3x＋30。"
+            }
+          ],
+          "verification": {
+            "question": "PがBにあるとき、AB上の式とBC上の式は同じ面積になる？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "どちらも12になり、つながる"
+              },
+              {
+                "id": "c2",
+                "text": "一方が0になる"
+              },
+              {
+                "id": "c3",
+                "text": "値が一致しない"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "Bではx＝6。AB上の y＝2x は12、BC上の y＝−3x＋30 も12。区間の境目で値が一致する。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/batch4-graphs/C3-36.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "∠B＝90°、AB＝6 cm、BC＝4 cm。PはA→B→Cへ移動する。xはAからの移動距離（cm）。PがBC上にあるとき、△APCの面積y（cm²）の式と区間は？ PがCに着いたときの面積は0とする。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝−3x＋12、6≦x≦10",
+                "value": {
+                  "a": -3,
+                  "b": 12,
+                  "domain": [
+                    6,
+                    10
+                  ]
+                }
+              },
+              {
+                "id": "c1",
+                "text": "y＝−3x＋30、6≦x≦10",
+                "value": {
+                  "a": -3,
+                  "b": 30,
+                  "domain": [
+                    6,
+                    10
+                  ]
+                }
+              },
+              {
+                "id": "c3",
+                "text": "y＝3x−18、6≦x≦10",
+                "value": {
+                  "a": 3,
+                  "b": -18,
+                  "domain": [
+                    6,
+                    10
+                  ]
+                }
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "(10−x)×6÷2＝−3x＋30。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。"
+        }
+      }
+    },
+    {
+      "id": 309,
+      "problem": {
+        "title": "動点：面積のグラフ",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-37",
+          "title": "動点：面積のグラフ",
+          "group": "難問",
+          "question": "点PがA→B→Cと動くとき、三角形の面積yの変化を表すグラフとして正しいものを選ぼう。AとCでは0、途中のBでは12になる。",
+          "answer": "(0,0)→(6,12)→(10,0)を結ぶ折れ線",
+          "steps": [
+            {
+              "question": "折れ曲がる点を含むグラフは？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "A"
+                },
+                {
+                  "id": "c1",
+                  "text": "B"
+                },
+                {
+                  "id": "c2",
+                  "text": "C"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "AB上はy＝2x、BC上はy＝−3x＋30。"
+            }
+          ],
+          "verification": {
+            "question": "グラフの始点・折れ曲がる点・終点と、その間の変化を確かめると？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "(0,0)、(6,12)、(10,0)を通り、前半は傾き2、後半は傾き−3"
+              },
+              {
+                "id": "c3",
+                "text": "両端が0なら、途中の形は何でもよい"
+              },
+              {
+                "id": "c2",
+                "text": "(0,0)、(6,24)、(10,0)を通る"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "AB上は底辺APが増えてy＝2x。BC上は底辺PCが減ってy＝−3x＋30。x＝6で両方12になる。"
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "∠B＝90°、AB＝6 cm、BC＝4 cm。点PはAからBを通ってCまで辺上を移動する。Aから辺に沿って動いた距離をx cm、△APCの面積をy cm²とする（端点での面積は0）。0≦x≦10での面積のグラフを選ぼう。",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "A"
+              },
+              {
+                "id": "c1",
+                "text": "B"
+              },
+              {
+                "id": "c2",
+                "text": "C"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "AB上はy＝2x、BC上はy＝−3x＋30。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。",
+          "choiceFigures": [
+            {
+              "choiceId": "c1",
+              "path": "assets/materials/chapter3/batch4-graphs/C3-37-c1.svg"
+            },
+            {
+              "choiceId": "c2",
+              "path": "assets/materials/chapter3/batch4-graphs/C3-37-c2.svg"
+            },
+            {
+              "choiceId": "c3",
+              "path": "assets/materials/chapter3/batch4-graphs/C3-37-c3.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 310,
+      "problem": {
+        "title": "x切片から定数を求める",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-38",
+          "title": "x切片から定数を求める",
+          "group": "難問",
+          "question": "直線m：y＝2x＋b はx軸と点A(−3,0)で交わる。bを求めよう。",
+          "answer": "6",
+          "steps": [
+            {
+              "question": "Aの座標を代入した式は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "0＝2×(−3)＋b"
+                },
+                {
+                  "id": "c3",
+                  "text": "0＝2×3＋b"
+                },
+                {
+                  "id": "c2",
+                  "text": "−3＝2×0＋b"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "x＝−3、y＝0を入れる。"
+            },
+            {
+              "question": "bの値は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "6"
+                },
+                {
+                  "id": "c2",
+                  "text": "−6"
+                },
+                {
+                  "id": "c3",
+                  "text": "3"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "0＝−6＋bよりb＝6。"
+            }
+          ],
+          "verification": {
+            "question": "b＝6を元の条件に戻して確かめると？",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "x＝3でy＝0になる"
+              },
+              {
+                "id": "c1",
+                "text": "x＝−3でy＝2×(−3)＋6＝0"
+              },
+              {
+                "id": "c3",
+                "text": "x＝0でy＝−3になる"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "指定されたA(−3,0)を通ることを確認する。"
+          },
+          "visual": null,
+          "mathChecks": [],
+          "direct": {
+            "question": "直線m：y＝2x＋b はx軸と点A(−3,0)で交わる。bを求めよう。",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "6",
+                "value": 6
+              },
+              {
+                "id": "c3",
+                "text": "3",
+                "value": 3
+              },
+              {
+                "id": "c2",
+                "text": "−6",
+                "value": -6
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "0＝−6＋bよりb＝6。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。"
+        }
+      }
+    },
+    {
+      "id": 311,
+      "problem": {
+        "title": "2直線とx軸で囲む面積",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-39",
+          "title": "2直線とx軸で囲む面積",
+          "group": "難問",
+          "question": "m：y＝2x＋6、n：y＝−x＋9。mとx軸の交点をA、nとx軸の交点をB、mとnの交点をPとする。座標の1目盛りは1 cm。△ABPの面積は？",
+          "answer": "48 cm²",
+          "steps": [
+            {
+              "question": "AとB、および底辺ABは？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "A(−3,0)、B(9,0)、AB＝12"
+                },
+                {
+                  "id": "c3",
+                  "text": "A(−3,0)、B(−9,0)、AB＝6"
+                },
+                {
+                  "id": "c2",
+                  "text": "A(3,0)、B(9,0)、AB＝6"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "各式でy＝0を置く。9−(−3)＝12。"
+            },
+            {
+              "question": "Pの座標は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "(8,1)"
+                },
+                {
+                  "id": "c1",
+                  "text": "(1,8)"
+                },
+                {
+                  "id": "c3",
+                  "text": "(3,12)"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "2x＋6＝−x＋9よりx＝1、y＝8。"
+            },
+            {
+              "question": "面積は？",
+              "choices": [
+                {
+                  "id": "c3",
+                  "text": "24 cm²"
+                },
+                {
+                  "id": "c2",
+                  "text": "96 cm²"
+                },
+                {
+                  "id": "c1",
+                  "text": "48 cm²"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "底辺12、高さ8なので12×8÷2＝48。"
+            }
+          ],
+          "verification": {
+            "question": "底辺AB＝12、高さ8として面積を別の方法で確かめると？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "12×8÷2＝48"
+              },
+              {
+                "id": "c2",
+                "text": "12×8＝96"
+              },
+              {
+                "id": "c3",
+                "text": "12＋8＝20"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "三角形の面積＝底辺×高さ÷2。座標からAB＝12、高さ＝8なので48。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/batch4-graphs/C3-39.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "m：y＝2x＋6、n：y＝−x＋9。mとx軸の交点をA、nとx軸の交点をB、mとnの交点をPとする。座標の1目盛りは1 cm。△ABPの面積は？",
+            "choices": [
+              {
+                "id": "c3",
+                "text": "24 cm²",
+                "value": 24
+              },
+              {
+                "id": "c2",
+                "text": "96 cm²",
+                "value": 96
+              },
+              {
+                "id": "c1",
+                "text": "48 cm²",
+                "value": 48
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "底辺12、高さ8なので12×8÷2＝48。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。"
+        }
+      }
+    },
+    {
+      "id": 312,
+      "problem": {
+        "title": "面積を二等分する直線",
+        "level": "難問",
+        "skipIntro": true,
+        "authored": {
+          "id": "C3-40",
+          "title": "面積を二等分する直線",
+          "group": "難問",
+          "question": "A(−3,0)、B(9,0)、P(1,8)とする。Pを通り、△ABPの面積を二等分する直線の式は？ 座標の1目盛りを1 cmとする。",
+          "answer": "y＝−4x＋12",
+          "steps": [
+            {
+              "question": "Pと結ぶべきAB上の点は？",
+              "choices": [
+                {
+                  "id": "c2",
+                  "text": "原点O(0,0)"
+                },
+                {
+                  "id": "c1",
+                  "text": "ABの中点M(3,0)"
+                },
+                {
+                  "id": "c3",
+                  "text": "A(−3,0)"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "高さが共通なので底辺を半分にすると面積も半分になる。"
+            },
+            {
+              "question": "PとMを通る直線は？",
+              "choices": [
+                {
+                  "id": "c1",
+                  "text": "y＝−4x＋12"
+                },
+                {
+                  "id": "c2",
+                  "text": "y＝4x＋4"
+                },
+                {
+                  "id": "c3",
+                  "text": "y＝−4x＋8"
+                }
+              ],
+              "correctChoice": "c1",
+              "explanation": "傾き(0−8)÷(3−1)＝−4。Pを代入し切片12。"
+            }
+          ],
+          "verification": {
+            "question": "求めた直線にABの中点(3,0)とP(1,8)を代入すると？",
+            "choices": [
+              {
+                "id": "c1",
+                "text": "両方とも式を満たす"
+              },
+              {
+                "id": "c2",
+                "text": "中点だけ満たす"
+              },
+              {
+                "id": "c3",
+                "text": "Pだけ満たす"
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "2点をともに通ることを代入で確認すれば、求めた直線の式を独立に検算できる。"
+          },
+          "visual": {
+            "type": "svg",
+            "path": "assets/materials/chapter3/batch4-graphs/C3-40.svg"
+          },
+          "mathChecks": [],
+          "direct": {
+            "question": "A(−3,0)、B(9,0)、P(1,8)とする。Pを通り、△ABPの面積を二等分する直線の式は？ 座標の1目盛りを1 cmとする。",
+            "choices": [
+              {
+                "id": "c2",
+                "text": "y＝4x＋4",
+                "value": [
+                  4,
+                  4
+                ]
+              },
+              {
+                "id": "c3",
+                "text": "y＝−4x＋8",
+                "value": [
+                  -4,
+                  8
+                ]
+              },
+              {
+                "id": "c1",
+                "text": "y＝−4x＋12",
+                "value": [
+                  -4,
+                  12
+                ]
+              }
+            ],
+            "correctChoice": "c1",
+            "explanation": "傾き(0−8)÷(3−1)＝−4。Pを代入し切片12。"
+          },
+          "flowPolicy": "原稿の後続手順は正しい前段を前提とする。前段を誤答した場合は見直しへ戻すか、選択された値に応じて後続を生成する。",
+          "solutionVisual": {
+            "asset": "",
+            "midpoint": [
+              3,
+              0
+            ],
+            "line": [
+              -4,
+              12
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

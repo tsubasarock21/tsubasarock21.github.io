@@ -1,0 +1,6 @@
+INKSTRIKE v0.2.8
+
+Original soundtrack: Circuit Flight (stage), Pressure Core (boss).
+Both loops were composed and synthesized specifically for this build.
+Sound effects are synthesized at runtime. No third-party samples or music were used.
+These audio assets may be used, edited and redistributed with this game.

@@ -1,0 +1,385 @@
+dialog {
+  border: 1px solid #dad3bf;
+  border-radius: 18px;
+  padding: 30px;
+  background: #fffbef;
+  width: min(90vw, 390px);
+  color: #43533e;
+  max-height: 90dvh;
+  overflow: auto;
+  box-shadow: 0 20px 80px #282f4030;
+}
+dialog::backdrop {
+  background: #24332777;
+  backdrop-filter: blur(5px);
+}
+dialog h2 {
+  font-size: 31px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 13px 0 16px;
+}
+dialog p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #808b73;
+  white-space: pre-line;
+}
+.solid,
+.quiet {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  min-height: 44px;
+  border: 1px solid #526e56;
+  border-radius: 10px;
+  background: #526e56;
+  color: #fffdf0;
+  margin-top: 16px;
+  padding: 12px;
+}
+.quiet {
+  background: transparent;
+  color: #7c876c;
+  border-color: #dcdccc;
+  margin-top: 8px;
+}
+.win-record {
+  padding: 17px 0;
+  border-block: 1px solid #e4e3d1;
+  margin: 20px 0;
+}
+.win-record span,
+.win-record small {
+  display: block;
+  font-size: 10px;
+  color: #94a083;
+}
+.win-record strong {
+  display: block;
+  font-size: 28px;
+  margin: 6px 0 9px;
+  letter-spacing: -1px;
+}
+.game-night .phase-label {
+  color: #c1d9d1;
+  background: #375859;
+}
+.game-night .live-dot {
+  background: #809bb4;
+}
+.game-night .scene-bottom {
+  background: #263f43;
+  color: #bac2ac;
+}
+@media (min-width: 1250px) {
+  .scene-wrap canvas {
+    height: 470px;
+  }
+}
+@media (max-width: 850px) {
+  .app {
+    max-width: 650px;
+    padding: 20px;
+  }
+  .game-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .intro {
+    padding: 25px 0 21px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .scene-wrap canvas {
+    height: 380px;
+  }
+  .office {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+  .office-heading {
+    grid-column: 1;
+    align-self: center;
+  }
+  .office-heading h2 {
+    font-size: 20px;
+  }
+  .crew-summary {
+    grid-column: 2;
+    margin: 0 0 10px;
+    gap: 10px;
+  }
+  .crew-summary > div + div {
+    padding-left: 10px;
+  }
+  .crew-summary strong {
+    font-size: 25px;
+  }
+  .action {
+    grid-column: span 2;
+    margin-bottom: 0;
+    min-height: 68px;
+    padding: 13px 16px;
+  }
+  .action strong {
+    font-size: 13px;
+  }
+  .action small {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  .care-note,
+  .journal {
+    grid-column: span 2;
+  }
+  .care-note {
+    margin-top: 4px;
+  }
+  .journal {
+    margin-top: 8px;
+    padding-top: 15px;
+  }
+  .journal p {
+    min-height: 0;
+  }
+  .rules {
+    margin-top: 17px;
+  }
+}
+@media (max-width: 420px) {
+  .app {
+    padding: 18px 14px max(24px, env(safe-area-inset-bottom));
+  }
+  .brand {
+    font-size: 17px;
+    gap: 6px;
+  }
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+  header {
+    padding-bottom: 18px;
+  }
+  .intro {
+    padding-top: 23px;
+  }
+  h1 {
+    font-size: 27px;
+    line-height: 1.5;
+  }
+  .intro p {
+    font-size: 11px;
+  }
+  .eyebrow {
+    font-size: 8px;
+  }
+  .mobile {
+    display: initial;
+  }
+  .scene-wrap canvas {
+    height: 360px;
+  }
+  .scene-top {
+    padding: 12px;
+  }
+  .scene-bottom {
+    padding: 11px 10px;
+    font-size: 8px;
+  }
+  .progress-section {
+    padding: 15px 14px 18px;
+  }
+  .progress-heading > b {
+    font-size: 22px;
+  }
+  .progress-detail {
+    font-size: 8px;
+  }
+  .office-heading p {
+    font-size: 9px;
+  }
+  .crew-summary span {
+    font-size: 8px;
+  }
+  .crew-summary strong {
+    font-size: 22px;
+  }
+  .care-note {
+    font-size: 9px;
+  }
+  .journal p {
+    font-size: 11px;
+  }
+  footer {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+  .action,
+  .progress-track i {
+    transition: none;
+  }
+}
+
+.name-button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  min-height: 40px;
+}
+.name-button b {
+  border-bottom: 1px dashed #a3aa94;
+}
+.name-button:disabled {
+  cursor: default;
+}
+.name-button:disabled b {
+  border: 0;
+}
+#nameForm > label {
+  display: block;
+  font-size: 12px;
+  color: #6c7f61;
+  margin: 12px 0 8px;
+}
+.name-field {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.name-field input {
+  min-width: 0;
+  width: 100%;
+  font: inherit;
+  font-size: 18px;
+  color: #43533e;
+  background: #fffef6;
+  border: 1px solid #b6c0a5;
+  border-radius: 9px;
+  padding: 12px;
+  min-height: 48px;
+}
+.name-field > span {
+  font-size: 20px;
+  white-space: nowrap;
+}
+#nameDialog p {
+  font-size: 11px;
+}
+#nameDialog h2 {
+  font-size: 28px;
+}
+.camp-label {
+  font-size: 10px;
+  color: #8b8f74;
+  margin: 0 0 14px;
+}
+.hire-bonus {
+  border: 1px solid #c8d9c1;
+  background: #e6efdc;
+  border-radius: 8px;
+  padding: 10px 11px;
+  color: #536b4c;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+.monuments {
+  margin-top: 28px;
+  padding: 23px 0 0;
+  border-top: 1px solid #dcdccc;
+}
+.monuments h2 {
+  font-size: 18px;
+  margin: 8px 0 16px;
+}
+.monument-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 2px 0 9px;
+  scroll-snap-type: x proximity;
+}
+.monument {
+  flex: 0 0 160px;
+  padding: 14px 11px;
+  border-radius: 10px;
+  border: 1px solid #d9d6c3;
+  background: #fffbef;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.monument-icon {
+  display: block;
+  color: #bb924f;
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 3px 0 #88633c;
+}
+.monument strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.monument small {
+  display: block;
+  font-size: 9px;
+  color: #9a9d87;
+  margin-top: 7px;
+}
+.complete-badge strong {
+  font-weight: 600;
+  font-size: clamp(15px, 3vw, 26px);
+  overflow-wrap: anywhere;
+  display: block;
+  padding: 0 15px;
+}
+.celebrating .site-card {
+  box-shadow:
+    0 0 0 2px #d0b16d44,
+    0 12px 38px #b28d4322;
+}
+.celebrating .complete-badge {
+  color: #6b6f3d;
+}
+#winTitle {
+  font-size: 25px;
+  overflow-wrap: anywhere;
+}
+#nextCountdown {
+  font-size: 11px;
+  color: #7b855d;
+  margin-top: 18px;
+}
+@media (max-width: 850px) {
+  .camp-label,
+  .hire-bonus {
+    grid-column: span 2;
+    margin: 0 0 6px;
+  }
+  .camp-label {
+    margin-top: 4px;
+  }
+  .office-heading {
+    grid-row: 1;
+  }
+  .crew-summary {
+    grid-row: 1;
+  }
+  .complete-badge strong {
+    font-size: 21px;
+  }
+}
+
+@media(max-width:850px){.game-layout{grid-template-columns:1fr;grid-template-areas:"scene" "ad" "office";grid-template-rows:auto;gap:20px}.game-ad{width:100%}}
+@media(max-width:420px){.game-ad{width:calc(100% + 28px);margin-inline:-14px}}

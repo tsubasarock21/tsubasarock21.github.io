@@ -1,0 +1,1230 @@
+<!-- Form_Clash v0.8.5 | 2026-10-23 | LAB navigation + anonymous event counts -->
+
+<!-- FORM CLASH / index.html / v0.8.5 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><script src="/lab-system/metrics-v2.js?v=2.0.0&_metrics=2"></script>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+  >
+  <title>FORM CLASH｜プチキャラバトル｜兵士を育てて城を攻める無料戦略ゲーム｜Tsubasa_Rock_LAB</title>
+  <link rel="stylesheet" href="style.css?v=0.8.5">
+
+<meta name="description" content="HP・攻撃力・移動速度などを自由に配分して、自分だけの兵士を設計。タップとSUMMONし、敵の城を攻め落とす戦略ブラウザゲームです。">
+<link rel="canonical" href="https://tsubasarock21.github.io/games/Form_Clash/">
+<meta property="og:title" content="FORM CLASH｜プチキャラバトル｜兵士を育てて城を攻める無料戦略ゲーム｜Tsubasa_Rock_LAB">
+<meta property="og:description" content="HP・攻撃力・移動速度などを自由に配分して、自分だけの兵士を設計。タップとSUMMONし、敵の城を攻め落とす戦略ブラウザゲームです。">
+<meta property="og:url" content="https://tsubasarock21.github.io/games/Form_Clash/">
+<meta property="og:type" content="website">
+<meta name="twitter:title" content="FORM CLASH｜プチキャラバトル｜兵士を育てて城を攻める無料戦略ゲーム｜Tsubasa_Rock_LAB">
+<meta name="twitter:description" content="HP・攻撃力・移動速度などを自由に配分して、自分だけの兵士を設計。タップとSUMMONし、敵の城を攻め落とす戦略ブラウザゲームです。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FORM CLASH｜プチキャラバトル","url":"https://tsubasarock21.github.io/games/Form_Clash/","description":"HP・攻撃力・移動速度などを自由に配分して、自分だけの兵士を設計。タップとSUMMONし、敵の城を攻め落とす戦略ブラウザゲームです。","applicationCategory":"GameApplication","operatingSystem":"Web browser","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@type":"Person","name":"Tsubasa-Rock"}}</script>
+<meta property="og:image" content="https://tsubasarock21.github.io/games/Form_Clash/thumbnail.jpg?v=0.8.5">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tsubasarock21.github.io/games/Form_Clash/thumbnail.jpg?v=0.8.5">
+</head>
+
+<body>
+
+<div id="app">
+
+  <!-- HOME -->
+
+  <section id="homeScreen" class="screen"><nav class="lab-navigation" aria-label="Tsubasa_Rock_LAB"><a class="lab-return" data-lab-return href="https://tsubasarock21.github.io/">← ラボへ戻る</a></nav>
+
+    <img class="home-battle-art" src="thumbnail.jpg?v=0.8.5" width="1672" height="940" alt="プチキャラバトル。5色の丸・三角・四角や特殊フォームの顔付きキャラが、城の間で元気に戦うイラスト。" decoding="async" fetchpriority="high" draggable="false">
+
+    <h1 class="home-accessible-title">プチキャラバトル — FORM CLASH</h1>
+    <div class="home-subtitle">
+      DESIGN &amp; DEPLOY
+    </div>
+
+    <section class="home-howto" lang="ja" aria-labelledby="quickHowtoTitle">
+      <h2 id="quickHowtoTitle">HOW TO PLAY</h2>
+      <ol class="howto-comic">
+        <li><div class="comic-art comic-art-1" role="img" aria-label="能力のスライダーを調整する青いキャラ"></div><div class="comic-caption"><h3><span>1</span>能力を決めよう</h3><p>100ポイントを配分。<br>強さも速さも自由！</p></div></li>
+        <li><div class="comic-art comic-art-2" role="img" aria-label="指で戦場を押し、紫のキャラを召喚する様子"></div><div class="comic-caption"><h3><span>2</span>長押しで召喚</h3><p>長押しでパワーアップ。<br>指を離すと、出撃！</p></div></li>
+        <li><div class="comic-art comic-art-3" role="img" aria-label="戦場を上から見た、両軍の自動バトル"></div><div class="comic-caption"><h3><span>3</span>あとは自動で戦う</h3><p>移動も攻撃も自動。<br>仲間を召喚しよう！</p></div></li>
+        <li><div class="comic-art comic-art-4" role="img" aria-label="敵のタワーが爆発して崩れる様子"></div><div class="comic-caption"><h3><span>4</span>敵の城を壊せ！</h3><p>敵の城を壊せば勝ち！<br>自分の城も守ろう！</p></div></li>
+      </ol>
+      <button id="homeHowToButton" class="home-howto-detail" type="button">HOW TO PLAY →</button>
+    </section>
+
+    <div class="home-menu">
+
+      <button
+        id="homeDesignButton"
+        class="home-button"
+      >
+        UNIT DESIGN
+      </button>
+
+      <button
+        id="homeBattleButton"
+        class="home-button primary"
+      >
+        BATTLE
+      </button>
+
+      <button
+        id="homeMedalButton"
+        class="home-button"
+      >
+        TROPHY
+      </button>
+
+      <button
+        class="home-button locked"
+        disabled
+      >
+        PVP
+        <span>COMING SOON</span>
+      </button>
+
+    </div>
+
+    <button id="soundToggleButton" class="sound-toggle" type="button" aria-pressed="true" aria-label="効果音を切り替え">♪ SOUND ON</button>
+    <div class="home-copyright">
+      © 2026 TSUBASA-ROCK
+    </div>
+
+  </section>
+
+
+  <!-- DIFFICULTY -->
+
+  <section
+    id="difficultyScreen"
+    class="screen hidden-screen"
+  >
+
+    <div class="difficulty-header">
+
+      <button
+        id="difficultyBackButton"
+        class="back-button"
+      >
+        ‹
+      </button>
+
+      <div>
+
+        <div class="screen-title">
+          BATTLE
+        </div>
+
+        <div class="screen-subtitle">
+          SELECT DIFFICULTY &amp; TIME
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <p class="difficulty-time-hint">1回のバトル時間を選んでください。<br>時間のボタンを押すと、対戦が始まります。</p>
+    <div class="difficulty-list">
+
+      <article class="difficulty-button easy difficulty-card" data-difficulty="easy"><div class="difficulty-info">
+
+        <div class="difficulty-name">
+          EASY
+        </div>
+
+        <div class="difficulty-description">
+          ENEMY POWER 55–80
+        </div>
+
+        <div class="difficulty-detail">
+          MAX 5 UNITS
+        </div>
+
+      </div><div class="battle-time-buttons" role="group" aria-label="EASYのバトル時間"><span class="battle-time-label">バトル時間</span><button type="button" class="battle-time-button" data-difficulty="easy" data-duration="30" aria-label="EASY・30秒で対戦開始">30秒</button><button type="button" class="battle-time-button" data-difficulty="easy" data-duration="45" aria-label="EASY・45秒で対戦開始">45秒</button><button type="button" class="battle-time-button" data-difficulty="easy" data-duration="60" aria-label="EASY・60秒で対戦開始">60秒</button></div></article>
+
+
+      <article class="difficulty-button normal difficulty-card" data-difficulty="normal"><div class="difficulty-info">
+
+        <div class="difficulty-name">
+          NORMAL
+        </div>
+
+        <div class="difficulty-description">
+          ENEMY POWER 85–110
+        </div>
+
+        <div class="difficulty-detail">
+          MAX 10 UNITS
+        </div>
+
+      </div><div class="battle-time-buttons" role="group" aria-label="NORMALのバトル時間"><span class="battle-time-label">バトル時間</span><button type="button" class="battle-time-button" data-difficulty="normal" data-duration="30" aria-label="NORMAL・30秒で対戦開始">30秒</button><button type="button" class="battle-time-button" data-difficulty="normal" data-duration="45" aria-label="NORMAL・45秒で対戦開始">45秒</button><button type="button" class="battle-time-button" data-difficulty="normal" data-duration="60" aria-label="NORMAL・60秒で対戦開始">60秒</button></div></article>
+
+
+      <article class="difficulty-button hard difficulty-card" data-difficulty="hard"><div class="difficulty-info">
+
+        <div class="difficulty-name">
+          HARD
+        </div>
+
+        <div class="difficulty-description">
+          ENEMY POWER 125–150
+        </div>
+
+        <div class="difficulty-detail">
+          MAX 10 UNITS
+        </div>
+
+      </div><div class="battle-time-buttons" role="group" aria-label="HARDのバトル時間"><span class="battle-time-label">バトル時間</span><button type="button" class="battle-time-button" data-difficulty="hard" data-duration="30" aria-label="HARD・30秒で対戦開始">30秒</button><button type="button" class="battle-time-button" data-difficulty="hard" data-duration="45" aria-label="HARD・45秒で対戦開始">45秒</button><button type="button" class="battle-time-button" data-difficulty="hard" data-duration="60" aria-label="HARD・60秒で対戦開始">60秒</button></div></article>
+
+
+      <article class="difficulty-button extra difficulty-card" data-difficulty="extra"><div class="difficulty-info">
+
+        <div class="difficulty-name">
+          EXTRA
+        </div>
+
+        <div class="difficulty-description">
+          HARD + SPECIAL ENEMIES 20%
+        </div>
+
+        <div class="difficulty-detail">
+          MAX 10 UNITS · 6 SPECIAL TYPES
+        </div>
+
+      </div><div class="battle-time-buttons" role="group" aria-label="EXTRAのバトル時間"><span class="battle-time-label">バトル時間</span><button type="button" class="battle-time-button" data-difficulty="extra" data-duration="30" aria-label="EXTRA・30秒で対戦開始">30秒</button><button type="button" class="battle-time-button" data-difficulty="extra" data-duration="45" aria-label="EXTRA・45秒で対戦開始">45秒</button><button type="button" class="battle-time-button" data-difficulty="extra" data-duration="60" aria-label="EXTRA・60秒で対戦開始">60秒</button></div></article>
+
+    </div>
+
+  </section>
+
+
+  <!-- UNIT DESIGN -->
+
+  <section
+    id="designScreen"
+    class="screen hidden-screen"
+  >
+
+    <div class="design-header">
+
+      <button
+        id="designBackButton"
+        class="back-button"
+      >
+        ‹
+      </button>
+
+      <div>
+
+        <div class="screen-title">
+          UNIT DESIGN
+        </div>
+
+        <div class="screen-subtitle">
+          DESIGN YOUR SOLDIERS
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="unit-selector">
+
+      <button class="unit-select-button selected">
+        <span>UNIT 01</span>
+        <strong>●</strong>
+      </button>
+
+      <button class="unit-select-button">
+        <span>UNIT 02</span>
+        <strong>↑</strong>
+      </button>
+
+      <button class="unit-select-button">
+        <span>UNIT 03</span>
+        <strong>→</strong>
+      </button>
+
+      <button class="unit-select-button">
+        <span>UNIT 04</span>
+        <strong>↓</strong>
+      </button>
+
+      <button class="unit-select-button">
+        <span>UNIT 05</span>
+        <strong>←</strong>
+      </button>
+
+    </div>
+
+
+    <!-- PREVIEW -->
+
+    <div
+      id="designPreview"
+      class="design-preview"
+    >
+
+      <div
+        id="previewUnitName"
+        class="preview-unit-name"
+      >
+        UNIT 01
+      </div>
+
+      <div
+        id="designUnitGraphic"
+        class="design-unit-graphic"
+      >
+
+        <div
+          id="designUnitCore"
+          class="design-unit-core"
+        >
+          2
+        </div>
+
+      </div>
+
+      <div class="preview-hint">
+        SWIPE TO CHANGE UNIT
+      </div>
+
+    </div>
+
+
+    <!-- POINTS -->
+
+    <div class="point-panel">
+
+      
+
+      <div>
+        <span>USED</span>
+        <strong id="usedPoint">0</strong>
+      </div>
+
+      <div>
+        <span>REMAIN</span>
+        <strong id="remainingPoint">100</strong>
+      </div>
+
+      <button
+        id="resetUnitButton"
+        class="reset-unit-button"
+        type="button"
+      >
+        RESET
+      </button>
+
+    </div>
+
+
+    <!-- PARAMETERS -->
+
+    <div class="parameter-list">
+
+      <div
+        class="parameter-row"
+        data-stat="hp"
+      >
+
+        <div class="parameter-name">
+          HP
+        </div>
+
+        <button class="parameter-button minus">
+          −
+        </button>
+
+        <div class="parameter-number">
+          0
+        </div>
+
+        <div class="parameter-bar">
+          <div class="parameter-fill"></div>
+        </div>
+
+        <button class="parameter-button plus">
+          +
+        </button>
+
+        <div class="parameter-real">
+          15
+        </div>
+
+      </div>
+
+
+      <div
+        class="parameter-row"
+        data-stat="move"
+      >
+
+        <div class="parameter-name">
+          MOVE
+        </div>
+
+        <button class="parameter-button minus">
+          −
+        </button>
+
+        <div class="parameter-number">
+          0
+        </div>
+
+        <div class="parameter-bar">
+          <div class="parameter-fill"></div>
+        </div>
+
+        <button class="parameter-button plus">
+          +
+        </button>
+
+        <div class="parameter-real">
+          0.250
+        </div>
+
+      </div>
+
+
+      <div
+        class="parameter-row"
+        data-stat="speed"
+      >
+
+        <div class="parameter-name">
+          A.SPD
+        </div>
+
+        <button class="parameter-button minus">
+          −
+        </button>
+
+        <div class="parameter-number">
+          0
+        </div>
+
+        <div class="parameter-bar">
+          <div class="parameter-fill"></div>
+        </div>
+
+        <button class="parameter-button plus">
+          +
+        </button>
+
+        <div class="parameter-real">
+          0.88/s
+        </div>
+
+      </div>
+
+
+      <div
+        class="parameter-row"
+        data-stat="atk"
+      >
+
+        <div class="parameter-name">
+          ATK
+        </div>
+
+        <button class="parameter-button minus">
+          −
+        </button>
+
+        <div class="parameter-number">
+          0
+        </div>
+
+        <div class="parameter-bar">
+          <div class="parameter-fill"></div>
+        </div>
+
+        <button class="parameter-button plus">
+          +
+        </button>
+
+        <div class="parameter-real">
+          2
+        </div>
+
+      </div>
+
+
+      <div
+        class="parameter-row"
+        data-stat="range"
+      >
+
+        <div class="parameter-name">
+          RANGE
+        </div>
+
+        <button class="parameter-button minus">
+          −
+        </button>
+
+        <div class="parameter-number">
+          0
+        </div>
+
+        <div class="parameter-bar">
+          <div class="parameter-fill"></div>
+        </div>
+
+        <button class="parameter-button plus">
+          +
+        </button>
+
+        <div class="parameter-real">
+          25
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOOST -->
+
+    <div class="boost-panel">
+
+      <div class="boost-title">
+
+        <span>
+          BOOST TARGET
+        </span>
+
+        <span id="boostCount">
+          0 / 2
+        </span>
+
+      </div>
+
+
+      <div class="boost-buttons">
+
+        <button
+          class="boost-button"
+          data-stat="hp"
+        >
+          HP
+        </button>
+
+        <button
+          class="boost-button"
+          data-stat="move"
+        >
+          MOVE
+        </button>
+
+        <button
+          class="boost-button"
+          data-stat="speed"
+        >
+          A.SPD
+        </button>
+
+        <button
+          class="boost-button"
+          data-stat="atk"
+        >
+          ATK
+        </button>
+
+        <button
+          class="boost-button"
+          data-stat="range"
+        >
+          RANGE
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- SAVE -->
+
+    <div class="save-panel">
+
+      <div
+        id="unitStatus"
+        class="unit-status"
+      >
+        SAVED
+      </div>
+
+      <button
+        id="saveUnitButton"
+        class="save-unit-button saved"
+      >
+        SAVE UNIT
+      </button>
+
+      <div
+        id="saveMessage"
+        class="save-message"
+      ></div>
+
+    </div>
+
+
+    <div
+      id="totalPoint"
+      style="display:none"
+    >
+      0
+    </div>
+
+  </section>
+
+
+  <!-- TROPHY -->
+
+  <section
+    id="medalScreen"
+    class="screen hidden-screen"
+  >
+
+    <div class="simple-header">
+
+      <button
+        id="medalBackButton"
+        class="back-button"
+      >
+        ‹
+      </button>
+
+      <div>
+
+        <div class="screen-title">
+          TROPHY
+        </div>
+
+        <div class="screen-subtitle">
+          ACHIEVEMENTS
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="medal-container">
+      <p class="trophy-list-hint">獲得条件はすべて公開しています。タップで詳しく表示。</p>
+
+      <div class="medal-page-header">
+
+        <button
+          id="medalPrevButton"
+          class="medal-page-button"
+        >
+          ‹
+        </button>
+
+        <div
+          id="medalPageLabel"
+          class="medal-page-label"
+        >
+          PAGE 1 / 5
+        </div>
+
+        <button
+          id="medalNextButton"
+          class="medal-page-button"
+        >
+          ›
+        </button>
+
+      </div>
+
+
+      <div
+        id="medalGrid"
+        class="medal-grid"
+      ></div>
+
+
+      <div class="medal-page-dots">
+
+        <span class="medal-page-dot selected"></span>
+        <span class="medal-page-dot"></span>
+        <span class="medal-page-dot"></span>
+        <span class="medal-page-dot"></span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW TO -->
+
+  <section
+    id="howToScreen"
+    class="screen hidden-screen"
+  >
+
+    <div class="simple-header">
+
+      <button
+        id="howToBackButton"
+        class="back-button"
+      >
+        ‹
+      </button>
+
+      <div>
+
+        <div class="screen-title">
+          HOW TO PLAY
+        </div>
+
+        <div class="screen-subtitle">
+          DESIGN &amp; DEPLOY
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="howto-container">
+
+      <div class="howto-block">
+
+        <div class="howto-number">
+          01
+        </div>
+
+        <div class="howto-title">
+          DESIGN
+        </div>
+
+        <div class="howto-lead">
+          100 POINTSで兵士を設計
+        </div>
+
+        <p>
+          HP / MOVE / A.SPD / ATK / RANGE の5つの能力に、
+          自由にポイントを振り分けます。
+        </p>
+
+        <p>
+          BOOST TARGETは2つまで選択できます。
+          BOOSTした能力はチャージ召喚でさらに強化されます。
+        </p>
+
+        <div class="howto-note">
+          すべてのポイントを使う必要はありません。
+        </div>
+
+      </div>
+
+
+      <div class="howto-block">
+
+        <div class="howto-number">
+          02
+        </div>
+
+        <div class="howto-title">
+          DEPLOY
+        </div>
+
+        <div class="howto-lead">
+          タップ＆ホールドでチャージ
+        </div>
+
+        <p>
+          戦場を押し続けるとチャージ開始。
+          指を離すと兵士を召喚します。
+        </p>
+
+        <div class="howto-charge">
+
+          <div>
+            <span>0.5 SEC</span>
+            <strong>×0.8</strong>
+          </div>
+
+          <div>
+            <span>1 SEC</span>
+            <strong>×1.0</strong>
+          </div>
+
+          <div>
+            <span>2 SEC</span>
+            <strong>×1.2</strong>
+          </div>
+
+          <div>
+            <span>3 SEC</span>
+            <strong>×1.5</strong>
+          </div>
+
+        </div>
+
+        <div class="howto-note">
+          長くチャージするほどBOOST TARGETが強化されます。
+        </div>
+
+      </div>
+
+
+      <div class="howto-block">
+
+        <div class="howto-number">
+          03
+        </div>
+
+        <div class="howto-title">
+          SWIPE
+        </div>
+
+        <div class="howto-lead">
+          5種類のUNITを使い分ける
+        </div>
+
+        <p>
+          チャージ中に指を動かすと、
+          召喚するUNITを切り替えられます。
+        </p>
+
+        <div class="howto-swipe">
+
+          <div class="howto-up">
+            <strong>↑</strong>
+            <span>UNIT 02</span>
+          </div>
+
+          <div class="howto-left">
+            <strong>←</strong>
+            <span>UNIT 05</span>
+          </div>
+
+          <div class="howto-center">
+            <strong>●</strong>
+            <span>UNIT 01</span>
+          </div>
+
+          <div class="howto-right">
+            <strong>→</strong>
+            <span>UNIT 03</span>
+          </div>
+
+          <div class="howto-down">
+            <strong>↓</strong>
+            <span>UNIT 04</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="howto-block">
+
+        <div class="howto-number">
+          04
+        </div>
+
+        <div class="howto-title">
+          BATTLE
+        </div>
+
+        <div class="howto-lead">
+          敵の城を破壊せよ
+        </div>
+
+        <p>
+          召喚された兵士は自動で移動・索敵・攻撃します。
+        </p>
+
+        <div class="howto-result">
+
+          <div>
+            <strong>VICTORY</strong>
+            <span>敵の城を破壊</span>
+          </div>
+
+          <div>
+            <strong>DEFEAT</strong>
+            <span>自分の城が破壊</span>
+          </div>
+
+          <div>
+            <strong>DRAW</strong>
+            <span>時間切れ</span>
+          </div>
+
+        </div>
+
+        <div class="howto-note">
+          戦い方を工夫してRANK Sを目指そう。
+        </div>
+
+      </div>
+
+
+      <div class="howto-block">
+        <div class="howto-number">05</div>
+        <div class="howto-title">TROPHY</div>
+        <div class="howto-lead">遊び方を変えて、トロフィーを集めよう</div>
+        <p>難易度ごとの勝利や、バトル時間別のRANK Sなど、条件を満たすとトロフィーを自動で獲得します。</p>
+        <p>特殊なユニットを設計することで見つかるトロフィーもあります。いろいろな配分や戦い方を試してみよう！</p>
+        <p>ホームの「TROPHY」から一覧を開けます。左右の矢印でページを切り替え、すべてのトロフィーの獲得条件を一覧で確認できます。タップすると条件を大きく表示します。</p>
+        <div class="howto-note">獲得記録は、遊んでいる端末のブラウザーに保存されます。</div>
+      </div>
+
+      <div class="howto-block howto-secret">
+
+        <div class="howto-number">
+          06
+        </div>
+
+        <div class="howto-title">
+          SPECIAL UNITS
+        </div>
+
+        <div class="howto-lead">
+          特殊なユニットを設計してみよう
+        </div>
+
+        <p>
+          ポイントの振り方。
+          BOOSTの組み合わせ。
+          あえてポイントを残すこと。
+        </p>
+
+        <p>
+          特殊ユニットの配分や召喚の条件は、TROPHYの一覧で確認できます。
+        </p>
+
+        <div class="howto-secret-message">
+          DESIGN. DISCOVER. BATTLE.
+        </div>
+
+      </div>
+
+
+      <div class="howto-credit">
+
+        <strong>
+          FORM CLASH
+        </strong>
+
+        <span>
+          Created by TSUBASA-ROCK
+        </span>
+
+        <span>
+          © 2026 TSUBASA-ROCK
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BATTLE -->
+
+  <section
+    id="battleScreen"
+    class="screen hidden-screen"
+  >
+
+    <div
+      id="game"
+      class="game"
+    >
+
+
+      <!-- HEADER -->
+
+      <div class="battle-header">
+
+        <button
+          id="battleHomeButton"
+          class="battle-home-button"
+        >
+          HOME
+        </button>
+
+        <div
+          id="battleState"
+          class="battle-state"
+        >
+          READY
+        </div>
+
+        <div
+          id="timerLabel"
+          class="timer-label"
+        >
+          45.0
+        </div>
+
+      </div>
+
+
+      <!-- ENEMY COUNT -->
+
+      <div
+        id="enemyCountDisplay"
+        class="enemy-count-display"
+      >
+        ENEMY 0
+      </div>
+
+
+      <!-- ENEMY TOWER -->
+
+      <div
+        id="enemyTower"
+        class="enemy-tower"
+      >
+
+        <div
+          id="enemySponsor"
+          class="enemy-sponsor"
+        >
+
+          <div class="ad-placeholder">
+            <strong>AD</strong>
+            <span>SPONSOR SPACE</span>
+          </div>
+
+        </div>
+
+
+        <div
+          id="enemyHpFrame"
+          class="fortress-hp-ring"
+        ></div>
+
+
+        <div id="enemyBrickWall" class="enemy-fortress" aria-hidden="true"></div>
+        <div id="towerDebris" aria-hidden="true"></div>
+
+
+        <div class="fortress-emblem">
+          ENEMY
+        </div>
+
+      </div>
+
+
+      <!-- MOAT -->
+
+      <div class="moat">
+        <div class="bridge"></div>
+      </div>
+
+
+      <!-- SPAWN GUIDE -->
+
+      <div
+        id="spawnGuide"
+        class="spawn-guide"
+      >
+        <span>DEPLOY</span>
+      </div>
+
+
+      <!-- UNIT LIMIT -->
+
+      <div
+        id="unitLimitMessage"
+        class="unit-limit-message hidden-screen"
+      >
+        UNIT LIMIT 3
+      </div>
+
+
+      <!-- PLAYER TOWER -->
+
+      <div
+        id="playerTower"
+        class="player-tower"
+      >
+
+        <div
+          id="playerSponsor"
+          class="player-sponsor"
+        >
+
+          <div class="ad-placeholder">
+            <strong>AD</strong>
+            <span>SPONSOR SPACE</span>
+          </div>
+
+        </div>
+
+
+        <div class="player-tower-body">
+
+          <div class="player-tower-label">
+            PLAYER
+          </div>
+
+          <div class="player-tower-hp">
+
+            <span class="player-hp-label">
+              HP
+            </span>
+
+            <strong id="playerHP">
+              100
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PLAYER UNIT COUNTERS -->
+
+      <div
+        id="playerCountDisplay"
+        class="player-count-display"
+      >
+
+        <div class="unit-count blue">
+          ● 0/3
+        </div>
+
+        <div class="unit-count red">
+          ↑ 0/3
+        </div>
+
+        <div class="unit-count yellow">
+          → 0/3
+        </div>
+
+        <div class="unit-count green">
+          ↓ 0/3
+        </div>
+
+        <div class="unit-count purple">
+          ← 0/3
+        </div>
+
+      </div>
+
+
+      <!-- START -->
+
+      <div
+        id="startScreen"
+        class="start-screen"
+      >
+
+        <div class="start-title">
+          READY
+        </div>
+
+        <button
+          id="startButton"
+          class="start-button"
+        >
+          START
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESULT -->
+
+  <section
+    id="resultScreen"
+    class="screen hidden-screen"
+  ><nav class="lab-navigation" aria-label="Tsubasa_Rock_LAB"><a class="lab-return" data-lab-return href="https://tsubasarock21.github.io/">← ラボへ戻る</a></nav>
+
+    <div id="resultMode"></div>
+    <div id="resultTitle">
+      VICTORY
+    </div>
+
+    <div id="resultScore"></div>
+
+    <div class="result-share-actions"><button id="shareGameButton" data-lab-share disabled>シェア</button><button id="shareResultButton" data-lab-share disabled>編成画像を共有</button></div>
+    <div id="shareStatus" role="status" aria-live="polite"></div>
+    <div class="result-buttons">
+
+      <button id="retryButton">
+        RETRY
+      </button>
+
+      <button id="resultHomeButton">
+        HOME
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <dialog id="medalConditionDialog" aria-labelledby="medalConditionTitle" aria-describedby="medalConditionText">
+    <div class="medal-condition-icon" aria-hidden="true">🏆</div>
+    <h2 id="medalConditionTitle"></h2>
+    <p class="medal-condition-label">獲得条件</p>
+    <p id="medalConditionText"></p>
+    <button id="closeMedalCondition" type="button">閉じる</button>
+  </dialog>
+  <dialog id="shareFallback" aria-labelledby="shareFallbackTitle">
+    <h2 id="shareFallbackTitle">バトル結果をシェア</h2>
+    <img id="sharePreview" alt="バトル結果と5体の編成・能力値・強化設定" />
+    <p>画像を長押しして保存することもできます。</p>
+    <a id="saveShareImage" download="form-clash-result.png">画像を保存</a>
+    <button id="copyShareText">結果テキストをコピー</button>
+    <textarea id="shareText" readonly aria-label="共有する結果テキスト"></textarea>
+    <button id="closeShareFallback">閉じる</button>
+  </dialog>
+
+  <!-- NEW TROPHY -->
+
+  <div
+    id="medalPopup"
+    class="medal-popup hidden-screen"
+  >
+
+    <div class="medal-popup-card">
+
+      <div class="medal-popup-new">
+        NEW TROPHY!
+      </div>
+
+      <div class="medal-popup-icon">🏆</div>
+
+      <div
+        id="medalPopupTitle"
+        class="medal-popup-title"
+      ></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js?v=0.8.5&_metrics=2&_metrics=2"></script>
+
+</body>
+
+</html>

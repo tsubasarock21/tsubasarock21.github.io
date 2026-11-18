@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;padding:0;text-align:center;overflow:hidden}body>div{margin:auto}</style><script>
+const slot=new URLSearchParams(location.search).get('slot')==='bottom'?'bottom':'top',ids={top:'b9de21441f6c26fbd75b5f98578aec13',bottom:'09464fb46c48df2904506b1d0e986f28'},live=navigator.onLine&&(location.hostname==='tsubasarock21.github.io'||location.hostname==='tsubasarock21.github.io');
+if(live)document.write('<script src="https://adm.shinobi.jp/s/'+ids[slot]+'"><\/script>');
+function report(){parent.postMessage({type:'yuru-ad-size',slot,height:live?Math.max(50,document.body?.scrollHeight||50):0},location.origin)}
+addEventListener('load',()=>{report();new ResizeObserver(report).observe(document.body);setTimeout(report,1500)});
+</script>
