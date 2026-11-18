@@ -23,3 +23,16 @@
   globalThis.LabMetrics = api;
   globalThis.LabMetricsV2 = Object.freeze({install: () => api});
 })();
+
+// These shared helpers run on the home and game pages only.
+(() => {
+  if (location.origin !== 'https://tsubasarock21.github.io' ||
+      new URLSearchParams(location.search).has('no_metrics')) return;
+  const src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  if (document.querySelector('script[src="' + src + '"]')) return;
+  const beacon = document.createElement('script');
+  beacon.type = 'module';
+  beacon.src = src;
+  beacon.setAttribute('data-cf-beacon', JSON.stringify({token: '64b2af7c70b74daf81f24ee56bc8acd8'}));
+  document.head.append(beacon);
+})();
