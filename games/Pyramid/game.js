@@ -1,5 +1,5 @@
-/* 石を積む v0.7.0 — local save and interface. */
-globalThis.LabPageConfig = { game: "Pyramid", version: "0.7.0" };
+/* 石を積む v0.7.1 — local save and interface. */
+globalThis.LabPageConfig = { game: "Pyramid", version: "0.7.1" };
 (() => {
   "use strict";
   const M = PyramidModel,
