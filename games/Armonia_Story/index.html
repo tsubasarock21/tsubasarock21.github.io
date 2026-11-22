@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#172538"><title>アルモニアストーリー I｜自動演劇パズル β版｜Tsubasa_Rock_LAB</title><style>
 :root{--bg:#101b28;--panel:#1c2d3e;--edge:#52677a;--gold:#eaca89;--ink:#f5f0dd;--muted:#b3c4cb;--cta:#d8b477}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;background:radial-gradient(ellipse at 50% 0,#284258 0,var(--bg) 62%);color:var(--ink)}button,select{font:inherit}button{touch-action:manipulation;cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}.shell{width:min(100%,860px);margin:auto;padding:12px 12px max(28px,env(safe-area-inset-bottom))}.top{text-align:center;padding:8px 0 12px}.top small{font-size:10px;letter-spacing:4px;color:var(--gold)}.top h1{font-family:Georgia,serif;font-size:clamp(26px,5.6vw,37px);margin:2px 0 0;letter-spacing:2px;color:#f6dcab;text-shadow:0 3px #5c493f}.top p{font-size:11px;color:#b4c0c8;margin:2px 0}.panel{border:1px solid #4c6575;border-radius:13px;background:linear-gradient(155deg,#203449,#172637);box-shadow:0 5px 20px #0003;overflow:hidden}.section-title{font-size:12px;letter-spacing:1px;color:var(--gold);font-weight:800;padding:12px 13px 7px}.stagehead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;background:#122031}.stagehead strong{font-size:12px}.chip{font-size:10px;border:1px solid #71818b;border-radius:99px;padding:5px 9px;color:#e5d6ba}.canvas-wrap{position:relative;background:#17354c;overflow:hidden;touch-action:none}canvas{display:block;width:100%;aspect-ratio:16/9;image-rendering:pixelated;image-rendering:crisp-edges;touch-action:none}.prologue{position:absolute;inset:0;z-index:8;display:none;align-items:flex-end;justify-content:center;padding:10px;background:#091320bd}.prologue.visible{display:flex}.dialogue{width:100%;max-width:650px;padding:14px;background:#15283bea;border:2px solid #d4ad75;border-radius:9px;box-shadow:0 8px 28px #0009}.dialogue small{display:block;color:#e8bc74;font-weight:800;margin-bottom:5px}.dialogue h2{font-size:16px;color:#ffe3a7;margin:0 0 7px}.dialogue p{font-size:12px;line-height:1.75;margin:6px 0;color:#f5f0df}.dialogue .speech{padding:7px 10px;background:#27394b;border-left:3px solid #d6b074}.dialogue button{display:block;width:100%;margin-top:10px;padding:10px;background:#e8c386;color:#34291c;border:0;border-radius:6px;font-weight:800}.floating{position:absolute;left:8px;top:8px;background:#102438dc;color:#f7ead7;border:1px solid #b2a577aa;padding:7px 9px;border-radius:8px;font-size:11px;max-width:75%;pointer-events:none}.mapnote{position:absolute;right:8px;bottom:8px;color:#fff;background:#122338bb;padding:5px 7px;border-radius:6px;font-size:10px;pointer-events:none}.viewbuttons{display:flex;flex-wrap:wrap;gap:6px;padding:9px;background:#172637}.viewbuttons button,.controls button,.quiet{border:1px solid #60758b;border-radius:8px;background:#2c445c;color:#fff;padding:9px 10px;font-size:12px}.viewbuttons button.active{background:#9a7845;border-color:#e2bb76;color:white}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-top:12px}.rolegrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:3px 12px 12px}.slot{min-width:0}.slot label{display:block;font-size:11px;color:#d6c79f;margin:0 0 5px}.slot select{width:100%;min-width:0;border:1px solid #617788;color:#f8f1db;background:#102236;border-radius:8px;padding:11px 7px;font-size:13px}.info{margin:0 12px 11px;background:#122638;border:1px solid #3e586c;border-radius:9px;padding:10px;font-size:12px;line-height:1.7;color:#dbe5e6;min-height:57px}.primary{margin:0 12px 13px;width:calc(100% - 24px);border:0;background:linear-gradient(#f1d59e,#d1a764);color:#302318;font-weight:800;border-radius:9px;padding:14px 10px;box-shadow:0 3px #9c733f}.primary:disabled{box-shadow:none}.sidepanel{padding-bottom:7px}.log{height:215px;overflow:auto;padding:3px 12px 11px;overscroll-behavior:contain}.entry{padding:9px 0;border-bottom:1px solid #ffffff17;font-size:12px;line-height:1.55}.time{color:#eacb88;font-size:10px;font-weight:700;display:block}.entry.fresh{color:#f9dfa9}.help{color:#b9cbd0;font-size:11px;padding:2px 12px 12px;line-height:1.65}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:7px;padding:10px 12px}.controls button{min-width:64px}.clock{font-variant-numeric:tabular-nums;color:#f7dbab;font-weight:800;margin-right:auto}.bar{height:5px;background:#0b1724}.fill{height:100%;width:0;background:#e7c080;transition:width .1s linear}.summary{display:none;margin-top:12px;padding:13px}.summary.visible{display:block}.score{font-size:30px;color:#f0cb84;font-weight:900}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.metric{background:#132536;border-radius:8px;padding:10px;text-align:center;font-size:11px;color:#c5d4d9}.metric strong{display:block;color:#fff;font-size:19px}.foot{font-size:10px;color:#95a9b5;text-align:center;padding:14px 8px;line-height:1.7}.hidden{display:none!important}@media(max-width:650px){.layout{grid-template-columns:1fr}.log{height:160px}.stagehead strong{font-size:11px}.viewbuttons button{padding:9px 8px;font-size:11px}}@media(max-width:360px){.rolegrid{gap:6px}.slot select{font-size:12px}}
-</style></head><body><nav style="position:relative;z-index:10;padding:8px 14px;background:#172536;text-align:left"><a href="/" style="color:#f6e8c8;font-size:13px;text-decoration:none">← Tsubasa_Rock_LABへ戻る</a></nav><main class="shell"><header class="top"><small>AN ORIGINAL FANTASY PUZZLE</small><h1>ARMONIA STORY I</h1><p>アルモニアストーリー — 脚本の行方 —</p></header><section class="panel"><div class="stagehead"><strong id="heading">第一幕　小さな島の物語</strong><span class="chip" id="sceneStatus">開演前</span></div><div class="canvas-wrap" id="canvasWrap"><canvas width="480" height="270" id="world" aria-label="ミロア島の自動進行するドット絵の舞台"></canvas><div class="prologue" id="prologue" role="dialog" aria-modal="true" aria-labelledby="prologueTitle"><div class="dialogue"><small>序幕｜開演前</small><h2 id="prologueTitle">レオンの物語</h2><p id="leonProfile"></p><p id="familyStory"></p><p class="speech" id="elderSpeech"></p><p id="leonReply"></p><button id="depart">物語を始める・出発する</button></div></div><div class="floating" id="sceneMessage">人々の配役を決めて「開演」を押してください。</div><div class="mapnote">ドラッグで視点移動</div></div><div class="viewbuttons" id="views"><button data-view="all" class="active">全景</button><button data-view="hero">レオン追跡</button><button data-view="a">カサリア村</button><button data-view="bridge">橋</button><button data-view="b">ナリス村</button><button data-view="cave">洞窟</button></div><div class="bar"><div class="fill" id="progress"></div></div><div class="controls"><span class="clock" id="clock">05:00</span><button id="pause" disabled>一時停止</button><button id="speed" disabled>×1</button><button id="rewatch" disabled>最初から再生</button></div></section><div class="layout"><section class="panel" id="casting"><div class="section-title">開演前の配役</div><div class="rolegrid"><div class="slot"><label for="father">レオンの父親</label><select id="father"></select></div><div class="slot"><label for="mother">レオンの母親</label><select id="mother"></select></div><div class="slot"><label for="guard">ナリス村の守り手</label><select id="guard"></select></div><div class="slot"><label for="caveRole">洞窟の調査役</label><select id="caveRole"></select></div></div><div class="info" id="castInfo">初期配役で世界がどのように進むか、観察してみましょう。</div><button class="primary" id="start">幕を上げる・開演</button></section><section class="panel sidepanel"><div class="section-title">出来事の記録 <span id="count" style="float:right;color:#bcd0d4;font-weight:400">0 件</span></div><div class="log" id="log" aria-live="polite"><div class="entry">ここには、舞台のあちこちで起こる出来事が記録されます。</div></div><div class="help">画面をスワイプして各地を観察できます。配役を変えて、橋・洞窟・村の運命がどう変わるか試してください。未発見の役者は公演で解放されます。</div></section></div><section class="panel summary" id="summary"><div class="section-title" style="padding:0 0 8px">終演・観客の評価</div><div class="score" id="score">—</div><p id="verdict" style="line-height:1.7;font-size:13px;margin:5px 0">—</p><div class="metrics"><div class="metric">村の平和<strong id="peace">—</strong></div><div class="metric">冒険の成果<strong id="explore">—</strong></div><div class="metric">新しい発見<strong id="discovered">—</strong></div></div><button class="primary" id="again" style="margin:15px 0 0;width:100%">配役を変えて再演する</button></section><p class="foot">βプロトタイプ v0.3.7 / 1公演 約75秒・劇中時間5分 / すべてオリジナルの図形描画による試作用ドット絵<br>ブラウザ内に発見記録を保存します。公開・販売前にグラフィックとシナリオの追加制作が必要です。</p></main><script>
+</style></head><body><nav style="position:relative;z-index:10;padding:8px 14px;background:#172536;text-align:left"><a href="/" style="color:#f6e8c8;font-size:13px;text-decoration:none">← Tsubasa_Rock_LABへ戻る</a></nav><main class="shell"><header class="top"><small>AN ORIGINAL FANTASY PUZZLE</small><h1>ARMONIA STORY I</h1><p>アルモニアストーリー — 脚本の行方 —</p></header><section class="panel"><div class="stagehead"><strong id="heading">第一幕　小さな島の物語</strong><span class="chip" id="sceneStatus">開演前</span></div><div class="canvas-wrap" id="canvasWrap"><canvas width="480" height="270" id="world" aria-label="ミロア島の自動進行するドット絵の舞台"></canvas><div class="prologue" id="prologue" role="dialog" aria-modal="true" aria-labelledby="prologueTitle"><div class="dialogue"><small>序幕｜開演前</small><h2 id="prologueTitle">レオンの物語</h2><p id="leonProfile"></p><p id="familyStory"></p><p class="speech" id="elderSpeech"></p><p id="leonReply"></p><button id="depart">物語を始める・出発する</button></div></div><div class="floating" id="sceneMessage">人々の配役を決めて「開演」を押してください。</div><div class="mapnote">ドラッグで視点移動</div></div><div class="viewbuttons" id="views"><button data-view="all" class="active">全景</button><button data-view="hero">レオン追跡</button><button data-view="a">カサリア村</button><button data-view="bridge">橋</button><button data-view="b">ナリス村</button><button data-view="cave">洞窟</button></div><div class="bar"><div class="fill" id="progress"></div></div><div class="controls"><span class="clock" id="clock">05:00</span><button id="pause" disabled>一時停止</button><button id="speed" disabled>×1</button><button id="rewatch" disabled>最初から再生</button></div></section><div class="layout"><section class="panel" id="casting"><div class="section-title">開演前の配役</div><div class="rolegrid"><div class="slot"><label for="father">レオンの父親</label><select id="father"></select></div><div class="slot"><label for="mother">レオンの母親</label><select id="mother"></select></div><div class="slot"><label for="guard">ナリス村の守り手</label><select id="guard"></select></div><div class="slot"><label for="caveRole">洞窟の調査役</label><select id="caveRole"></select></div></div><div class="info" id="castInfo">初期配役で世界がどのように進むか、観察してみましょう。</div><button class="primary" id="start">幕を上げる・開演</button></section><section class="panel sidepanel"><div class="section-title">出来事の記録 <span id="count" style="float:right;color:#bcd0d4;font-weight:400">0 件</span></div><div class="log" id="log" aria-live="polite"><div class="entry">ここには、舞台のあちこちで起こる出来事が記録されます。</div></div><div class="help">画面をスワイプして各地を観察できます。配役を変えて、橋・洞窟・村の運命がどう変わるか試してください。未発見の役者は公演で解放されます。</div></section></div><section class="panel summary" id="summary"><div class="section-title" style="padding:0 0 8px">終演・観客の評価</div><div class="score" id="score">—</div><p id="verdict" style="line-height:1.7;font-size:13px;margin:5px 0">—</p><div class="metrics"><div class="metric">村の平和<strong id="peace">—</strong></div><div class="metric">冒険の成果<strong id="explore">—</strong></div><div class="metric">新しい発見<strong id="discovered">—</strong></div></div><button class="primary" id="again" style="margin:15px 0 0;width:100%">配役を変えて再演する</button></section><p class="foot">βプロトタイプ v0.3.8 / 1公演 約75秒・劇中時間5分 / オリジナルの描画素材・方向別歩行アニメーション<br>ブラウザ内に発見記録を保存します。β版につきシナリオ・演出は順次追加します。</p></main><script>
 (()=>{'use strict';
-const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d',{alpha:false});ctx.imageSmoothingEnabled=false;
+const $=id=>document.getElementById(id),canvas=$('world');let ctx=canvas.getContext('2d',{alpha:false});ctx.imageSmoothingEnabled=false;
 const W=880,H=500,VW=480,VH=270,RUN=75,MAX=300,KEY='armonia-story-casting-v03';
 const people={dario:{name:'ダリオ',job:'村人'},mina:{name:'ミーナ',job:'村人'},baldo:{name:'バルド',job:'戦士'},serina:{name:'セリナ',job:'戦士'},garan:{name:'ガラン',job:'大工'},loyd:{name:'ロイド',job:'狩人'},lisette:{name:'リゼット',job:'貴族'},zenos:{name:'ゼノス',job:'元勇者'},filia:{name:'フィリア',job:'元勇者'}};
 const slots={father:['dario','baldo','garan','loyd'],mother:['mina','serina','lisette','filia'],guard:['none','baldo','serina','zenos'],caveRole:['none','garan','filia','zenos']};
@@ -13,7 +13,7 @@ const known=new Set(['dario','mina','baldo',...(Array.isArray(saved.known)?saved
 let casting={...defaults},state='setup',t=0,speed=1,pause=false,last=0,view='all',camera={x:0,y:0},drag=null,events=[],fired=new Set(),worldState={};let script=[],actor={x:178,y:335},npcs={};
 function place(id,x,y){return npcs[id]={id,x,y,motion:null,action:''}}
 function travel(a,duration,...stops){const points=[[a.x,a.y],...stops],lengths=points.slice(1).map((p,i)=>Math.hypot(p[0]-points[i][0],p[1]-points[i][1])),total=lengths.reduce((a,b)=>a+b,0);a.motion={start:t,end:t+duration,points,lengths,total};}
-function advanceMotion(a,at){const m=a.motion;if(!m)return;if(at>=m.end){[a.x,a.y]=m.points[m.points.length-1];a.motion=null;return;}let distance=m.total*Math.max(0,(at-m.start)/(m.end-m.start));for(let i=0;i<m.lengths.length;i++){if(distance<=m.lengths[i]||i===m.lengths.length-1){const q=m.lengths[i]?distance/m.lengths[i]:1;const p=m.points[i],n=m.points[i+1];a.x=p[0]+(n[0]-p[0])*q;a.y=p[1]+(n[1]-p[1])*q;return;}distance-=m.lengths[i]}}
+function advanceMotion(a,at){const m=a.motion;if(!m)return;if(at>=m.end){[a.x,a.y]=m.points[m.points.length-1];a.motion=null;return;}let distance=m.total*Math.max(0,(at-m.start)/(m.end-m.start));for(let i=0;i<m.lengths.length;i++){if(distance<=m.lengths[i]||i===m.lengths.length-1){const q=m.lengths[i]?distance/m.lengths[i]:1;const p=m.points[i],n=m.points[i+1];a.x=p[0]+(n[0]-p[0])*q;a.y=p[1]+(n[1]-p[1])*q;const dx=n[0]-p[0],dy=n[1]-p[1];if(dx||dy)a.facing=Math.abs(dx)>Math.abs(dy)?(dx<0?'left':'right'):(dy<0?'up':'down');return;}distance-=m.lengths[i]}}
 function advanceWorld(at){advanceMotion(actor,at);Object.values(npcs).forEach(a=>advanceMotion(a,at))}
 function routeTo(duration,...stops){travel(actor,duration,...stops)}
 function npcRoute(id,duration,...stops){if(npcs[id])travel(npcs[id],duration,...stops)}
@@ -179,104 +179,146 @@ function finish(){state='done';lockCast(false);pause=false;$('start').disabled=f
 function reset(){$('prologue').classList.remove('visible');state='setup';lockCast(false);pause=false;t=0;speed=1;events=[];worldState={};actor={x:nodes.a.x,y:nodes.a.y,motion:null};npcs={};renderLog();makeOptions();showCast();$('summary').classList.remove('visible');$('sceneStatus').textContent='開演前';$('heading').textContent='第一幕　小さな島の物語';$('clock').textContent='05:00';$('progress').style.width='0%';$('pause').disabled=true;$('speed').disabled=true;$('rewatch').disabled=true;$('sceneMessage').textContent='配役を変えて、次の物語を始めよう。';window.scrollTo({top:0,behavior:'smooth'});}
 $('start').onclick=begin;$('again').onclick=reset;$('rewatch').onclick=()=>{if(state==='running'){pause=false;}begin()};$('pause').onclick=()=>{pause=!pause;$('pause').textContent=pause?'再開':'一時停止'};$('speed').onclick=()=>{speed=({1:2,2:5,5:1})[speed];$('speed').textContent='×'+speed};
 $('views').addEventListener('click',e=>{let b=e.target.closest('button[data-view]');if(!b)return;view=b.dataset.view;[...$('views').querySelectorAll('button')].forEach(btn=>btn.classList.toggle('active',btn===b))});
-let seed=71;function rand(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};let tree=[];for(let i=0;i<420;i++){let x=28+rand()*(W-56),y=20+rand()*(H-40);if((x>113&&x<230&&y>275&&y<400)||(x>650&&x<790&&y>270&&y<395)||(x>410&&x<500&&y>100&&y<178)||(y>226&&y<280)||(x>615&&y>405))continue;tree.push({x,y,type:rand()})}
-const colors={sea:'#346e89',shore:'#e6d08b',grass:'#649d64',grass2:'#72aa6a',tree:'#245c49',dark:'#122f34',path:'#c8ad7a',mount:'#777e80'};
-function rect(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
-function poly(points,col){ctx.fillStyle=col;ctx.beginPath();ctx.moveTo(...points[0]);for(let p of points.slice(1))ctx.lineTo(...p);ctx.closePath();ctx.fill()}
-function line(points,col,width){ctx.strokeStyle=col;ctx.lineWidth=width;ctx.lineJoin='round';ctx.lineCap='square';ctx.beginPath();ctx.moveTo(...points[0]);for(let p of points.slice(1))ctx.lineTo(...p);ctx.stroke()}
-function house(x,y,roof='#a85d4f',sz=1){ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(sz,sz);rect(-19,-4,38,30,'#a87850');rect(-17,0,34,21,'#d4af79');rect(-3,9,8,12,'#5e4b42');rect(-14,5,7,7,'#385f64');rect(8,5,7,7,'#385f64');poly([[-23,-4],[0,-25],[23,-4]],'#463b42');poly([[-19,-5],[0,-20],[19,-5]],roof);rect(-23,-4,46,4,'#472f36');ctx.restore()}
-function pine(x,y,size=1){ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(size,size);rect(-3,4,6,12,'#664c37');poly([[-16,7],[0,-25],[16,7]],'#193f36');poly([[-15,3],[0,-24],[15,3]],'#29654b');poly([[-14,-5],[0,-31],[14,-5]],'#3a8155');rect(-3,-24,4,3,'#70a67b');ctx.restore()}
-function character(x,y,coat='#496e9a',phase=0){ctx.save();ctx.translate(Math.round(x),Math.round(y));rect(-5,-1,10,12,'#293444');rect(-4,-2,8,10,coat);rect(-4,7,3,5+(Math.sin(phase)>0?1:0),'#272d40');rect(1,7,3,5+(Math.sin(phase)<=0?1:0),'#272d40');rect(-5,-13,10,10,'#dbac7f');rect(-5,-14,10,4,'#453a35');rect(-6,1,2,7,'#deb18b');rect(4,1,2,7,'#deb18b');ctx.restore()}
-function label(x,y,txt,fill='#192b3add'){ctx.font='bold 11px system-ui';let wid=ctx.measureText(txt).width+13;rect(x-wid/2,y-15,wid,17,fill);ctx.fillStyle='#fff2d1';ctx.fillText(txt,Math.round(x-wid/2+7),y-3)}
-function background(s){rect(0,0,W,H,colors.sea);let coast=[[87,55],[213,19],[370,28],[524,20],[690,54],[813,119],[840,247],[807,384],[718,471],[524,490],[362,475],[194,481],[86,416],[29,293],[45,147]];poly(coast,'#ead39c');poly(coast.map(([x,y])=>[440+(x-440)*.972,250+(y-250)*.951]),colors.grass);
-for(let x=52;x<822;x+=29)for(let y=50;y<465;y+=29){let r=((x*11+y*37)%19);if(r<8)rect(x,y,3,2,r<4?'#79ae74':'#4f8e61')}
-// Rivers and routes
-// The river splits the island into west and east; only the bridge or cave pass can cross it.
+// World artwork: world coordinates and routing stay identical to v0.3.7.
+let seed=71;
+function rand(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
+const coast=[[87,55],[213,19],[370,28],[524,20],[690,54],[813,119],[840,247],[807,384],[718,471],[524,490],[362,475],[194,481],[86,416],[29,293],[45,147]];
 const river=[[447,16],[443,85],[452,152],[447,218],[451,286],[448,367],[446,483]];
-line(river,'#397c9e',45);line(river,'#4f9ec0',35);line(river,'#83b9c5',4);
-line([[175,340],[270,323],[355,293],[413,257]],'#a48f66',18);line([[175,340],[270,323],[355,293],[413,257]],'#d6b881',12);
-line([[485,257],[570,284],[640,320],[708,327]],'#a48f66',18);line([[485,257],[570,284],[640,320],[708,327]],'#d6b881',12);
-line([[176,339],[260,272],[322,190],[411,147]],'#bca378',15);line([[176,339],[260,272],[322,190],[411,147]],'#dfc489',9);
-line([[413,257],[405,215],[411,147]],'#ab966f',12);line([[413,257],[405,215],[411,147]],'#dfc489',7);
-line([[482,132],[570,193],[615,279],[706,326]],'#bca378',15);line([[482,132],[570,193],[615,279],[706,326]],'#dfc489',9);
-// The cave tunnel is a separate northern crossing.
-rect(415,130,66,22,'#59606a');rect(416,134,64,14,'#292e3b');for(let bx=419;bx<480;bx+=10)rect(bx,146,6,3,'#978a73');
-line([[675,328],[675,382],[627,439]],'#d3b585',11);line([[707,327],[732,246],[717,181],[705,112]],'#c7a87b',11);
-for(let p of tree)pine(p.x,p.y, p.type>.9?1.12:.7+p.type*.18);
-// Mountains
-for(let [x,y] of [[405,79],[433,72],[465,80],[494,84],[528,90],[547,126],[396,130]]){poly([[x-23,y+21],[x,y-18],[x+27,y+21]],'#626c70');poly([[x-12,y+1],[x,y-18],[x+13,y+1],[x+4,y-2],[x-1,y+4]],'#c6c8bd');poly([[x+5,y+21],[x+27,y+21],[x+10,y-5]],'#414c56')}
-// Houses and villages
-for(let [x,y,r] of [[142,304,'#aa5d4c'],[210,305,'#b27a55'],[135,367,'#895979'],[215,378,'#945441'],[670,293,'#a75e4d'],[754,300,'#ae7150'],[680,366,'#aa6851'],[755,359,'#a65b4c']])house(x,y,r,.85);
-house(623,436,'#967554',1.0);rect(617,455,20,8,'#a1b877');
-// Village stalls and extra ground detail
-for(let [x,y] of [[173,364],[702,364]]){rect(x-16,y+6,30,5,'#77593a');rect(x-14,y-2,28,12,'#b9a376');rect(x-16,y-6,32,7,'#b8664d');rect(x-13,y-2,9,3,'#ebce78');rect(x+5,y-2,8,3,'#a6bc64')}
-// Two separate cave mouths, one on either bank, connected through the mountains.
-for(const [cx,cy] of [[411,146],[485,146]]){
-poly([[cx-22,cy+7],[cx-19,cy-21],[cx,cy-37],[cx+18,cy-21],[cx+23,cy+7]],'#454c55');
-poly([[cx-16,cy+7],[cx-12,cy-17],[cx,cy-28],[cx+13,cy-17],[cx+17,cy+7]],'#85817c');
-poly([[cx-12,cy+6],[cx-10,cy-8],[cx,cy-15],[cx+11,cy-8],[cx+12,cy+6]],'#17232e');
-rect(cx-16,cy+7,33,4,'#47434a');
+const paths=[[[176,339],[270,323],[355,293],[413,257]],[[485,257],[570,284],[640,320],[708,327]],[[176,339],[260,272],[322,190],[411,147]],[[413,257],[405,215],[411,147]],[[485,146],[570,193],[615,279],[706,326]],[[708,327],[675,328],[675,382],[627,439]],[[708,327],[732,246],[717,181],[705,112]]];
+const colors={sea:'#214b6c',shallow:'#397b8b',sand:'#d6bc80',grass:'#668f59',dark:'#203d36',path:'#ccb17b'};
+function rect(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
+function poly(points,col){ctx.fillStyle=col;ctx.beginPath();ctx.moveTo(...points[0]);for(const p of points.slice(1))ctx.lineTo(...p);ctx.closePath();ctx.fill()}
+function line(points,col,width){ctx.strokeStyle=col;ctx.lineWidth=width;ctx.lineJoin='round';ctx.lineCap='square';ctx.beginPath();ctx.moveTo(...points[0]);for(const p of points.slice(1))ctx.lineTo(...p);ctx.stroke()}
+function ellipse(x,y,rx,ry,color){ctx.fillStyle=color;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.fill()}
+function sandPoint(x,y){let inside=false;for(let i=0,j=coast.length-1;i<coast.length;j=i++){let [a,b]=coast[i],[c,d]=coast[j];if(((b>y)!==(d>y))&&(x<(c-a)*(y-b)/(d-b)+a))inside=!inside;}return inside}
+function segmentDistance(x,y,a,b){let dx=b[0]-a[0],dy=b[1]-a[1],q=Math.max(0,Math.min(1,((x-a[0])*dx+(y-a[1])*dy)/(dx*dx+dy*dy||1)));return Math.hypot(x-a[0]-dx*q,y-a[1]-dy*q)}
+function nearLine(x,y,path,width){return path.slice(1).some((b,i)=>segmentDistance(x,y,path[i],b)<width)}
+function clearGround(x,y){return paths.some(p=>nearLine(x,y,p,27))||nearLine(x,y,river,50)||(x>105&&x<270&&y>266&&y<412)||(x>630&&x<802&&y>260&&y<410)||(x>369&&x<560&&y<185)||(x>585&&x<675&&y>390)||(x>640&&x<761&&y<153)}
+const trees=[],grass=[];
+for(let i=0;i<610;i++){let x=35+rand()*810,y=30+rand()*441;let v=rand();if(!sandPoint(x,y)||clearGround(x,y))continue;if(trees.some(p=>Math.hypot(x-p.x,y-p.y)<17))continue;trees.push({x,y,type:v})}
+for(let i=0;i<1600;i++){let x=40+rand()*800,y=25+rand()*455;if(sandPoint(x,y)&&!clearGround(x,y))grass.push([x,y,rand()]);}
+trees.sort((a,b)=>a.y-b.y);
+function tileRoof(x,y,w,h,color){rect(x,y,w,h,'#493b3d');rect(x+2,y+1,w-4,h-3,color);for(let yy=y+3;yy<y+h-2;yy+=4){rect(x+2,yy,w-4,1,'#70474a');for(let xx=x+3+((yy-y)%8===3?0:4);xx<x+w-3;xx+=8)rect(xx,yy-2,1,2,'#e1a37d66')}rect(x+2,y,w-4,2,'#e4a47b')}
+function house(x,y,roof='#a85d4f',sz=1){ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(sz,sz);ellipse(6,20,30,8,'#233d3b55');rect(-22,-7,44,31,'#624637');rect(-20,-6,39,27,'#d8b58a');rect(16,-5,3,27,'#a57a52');rect(-20,18,39,4,'#86745e');for(const xx of [-20,-2,16])rect(xx,-5,3,26,'#74513b');rect(-20,6,39,2,'#8d684a');rect(-6,8,12,13,'#543f33');rect(-4,9,8,11,'#9b6845');rect(2,14,2,2,'#e0bc75');for(const xx of [-16,8]){rect(xx,1,9,9,'#65473a');rect(xx+1,2,7,7,'#3b6772');rect(xx+2,3,2,5,'#a8d3d5');rect(xx+4,2,1,7,'#987d58');rect(xx,9,9,2,'#cdb286')}poly([[-26,-5],[-17,-23],[17,-23],[26,-5]],'#3a3036');poly([[-23,-7],[-15,-21],[15,-21],[23,-7]],roof);for(let yy=-19;yy<-7;yy+=4){let inset=Math.round((-7-yy)*.55);rect(-22+inset,yy,44-inset*2,1,'#724548');for(let xx=-20+inset;xx<21-inset;xx+=7)rect(xx,yy-2,1,2,'#e3ac8c77')}rect(-26,-6,52,3,'#493139');rect(10,-24,7,13,'#7f665b');rect(9,-25,9,3,'#b8a08a');rect(-3,23,11,3,'#b2a693');ctx.restore()}
+function pine(x,y,size=1){ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(size,size);ellipse(6,12,19,7,'#253d365c');rect(-3,-4,6,19,'#503c2d');rect(-2,7,2,7,'#94704d');poly([[-19,7],[0,-29],[19,7]],'#183d34');poly([[-16,2],[0,-28],[16,2]],'#2b6650');poly([[-14,-7],[0,-36],[14,-7]],'#214c3f');poly([[-12,-9],[0,-33],[12,-9]],'#43815a');poly([[-8,-13],[0,-30],[3,-9]],'#619566');rect(-10,-3,6,2,'#66a06f');rect(3,1,9,2,'#1b4c41');ctx.restore()}
+function oak(x,y,size=1){ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(size,size);ellipse(8,12,22,8,'#233d3655');rect(-5,-5,10,20,'#573e2e');rect(-4,4,3,10,'#ae8152');poly([[-19,-5],[-18,-20],[-9,-29],[7,-29],[19,-19],[23,-6],[15,4],[-12,5]],'#234a3a');poly([[-18,-9],[-16,-21],[-6,-28],[8,-27],[15,-16],[13,-4],[-10,1]],'#3c744b');poly([[-12,-17],[-6,-25],[5,-25],[9,-18],[1,-12],[-11,-10]],'#669758');rect(-15,-12,7,4,'#548b51');rect(8,-5,9,3,'#2a5b43');ctx.restore()}
+function field(x,y,w,h){rect(x-2,y-2,w+4,h+4,'#75573b');rect(x,y,w,h,'#977b4c');for(let yy=y+4;yy<y+h;yy+=7){rect(x+1,yy,w-2,2,'#6d5037');for(let xx=x+3;xx<x+w-2;xx+=6){rect(xx,yy-2,3,4,'#527f44');rect(xx,yy-3,1,2,'#c4cb75')}}}
+function fence(x,y,w){rect(x,y+4,w,2,'#765c41');rect(x,y+8,w,2,'#a68a60');for(let i=0;i<=w;i+=8){rect(x+i,y,2,12,'#634b35');rect(x+i,y,2,2,'#d3b68c')}}
+function well(x,y){ellipse(x+4,y+7,13,5,'#283f3455');rect(x-8,y-3,16,13,'#686c65');rect(x-6,y-1,12,7,'#d0c4ab');rect(x-4,y,8,5,'#39616a');rect(x-9,y-11,2,11,'#775b40');rect(x+7,y-11,2,11,'#775b40');poly([[x-13,y-11],[x,y-18],[x+13,y-11]],'#905f4d');rect(x-13,y-11,26,2,'#503f38')}
+function stone(x,y,w,h){poly([[x,y+h],[x+2,y+3],[x+w*.45,y],[x+w-2,y+3],[x+w,y+h]],'#535e5d');poly([[x+2,y+3],[x+w*.45,y],[x+w-2,y+3],[x+w-4,y+6],[x+3,y+7]],'#9a9e89');rect(x+1,y+h-2,w-2,2,'#444e4d')}
+function mountain(x,y,k=1){ctx.save();ctx.translate(x,y);ctx.scale(k,k);ellipse(3,19,37,12,'#34494366');poly([[-38,19],[-23,-3],[-12,-7],[0,-36],[11,-22],[23,-5],[38,19]],'#697476');poly([[0,-36],[11,-22],[23,-5],[38,19],[8,19],[4,-1]],'#424f57');poly([[-27,19],[-12,-7],[0,-36],[2,-9],[-8,6],[-11,19]],'#929789');poly([[-12,-7],[0,-36],[11,-22],[16,-14],[4,-18],[-1,-12],[-5,-17]],'#d3d7c9');line([[-20,13],[-14,6],[-12,0]],'#b1b5a2',2);ctx.restore()}
+function caveMouth(x,y){ellipse(x+4,y+9,26,8,'#253c3955');poly([[x-26,y+7],[x-23,y-18],[x-7,y-34],[x+10,y-32],[x+23,y-16],[x+26,y+7]],'#4d5759');poly([[x-21,y+5],[x-18,y-16],[x-7,y-29],[x+9,y-28],[x+18,y-13],[x+21,y+5]],'#9b9a89');poly([[x-13,y+7],[x-12,y-10],[x-6,y-17],[x+7,y-17],[x+13,y-9],[x+13,y+7]],'#172a32');rect(x-10,y-7,20,15,'#101e29');rect(x-18,y+6,36,4,'#69675e');rect(x-19,y-9,4,3,'#b6b4a0');rect(x+13,y-13,4,3,'#747a70');}
+function castle(){ellipse(712,121,56,13,'#20343166');rect(671,72,73,52,'#424955');rect(675,73,65,47,'#757983');for(let yy=77;yy<120;yy+=7){rect(676,yy,63,1,'#515662');for(let xx=680+((yy-77)%14?4:0);xx<740;xx+=10)rect(xx,yy,1,7,'#5d6269')}for(const tx of [670,725]){rect(tx,51,24,73,'#454955');rect(tx+3,55,18,65,'#8e9396');for(let yy=59;yy<119;yy+=7)rect(tx+3,yy,18,1,'#606571');for(let xx=tx;xx<tx+24;xx+=8)rect(xx,45,5,12,'#515662');rect(tx+10,65,5,15,'#27323d');}rect(695,91,22,33,'#373441');poly([[695,93],[699,86],[713,86],[717,93]],'#30313c');rect(701,94,10,29,'#79554a');for(let yy=100;yy<122;yy+=6)rect(701,yy,10,1,'#493a39');rect(706,29,2,23,'#9c927c');poly([[708,30],[726,34],[708,41]],'#9d394d');}
+const outfits={
+ leon:['#4a79b4','#d9a05e','#4c302a','#d6a87b','hero'],dario:['#887048','#d3b77d','#55382d','#d8ab80','vest'],mina:['#a85f73','#ecd2be','#5d3f39','#e1b98e','dress'],
+ baldo:['#426b91','#b8c6c6','#8d6841','#dfab7d','armor'],serina:['#9d4b69','#f4d6a0','#bd6c36','#ebbd94','armor'],garan:['#94633c','#dbb064','#563e31','#d8a677','tool'],
+ loyd:['#47714e','#b7c681','#443b2f','#d7a077','hood'],lisette:['#8163ac','#e8c4df','#cab17e','#f0c9a7','dress'],zenos:['#59617d','#cfbc78','#a8a9aa','#d5ae8b','armor'],
+ filia:['#8a6aa4','#e4c8b6','#d9d4bd','#ebc8a2','robe'],elder:['#77745b','#d6c299','#d0d0c0','#dfb58b','robe'],villager1:['#a2894c','#d9b57c','#775641','#dfad84','vest'],villager2:['#6d925d','#e4d6ad','#66443c','#dcae84','dress'],
+ enemy1:['#793e58','#cf786b','#272f39','#a6a8a0','monster'],enemy2:['#795345','#df8b64','#2d343e','#b2ab90','monster'],captain:['#6d3651','#d9b66f','#3c303e','#b9a18f','monster']
+};
+const spriteCache=new Map();
+function sprite(id,dir,step){const key=id+'/'+dir+'/'+step;if(spriteCache.has(key))return spriteCache.get(key);
+ const c=document.createElement('canvas');c.width=23;c.height=32;const p=c.getContext('2d');p.imageSmoothingEnabled=false;
+ const [coat,trim,hair,skin,kind]=outfits[id]||outfits.dario;
+ const q=(x,y,w,h,col)=>{p.fillStyle=col;p.fillRect(x,y,w,h)};
+ const dark='#26303b',boot='#403936',light='#f4d5ac',back=dir==='up',side=dir==='left'||dir==='right',flip=dir==='left';
+ if(flip){p.translate(23,0);p.scale(-1,1);}
+ const sway=step===1?1:step===2?-1:0,shift=side?1:0;
+ // Silhouette, shoes, legs, torso and arms use the same origin in every frame.
+ q(6,26+sway,4,4,dark);q(13,26-sway,4,4,dark);q(5,29+sway,5,2,boot);q(13,29-sway,5,2,boot);
+ q(6,22,12,6,dark);q(7,22,10,5,coat);
+ if(kind==='dress'||kind==='robe'){q(5,19,14,8,dark);q(6,18,12,8,coat);q(6,25,12,1,trim)}
+ q(4+shift,13,15-shift,11,dark);q(5+shift,14,13-shift,8,coat);q(7+shift,14,3,7,trim);q(6+shift,21,11-shift,2,'#503b32');q(11+shift,21,2,2,trim);
+ q(2+shift,15+sway,4,8,dark);q(3+shift,16+sway,2,5,coat);q(3+shift,22+sway,3,3,skin);
+ q(17,15-sway,4,8,dark);q(18,16-sway,2,5,coat);q(17,22-sway,3,3,skin);
+ // Distinct hair, clothing and equipment stay fixed when roles change.
+ q(5+shift,3,13-shift,13,dark);q(6+shift,2,11-shift,12,hair);q(7+shift,6,10-shift,9,skin);
+ if(back){q(6+shift,3,11-shift,11,hair);q(10,13,3,2,skin);q(8,15,8,7,coat);q(8,15,2,6,trim)}
+ else{q(7+shift,6,3,2,hair);q(10+shift,5,5,2,hair);q(7+shift,8,2,1,light);if(side){q(14,9,2,2,dark);q(16,11,2,2,skin)}else{q(9,9,1,2,dark);q(14,9,1,2,dark);q(11,12,3,1,'#a97263');}}
+ if(kind==='hero'){q(6,5,12,2,'#e3bd69');q(5,6,2,4,'#b87845');q(8,15,8,2,'#d6b36e');q(5,17,2,9,'#6f97c3');q(18,19,2,9,'#d5dad6')}
+ if(kind==='armor'){q(4,14,5,4,'#a9b7ad');q(15,14,5,4,'#a9b7ad');q(9,16,5,4,'#e2d5b3');q(19,19,2,10,'#c4d1d0');q(17,23,5,2,trim);if(id==='baldo'||id==='zenos'){q(6,11,4,3,hair);q(14,12,3,3,hair)}else{q(4,5,3,10,hair);q(16,5,3,12,hair)}}
+ if(kind==='tool'){q(5,11,4,4,hair);q(15,11,3,4,hair);q(8,15,2,7,'#573e2f');q(14,15,2,7,'#573e2f');q(18,20,2,9,'#b99b69');q(17,19,5,3,'#a8a7a0')}
+ if(kind==='hood'){q(5,3,13,3,coat);q(4,6,3,9,coat);q(16,6,3,9,coat);q(17,18,2,10,'#e0aa6c');q(19,19,1,8,'#50382d')}
+ if(kind==='dress'||kind==='robe'){q(4,5,3,11,hair);q(16,5,3,11,hair);q(6,20,12,2,trim);if(id==='lisette')q(8,3,9,2,'#e9ce88');if(id==='elder'){q(8,12,8,3,'#e3d7ba');q(10,15,4,3,'#f0e4c7');q(19,17,2,12,'#ad9568')}}
+ if(kind==='monster'){q(5,3,13,13,hair);q(6,1,3,5,trim);q(15,1,3,5,trim);if(!back){q(8,8,3,2,'#ffae69');q(13,8,3,2,'#ffae69');q(10,12,5,2,'#ebe1c4')}q(4,14,4,5,trim);q(15,14,5,5,trim);q(18,22,4,3,'#c4b6aa')}
+ spriteCache.set(key,c);return c;
 }
-// Garan appears inside the cave cutaway, not outside the cave.
-// Rescue is illustrated inside the cave cutaway.
-// Bridge broken or repaired
-if(worldState.bridge){for(let x=419;x<=474;x+=8){rect(x,239,6,36,'#966c45');rect(x,239,1,36,'#ddc086')}rect(416,234,65,5,'#56442f');rect(416,276,65,5,'#56442f')}else {rect(415,239,17,7,'#976b48');rect(466,268,16,7,'#976b48');rect(418,246,11,6,'#d8b080');rect(470,261,9,5,'#d8b080');}
-
-// Fortress
-rect(671,70,70,55,'#51505a');rect(676,57,17,30,'#787582');rect(719,57,17,30,'#787582');rect(695,48,24,26,'#85808a');rect(700,91,16,34,'#24293b');for(let x of [677,695,713,731])rect(x,65,8,6,'#a4a0a0');poly([[694,48],[708,25],[723,48]],'#5b3b58');rect(704,35,8,10,'#c14b62');
-// Decorative village lamps
-for(let [x,y] of [[252,330],[631,311],[627,410]]){rect(x,y,3,18,'#624837');rect(x-3,y-2,9,9,'#c48d42');rect(x-1,y,5,5,'#f0db8d')}
-// Fog at unknown fortress
-if(!worldState.hunt){ctx.fillStyle='#182b3ad8';ctx.fillRect(666,55,83,80);label(710,91,'？？？')}
-// Named actors occupy only their assigned roles.
-function castSprite(id,x,y,color,caption){character(x,y,color,s*5);label(x,y-17,caption||people[id].name)}
-if(state==='running'||state==='done'||state==='prologue'){
-const hues={dario:'#a17b51',mina:'#ab7383',baldo:'#5b729e',serina:'#ba5f66',garan:'#9c6740',loyd:'#4c7753',lisette:'#9a73b7',zenos:'#746d9d',filia:'#b694bd',elder:'#8d8267',villager1:'#b2a064',villager2:'#96ab88',enemy1:'#70384a',enemy2:'#873a47'};
-for(const a of Object.values(npcs)){
- if(a.id==='loyd'&&!assigned(casting,'loyd')&&!worldState.hunterSeen)continue;
- if((a.id==='zenos'||a.id==='filia')&&!known.has(a.id)&&!assigned(casting,a.id))continue;
- if(a.id.startsWith('enemy')&&(worldState.attack==='waiting'||worldState.attack==='repelled'&&!a.motion))continue;
- if(a.id===casting.caveRole&&worldState.caveInside)continue;
- const p=people[a.id],role=a.id===casting.father?'・父':a.id===casting.mother?'・母':a.id===casting.guard?'・守り手':a.id===casting.caveRole?'・調査':'';
- character(a.x,a.y,hues[a.id]||'#777',a.motion?s*8:0);
- if(p||a.id==='elder')label(a.x,a.y-17,(p?p.name:'エルド')+role+(a.action?' / '+a.action:''));
+function character(x,y,id='leon',phase=0,dir='down',scale=1){
+ const step=phase===0?0:(Math.floor(Math.abs(phase))%4===1?1:Math.floor(Math.abs(phase))%4===3?2:0);
+ ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(scale,scale);
+ ellipse(1,10,10,4,'#17272a66');ctx.drawImage(sprite(id,dir,step),-11,-21);ctx.restore();
 }
-if(worldState.hunt){line([[645,215],[667,170],[705,122]],'#e9c778',2);label(668,164,'ロイドの地図');}
-}else{
-castSprite('dario',162,354,'#a17b51','ダリオ');
-castSprite('mina',218,352,'#ab7383','ミーナ');
-castSprite('baldo',247,347,'#5b729e','バルド');
-castSprite('serina',686,340,'#ba5f66','セリナ');
+function label(x,y,txt,fill='#172d36e8'){const sc=Math.abs(ctx.getTransform().a)||1;const fs=Math.max(11,9.5/sc);ctx.font='bold '+fs+'px system-ui';let wid=ctx.measureText(txt).width+10/sc;rect(x-wid/2,y-15/sc,wid,16/sc,fill);rect(x-wid/2,y-15/sc,wid,1/sc,'#d6c08a');ctx.fillStyle='#fff2d1';ctx.textBaseline='alphabetic';ctx.fillText(txt,x-wid/2+5/sc,y-3/sc)}
+function land(){const inset=coast.map(([x,y])=>[440+(x-440)*.96,250+(y-250)*.94]);rect(0,0,W,H,colors.sea);poly(coast.map(([x,y])=>[440+(x-440)*1.04,250+(y-250)*1.04]),colors.shallow);poly(coast,'#ecd4a0');poly(inset,colors.grass);
+ ctx.save();ctx.beginPath();ctx.moveTo(...inset[0]);for(const p of inset.slice(1))ctx.lineTo(...p);ctx.closePath();ctx.clip();
+ for(let x=24;x<W;x+=16)for(let y=22;y<H;y+=16){const n=((x*17+y*29)^(x*y))>>>0;rect(x,y,16,16,['#648e59','#6b965e','#709c62','#5f8956'][n%4]);if(n%11===0){rect(x+2,y+5,2,3,'#80ae69');rect(x+9,y+9,3,2,'#4d794b')}}
+ for(const [x,y,v] of grass){rect(x,y,2,3,v<.35?'#476c47':'#94ac68');rect(x+2,y+2,2,1,'#b6bf7a');if(v>.97)rect(x,y-2,2,2,'#f3c7a1')}
+ ctx.restore();
+ line(river,'#587f68',55);line(river,'#c9b481',49);line(river,'#2f6579',44);line(river,'#4389a0',34);line(river,'#67b0bb',16);
+ for(const [i,path] of paths.entries()){line(path,'#68774d',i<2?23:17);line(path,'#a08a64',i<2?18:14);line(path,'#d3bb85',i<2?13:9);for(let j=1;j<path.length;j++){let [a,b]=[path[j-1],path[j]],d=Math.hypot(b[0]-a[0],b[1]-a[1]);for(let k=8;k<d;k+=18){let f=k/d;rect(a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,3,1,'#b19a70')}}}
+ // Hamlet clearings and land use.
+ ellipse(181,353,76,47,'#a4a775');ellipse(710,332,76,48,'#a4a775');
+ line([[125,352],[174,339],[248,327]],'#d1b57b',12);line([[670,328],[710,328],[768,344]],'#d1b57b',12);
+ field(106,318,25,24);field(229,376,30,21);field(763,309,26,21);field(651,381,34,17);fence(106,344,28);fence(229,398,30);fence(760,333,29);
+ for(const p of trees)(p.type<.32?oak:pine)(p.x,p.y,.64+p.type*.34);
+ for(const [x,y,k] of [[397,79,1.1],[435,60,1.22],[470,65,1.12],[507,80,1.03],[545,113,.9],[388,117,.75]])mountain(x,y,k);
+ // Two cave mouths share a subterranean passage, never a surface crossing.
+ rect(415,130,66,22,'#59636a');rect(416,135,64,13,'#303945');for(let bx=419;bx<480;bx+=11)rect(bx,145,7,3,'#928774');caveMouth(411,146);caveMouth(485,146);
+ for(const [x,y,r,k] of [[142,304,'#ad6555',.84],[210,305,'#b88455',.95],[135,367,'#8b637b',.8],[215,378,'#9b654c',.8],[670,293,'#a76b50',.86],[754,300,'#b66e4b',.89],[680,366,'#7f7757',.82],[755,359,'#a46c57',.83],[623,436,'#86624e',1.05]])house(x,y,r,k);
+ well(177,366);well(706,358);castle();
+ for(const [x,y] of [[252,330],[631,311],[627,410]]){rect(x,y,3,18,'#694c3c');rect(x-3,y-2,9,9,'#80573f');rect(x-1,y,5,5,'#f9d184');rect(x-4,y-3,11,2,'#483c36')}
+ for(const [x,y] of [[389,239],[509,264],[378,131],[506,156],[615,432],[644,449]])stone(x,y,12,6)
 }
-if(!worldState.caveInside){character(actor.x,actor.y,'#4269a5',actor.motion?s*9:0);label(actor.x,actor.y-18,'レオン');}else label(411,171,'レオン・洞窟内');
-if(worldState.attack==='battle'||worldState.attack==='fallen'||worldState.attack==='repelled')label(745,390,worldState.attack==='battle'?'襲撃中':worldState.attack==='fallen'?'村陥落':'防衛成功');
-if(worldState.bridge)label(449,210,'橋・修復済み');else label(449,210,'壊れた橋');
-label(177,285,'カサリア村');label(703,271,'ナリス村');label(412,94,'洞窟・西口');label(493,95,'洞窟・東口');label(625,403,'古い家');if(worldState.hunt)label(706,56,'隊長の砦');
+let landscape=null;
+function paintLandscape(){if(!landscape){landscape=document.createElement('canvas');landscape.width=W;landscape.height=H;const old=ctx;ctx=landscape.getContext('2d');ctx.imageSmoothingEnabled=false;try{land()}finally{ctx=old}}ctx.drawImage(landscape,0,0)}
+function water(s){for(let y=24;y<475;y+=28){const offset=Math.sin(y*.1+s)*7;rect(442+offset,y,10,1,'#b2e2d477');rect(449-offset,y+8,5,1,'#a1c9c477')}for(let i=0;i<58;i++){let x=(i*137+Math.floor(s*8))%W,y=(i*71)%H;if(!sandPoint(x,y)){rect(x,y,8+(i%4)*3,1,'#80b8ba44');rect(x+4,y+3,5,1,'#a3d0cf33')}}}
+function bridge(s){if(worldState.bridge){rect(415,240,67,35,'#503e35');for(let x=417;x<=476;x+=6){rect(x,241,5,33,'#a97750');rect(x,241,1,33,'#d5ad79');rect(x+4,242,1,31,'#6a4839')}for(let x=414;x<=482;x+=16){rect(x,232,3,10,'#523d32');rect(x,272,3,10,'#523d32');rect(x,231,3,2,'#e5bd82')}rect(415,235,67,3,'#deb27e');rect(415,276,67,3,'#deb27e')}else{rect(414,240,19,33,'#795339');rect(467,240,16,33,'#795339');for(let x of [417,423,470,476]){rect(x,241,4,31,'#c39a67');rect(x,239,2,5,'#4f3b33')}line([[420,239],[433,245],[436,252]],'#e0b97e',3);line([[465,266],[471,273],[481,275]],'#d2a16c',3);if(worldState.bridgePlanned&&t>=22&&t<36){const k=Math.floor((t-22)/14*7);for(let x=433;x<433+k*5;x+=5)rect(x,240,4,33,'#b78b60')}}}
+function background(s){paintLandscape();water(s);bridge(s);
+ if(!worldState.hunt){ctx.fillStyle='#1c2e3bd9';ctx.fillRect(659,40,92,94);label(706,95,'？？？')}
+ const active=['running','done','prologue'].includes(state);
+ const actors=active?Object.values(npcs).filter(a=>!(a.id==='loyd'&&!assigned(casting,'loyd')&&!worldState.hunterSeen)&&!((a.id==='zenos'||a.id==='filia')&&!known.has(a.id)&&!assigned(casting,a.id))&&!(a.id.startsWith('enemy')&&(worldState.attack==='waiting'||worldState.attack==='repelled'&&!a.motion))&&!(a.id===casting.caveRole&&worldState.caveInside)):[{id:'dario',x:162,y:354},{id:'mina',x:218,y:352},{id:'baldo',x:247,y:347},{id:'serina',x:686,y:340}];
+ if(worldState.atFort&&!worldState.boss)actors.push({id:'captain',x:704,y:99});
+ if(!worldState.caveInside)actors.push({...actor,id:'leon'});
+ actors.sort((a,b)=>a.y-b.y);
+ for(const a of actors)character(a.x,a.y,a.id,a.motion&&state==='running'&&!pause? t*1.6:0,a.facing||'down',1.06);
+ const detailed=view!=='all';
+ for(const a of actors){const p=people[a.id],isHero=a.id==='leon';if(isHero||detailed&&(p||a.id==='elder'||a.id==='captain')){const role=active?(a.id===casting.father?'・父':a.id===casting.mother?'・母':a.id===casting.guard?'・守り手':a.id===casting.caveRole?'・調査':''):'';label(a.x,a.y-22,(isHero?'レオン':p?p.name:a.id==='elder'?'エルド':'隊長')+role+(detailed&&a.action?' / '+a.action:''))}}
+ if(worldState.caveInside)label(411,173,'洞窟内');
+ if(worldState.hunt&&detailed){line([[645,215],[667,170],[705,122]],'#e9c778',2);label(668,164,'砦への道')}
+ if(worldState.attack==='battle'||worldState.attack==='fallen'||worldState.attack==='repelled'){const col=worldState.attack==='fallen'?'#703e42':worldState.attack==='repelled'?'#345c46': '#754e35';label(745,403,worldState.attack==='battle'?'襲撃中':worldState.attack==='fallen'?'村陥落':'防衛成功',col);if(worldState.attack==='fallen'){for(let i=0;i<3;i++){let x=683+i*29,y=311+(i%2)*24;for(let j=0;j<3;j++)ellipse(x+Math.sin(s+j)*4,y-j*7,6+j*2,4+j,'#34353c99')}}}
+ label(449,214,worldState.bridge?'橋・修復済み':'壊れた橋');label(177,279,'カサリア村');label(703,270,'ナリス村');label(412,91,'洞窟・西口');label(493,91,'洞窟・東口');label(625,403,'古い家');if(worldState.hunt)label(706,45,'隊長の砦');
 }
 // A separate theatre view makes cave encounters observable.
 function caveCutaway(){
  const phase=worldState.cavePhase,elapsed=t;
  ctx.save();ctx.setTransform(1,0,0,1,0,0);
- rect(0,0,VW,VH,'#1a202d');
- for(let i=0;i<16;i++){let x=i*32;poly([[x,0],[x+16,12+(i%4)*8],[x+32,0]],'#414851')}
- for(let i=0;i<20;i++){let x=i*25;poly([[x,VH],[x+12,VH-17-(i%3)*5],[x+25,VH]],'#51515b')}
- rect(0,210,VW,44,'#5e5146');rect(0,251,VW,19,'#383b45');
- line([[22,207],[123,201],[212,210],[320,200],[449,207]],'#aa8a65',5);
+ rect(0,0,VW,VH,'#151e2c');
+ // Layered mine walls, stone strata and a softly lit path create a distinct interior scene.
+ for(let yy=20;yy<176;yy+=18){for(let xx=-12;xx<VW;xx+=31){let x=xx+((yy/18|0)%2)*13,n=(xx*7+yy*13)&15;
+ rect(x,yy,28,14,['#25303d','#2c3742','#303945','#242f3d'][n%4]);rect(x+2,yy+2,24,2,'#424b51');rect(x+2,yy+12,24,2,'#1e2832');}}
+ poly([[0,176],[52,166],[135,185],[214,163],[302,182],[402,165],[480,181],[480,270],[0,270]],'#424340');
+ poly([[0,198],[72,190],[146,201],[239,188],[313,195],[420,190],[480,199],[480,270],[0,270]],'#675849');
+ for(let i=0;i<44;i++){let x=(i*73)%480,y=203+(i*29)%44;rect(x,y,4+(i%4)*2,2,i%3?'#8d7860':'#4e4842')}
+ for(const [x,y,n] of [[18,91,1.1],[60,70,.8],[145,100,1],[251,86,1.15],[355,91,.9],[450,66,1.25]]){poly([[x-24*n,0],[x+23*n,0],[x+12*n,y*.42],[x+4*n,y], [x-5*n,y*.6]],'#4b5356');poly([[x-24*n,0],[x,0],[x-4*n,y*.6]],'#636665');}
+ for(const [x,y,k] of [[24,214,1],[74,208,.6],[228,215,.65],[370,213,.8],[465,210,1]]){poly([[x-16*k,y],[x-4*k,y-39*k],[x+3*k,y-24*k],[x+15*k,y]],'#4d5358');poly([[x-16*k,y],[x-4*k,y-39*k],[x-5*k,y]],'#757975');}
+ ellipse(244,210,74,10,'#233d46');ellipse(244,209,67,7,'#39666e');rect(212,207,18,1,'#7a9e9d');rect(257,211,32,1,'#98b5b0');
+ for(const x of [44,271,449]){ellipse(x,111,23,33,'#b1974c16');ellipse(x,111,13,21,'#d7a35322');rect(x-2,109,4,22,'#6f5137');rect(x-5,105,10,6,'#b77c48');rect(x-3,100,6,8,'#e8b36b');rect(x-1,96+(Math.floor(elapsed*2)%3),3,8,'#ffe2a0')}
+ for(let i=0;i<19;i++){let x=(i*83+20)%480,y=70+(i*37)%95;rect(x,y,2,2,i%2?'#9cb29b33':'#dbb97d33')}
  rect(10,10,243,33,'#102333');ctx.font='bold 14px sans-serif';ctx.fillStyle='#ffe2aa';ctx.fillText('フーデル洞窟｜内部',18,31);
  ctx.font='12px sans-serif';ctx.fillStyle='#f3ebd6';ctx.fillText('場面：'+phase,18,59);
- function bigActor(x,y,color,name,fallen=false){
+ function bigActor(x,y,id,name,fallen=false){
   ctx.save();ctx.translate(x,y);if(fallen)ctx.rotate(-Math.PI/2);
-  ctx.scale(2.3,2.3);character(0,0,color,elapsed/3);ctx.restore();
-  label(x,fallen?y-34:y-43,name);
+  ctx.scale(2.3,2.3);character(0,0,id,phase==='探索'?elapsed/2:0,id==='enemy1'?'left':'right');ctx.restore();
+  label(x,fallen?y-34:y-56,name);
  }
- bigActor(93,178,'#416a9f','レオン');
- if(casting.caveRole!=='none')bigActor(194,178,'#659777',people[casting.caveRole].name+'・調査');
+ bigActor(93,178,'leon','レオン');
+ if(casting.caveRole!=='none')bigActor(194,178,casting.caveRole,people[casting.caveRole].name+'・調査');
  if(elapsed>=52&&elapsed<76){
-  bigActor(314,179,'#894b53','魔物');
-  if(atOriginalPost(casting,'garan')&&elapsed>=57)bigActor(420,187,'#9c7451',worldState.rescued?'ガラン':'倒れた男',!worldState.rescued);
+  bigActor(314,179,'enemy1','魔物');
+  if(atOriginalPost(casting,'garan')&&elapsed>=57)bigActor(420,187,'garan',worldState.rescued?'ガラン':'倒れた男',!worldState.rescued);
  }
  ctx.font='12px sans-serif';ctx.fillStyle='#f7dfae';
- ctx.fillText(elapsed<52?'奥から不気味な足音が聞こえる…':elapsed<57?(atOriginalPost(casting,'garan')?'倒れている人物の近くに魔物がいる！':'洞窟の奥に魔物がいる！'):elapsed<76?(worldState.rescued?'魔物を退けて救助した！':'魔物が立ちはだかり、助けられない…'):'洞窟を抜けた',16,250);
+ ctx.fillText(elapsed<52?'奥から不気味な足音が聞こえる…':elapsed<57?(atOriginalPost(casting,'garan')?'倒れている人物の近くに魔物がいる！':'洞窟の奥に魔物がいる！'):elapsed<76?(!atOriginalPost(casting,'garan')?'魔物を避け、先へ進む…':worldState.rescued?'魔物を退けて救助した！':'魔物が立ちはだかり、助けられない…'):'洞窟を抜けた',16,250);
  ctx.restore();
 }
 function draw(now){let target=view==='hero'?{x:actor.x,y:actor.y}:nodes[view]||nodes.all;let scale=view==='all'?0.545:1.12;let x=target.x-VW/(2*scale),y=target.y-VH/(2*scale);x=Math.max(0,Math.min(W-VW/scale,x));y=Math.max(0,Math.min(H-VH/scale,y));if(view==='all'){x=(W-VW/scale)/2;y=(H-VH/scale)/2}camera={x,y,scale};ctx.save();ctx.setTransform(scale,0,0,scale,-x*scale,-y*scale);background((t||0)/12);ctx.restore();if(worldState.caveInside&&(view==='cave'||view==='hero'))caveCutaway()}
