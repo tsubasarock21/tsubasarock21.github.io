@@ -185,7 +185,7 @@ if(!worldState.hunt){ctx.fillStyle='#182b3ad8';ctx.fillRect(666,55,83,80);label(
 // Named actors occupy only their assigned roles.
 function castSprite(id,x,y,color,caption){character(x,y,color,s*5);label(x,y-17,caption||people[id].name)}
 if(state==='running'||state==='done'){
-castSprite(casting.father,162,354,'#a17b51',people[casting.father].name+'・父');
+if(!(casting.father==='garan'&&t>=5&&t<36))castSprite(casting.father,162,354,'#a17b51',people[casting.father].name+'・父');
 castSprite(casting.mother,218,352,'#ab7383',people[casting.mother].name+'・母');
 if(atOriginalPost(casting,'baldo'))castSprite('baldo',247,347,'#5b729e','バルド');
 if(atOriginalPost(casting,'serina'))castSprite('serina',686,340,'#ba5f66','セリナ');
@@ -194,7 +194,7 @@ if(casting.guard!=='none')castSprite(casting.guard,734,310,'#5b729e',people[cast
 if(casting.caveRole!=='none')castSprite(casting.caveRole,358,170,'#668d75',people[casting.caveRole].name+'・調査');
 if(worldState.bridgePlanned&&t>=5&&t<36)castSprite('garan',406,250,'#a17b51','ガラン・修理');
 if(worldState.hunterSeen&&atOriginalPost(casting,'loyd'))castSprite('loyd',578,210,'#4c7753','ロイド');
-if(worldState.hunt){line([[645,215],[667,170],[705,122]],'#e9c778',2);castSprite('loyd',690,150,'#4c7753','ロイド・狩人');}
+if(worldState.hunt){line([[645,215],[667,170],[705,122]],'#e9c778',2);label(668,164,'ロイドの地図');}
 }else{
 castSprite('dario',162,354,'#a17b51','ダリオ');
 castSprite('mina',218,352,'#ab7383','ミーナ');
