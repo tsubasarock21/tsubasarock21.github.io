@@ -182,24 +182,57 @@ rect(671,70,70,55,'#51505a');rect(676,57,17,30,'#787582');rect(719,57,17,30,'#78
 for(let [x,y] of [[252,330],[631,311],[627,410]]){rect(x,y,3,18,'#624837');rect(x-3,y-2,9,9,'#c48d42');rect(x-1,y,5,5,'#f0db8d')}
 // Fog at unknown fortress
 if(!worldState.hunt){ctx.fillStyle='#182b3ad8';ctx.fillRect(666,55,83,80);label(710,91,'？？？')}
-// Characters
-character(173,347,'#416ea0',s*6);character(211,327,'#a16f48',s*2);
-if(sceneCharacterAvailable('serina'))character(699,338,'#b95f66',s*2);
-character(670,349,'#629a75',s*3);
-// In the home scene, assigned parent actors appear as family, never at their original post.
+// Named actors occupy only their assigned roles.
+function castSprite(id,x,y,color,caption){character(x,y,color,s*5);label(x,y-17,caption||people[id].name)}
 if(state==='running'||state==='done'){
-if(casting.mother==='serina')character(151,345,'#b95f66',s*2);
-if(casting.father==='garan'&&t<36)character(411,250,'#9c6740',s*5);
+castSprite(casting.father,162,354,'#a17b51',people[casting.father].name+'・父');
+castSprite(casting.mother,218,352,'#ab7383',people[casting.mother].name+'・母');
+if(atOriginalPost(casting,'baldo'))castSprite('baldo',247,347,'#5b729e','バルド');
+if(atOriginalPost(casting,'serina'))castSprite('serina',686,340,'#ba5f66','セリナ');
+if(atOriginalPost(casting,'lisette'))castSprite('lisette',741,351,'#9a73b7','リゼット');
+if(casting.guard!=='none')castSprite(casting.guard,734,310,'#5b729e',people[casting.guard].name+'・守り手');
+if(casting.caveRole!=='none')castSprite(casting.caveRole,358,170,'#668d75',people[casting.caveRole].name+'・調査');
+if(worldState.bridgePlanned&&t>=5&&t<36)castSprite('garan',406,250,'#a17b51','ガラン・修理');
+if(worldState.hunterSeen&&atOriginalPost(casting,'loyd'))castSprite('loyd',578,210,'#4c7753','ロイド');
+if(worldState.hunt){line([[645,215],[667,170],[705,122]],'#e9c778',2);castSprite('loyd',690,150,'#4c7753','ロイド・狩人');}
+}else{
+castSprite('dario',162,354,'#a17b51','ダリオ');
+castSprite('mina',218,352,'#ab7383','ミーナ');
+castSprite('baldo',247,347,'#5b729e','バルド');
+castSprite('serina',686,340,'#ba5f66','セリナ');
 }
-if(worldState.visitedB||worldState.hunt)character(actor.x,actor.y,'#4269a5',s*9);else character(actor.x,actor.y,'#4269a5',s*9);
-if(worldState.guard)character(733,317,'#596e8a',s*7);
-if(worldState.hunterSeen&&sceneCharacterAvailable('loyd')){character(578,210,'#4d7851',s*4);label(580,182,'狩人ロイド')}
-if(worldState.hunt){line([[645,215],[667,170],[705,122]],'#e9c778',2);character(690,150,'#4d7851',s*4)}
+character(actor.x,actor.y,'#4269a5',s*9);label(actor.x,actor.y-18,'レオン');
 if(s>130&&!worldState.defended&&!worldState.hunt){character(771,342,'#70384a',s*4);character(787,348,'#873a47',s*6)}
 if(worldState.bridge)label(449,210,'橋・修復済み');else label(449,210,'壊れた橋');
 label(177,285,'カサリア村');label(703,271,'ナリス村');label(412,94,'洞窟・西口');label(493,95,'洞窟・東口');label(625,403,'古い家');if(worldState.hunt)label(706,56,'隊長の砦');
 }
-function draw(now){let target=view==='hero'?{x:actor.x,y:actor.y}:nodes[view]||nodes.all;let scale=view==='all'?0.545:1.12;let x=target.x-VW/(2*scale),y=target.y-VH/(2*scale);x=Math.max(0,Math.min(W-VW/scale,x));y=Math.max(0,Math.min(H-VH/scale,y));if(view==='all'){x=(W-VW/scale)/2;y=(H-VH/scale)/2}camera={x,y,scale};ctx.save();ctx.setTransform(scale,0,0,scale,-x*scale,-y*scale);background((t||0)/12);ctx.restore()}
+// A separate theatre view makes cave encounters observable.
+function caveCutaway(){
+ const phase=worldState.cavePhase,elapsed=t;
+ ctx.save();ctx.setTransform(1,0,0,1,0,0);
+ rect(0,0,VW,VH,'#1a202d');
+ for(let i=0;i<16;i++){let x=i*32;poly([[x,0],[x+16,12+(i%4)*8],[x+32,0]],'#414851')}
+ for(let i=0;i<20;i++){let x=i*25;poly([[x,VH],[x+12,VH-17-(i%3)*5],[x+25,VH]],'#51515b')}
+ rect(0,210,VW,44,'#5e5146');rect(0,251,VW,19,'#383b45');
+ line([[22,207],[123,201],[212,210],[320,200],[449,207]],'#aa8a65',5);
+ rect(10,10,243,33,'#102333');ctx.font='bold 14px sans-serif';ctx.fillStyle='#ffe2aa';ctx.fillText('フーデル洞窟｜内部',18,31);
+ ctx.font='12px sans-serif';ctx.fillStyle='#f3ebd6';ctx.fillText('場面：'+phase,18,59);
+ function bigActor(x,y,color,name,fallen=false){
+  ctx.save();ctx.translate(x,y);if(fallen)ctx.rotate(-Math.PI/2);
+  ctx.scale(2.3,2.3);character(0,0,color,elapsed/3);ctx.restore();
+  label(x,fallen?y-34:y-43,name);
+ }
+ bigActor(93,178,'#416a9f','レオン');
+ if(casting.caveRole!=='none')bigActor(194,178,'#659777',people[casting.caveRole].name+'・調査');
+ if(elapsed>=52&&elapsed<76){
+  bigActor(314,179,'#894b53','魔物');
+  if(atOriginalPost(casting,'garan')&&elapsed>=57)bigActor(420,187,'#9c7451',worldState.rescued?'ガラン':'倒れた男',!worldState.rescued);
+ }
+ ctx.font='12px sans-serif';ctx.fillStyle='#f7dfae';
+ ctx.fillText(elapsed<52?'奥から不気味な足音が聞こえる…':elapsed<57?'倒れている人物の近くに魔物がいる！':elapsed<76?(worldState.rescued?'魔物を退けて救助した！':'魔物が立ちはだかり、助けられない…'):'洞窟を抜けた',16,250);
+ ctx.restore();
+}
+function draw(now){let target=view==='hero'?{x:actor.x,y:actor.y}:nodes[view]||nodes.all;let scale=view==='all'?0.545:1.12;let x=target.x-VW/(2*scale),y=target.y-VH/(2*scale);x=Math.max(0,Math.min(W-VW/scale,x));y=Math.max(0,Math.min(H-VH/scale,y));if(view==='all'){x=(W-VW/scale)/2;y=(H-VH/scale)/2}camera={x,y,scale};ctx.save();ctx.setTransform(scale,0,0,scale,-x*scale,-y*scale);background((t||0)/12);ctx.restore();if(worldState.caveInside&&(view==='cave'||view==='hero'))caveCutaway()}
 let actualView='all';const viewBtns=$('views');viewBtns.addEventListener('click',()=>{});canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(!drag)return;let dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>3){drag.moved=true;let bx=camera.x-dx/canvas.clientWidth*VW/camera.scale,by=camera.y-dy/canvas.clientHeight*VH/camera.scale;view='free';// drag promotes free inspection, using an independent focus node
 nodes.all.x=Math.max(100,Math.min(W-100,bx+VW/(2*camera.scale)));nodes.all.y=Math.max(60,Math.min(H-60,by+VH/(2*camera.scale)));for(let b of viewBtns.querySelectorAll('button'))b.classList.remove('active');drag.x=e.clientX;drag.y=e.clientY}});canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);
 function frame(now){if(!last)last=now;let dt=Math.max(0,Math.min(.08,(now-last)/1000));last=now;tick(dt);draw(now);requestAnimationFrame(frame)}
