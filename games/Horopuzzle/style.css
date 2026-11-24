@@ -376,5 +376,5 @@ select,.player-name-label input,#gallery-select,.horo-ranking-dialog select{bord
 .sign-button .rare-art{background:#101b30}.sign-button .rare-star{display:none}.sign-button .rare-illustration{object-fit:contain}
 .celebration-actor.adult-actor{width:43%;max-width:170px;aspect-ratio:2/3;margin:14px 8px 0}.adult-actor .character-art{width:100%;height:100%;aspect-ratio:2/3;border:1px solid #b9a274;border-radius:9px}.adult-actor .rare-star{display:none}
 
-/* Reading-first results: three comfortable paragraphs, without the congratulation block. */
-#app[data-phase="complete"] .compact-message .message{font-size:15px;line-height:1.95;margin:12px 0 0;overflow-wrap:anywhere}#app[data-phase="complete"] .message>p{margin:0 0 16px}#app[data-phase="complete"] .message>p:last-child{margin-bottom:0}#app[data-phase="complete"] .compact-message .theme{font-size:12px;padding:5px 10px}
+/* Reading-first results: two concise paragraphs, without the congratulation block. */
+#app[data-phase="complete"] .compact-message .message{font-size:14px;line-height:1.8;margin:12px 0 0;overflow-wrap:anywhere}#app[data-phase="complete"] .message>p{margin:0 0 10px}#app[data-phase="complete"] .message>p:last-child{margin-bottom:0}#app[data-phase="complete"] .compact-message .theme{font-size:12px;padding:5px 10px}

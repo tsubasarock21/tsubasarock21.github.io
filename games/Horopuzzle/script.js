@@ -1,5 +1,5 @@
-/* Horopuzzle v0.8.6 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.6"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
+/* Horopuzzle v0.8.7 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.7"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Horopuzzle",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -283,7 +283,7 @@ H.AddAcceleration(b.a,b.r,this.curr.gravitators[m.Uranus].r,1.292024916781969E-8
 return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prototype,{OriginBody:{configurable:!0,enumerable:!0,get:function(){return this.originBody}},Time:{configurable:!0,enumerable:!0,get:function(){return this.curr.time}}});e.GravitySimulator=H;var kd=function(a,b,c){this.time=a;this.gravitators=b;this.bodies=c}},{}]},{},[1])(1)});
 
 ;
-/* 星占いパズル / HOROPUZZLE v0.8.6 — application source */
+/* 星占いパズル / HOROPUZZLE v0.8.7 — application source */
 (() => {
  'use strict';
  const SIGNS=[['牡羊座','♈'],['牡牛座','♉'],['双子座','♊'],['蟹座','♋'],['獅子座','♌'],['乙女座','♍'],['天秤座','♎'],['蠍座','♏'],['射手座','♐'],['山羊座','♑'],['水瓶座','♒'],['魚座','♓']];
@@ -306,7 +306,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
  Jupiter:[['少し視野を広げて、別のやり方も見てみよう。','今日は先を見渡す日に。今後楽しみな予定を一つ考えよう。'],['興味のある分野を、一つのぞいてみよう。','挑戦したいことの入門情報を探すところから始めよう。'],['相手の新しい一面に、興味を向けてみよう。','価値観の違いも発見として。相手の考えを聞いてみよう。'],['将来楽しみたいことのために、予算を考えてみよう。','大きな期待より小さな計画。無理のない予算を組もう。']],
  Saturn:[['続けていることを、今日も一つ丁寧に。','休む時間も予定のうち。無理なく続く形を整えよう。'],['小さな目標を決めて、最初の一回をやってみよう。','長く続けるために、簡単にできる始め方を考えよう。'],['小さな約束を大切に。安心できるやりとりを重ねよう。','無理な約束をせず、できることを誠実に伝えよう。'],['固定費や定期購入を一つ見直してみよう。','支出を一つ記録。未来の自分が助かる習慣を育てよう。']]
  };
- const KEY='starMemory.v1', VERSION='0.8.6', DEFAULT_NAME='星の旅人';
+ const KEY='starMemory.v1', VERSION='0.8.7', DEFAULT_NAME='星の旅人';
  const $=s=>document.querySelector(s);
  const app=$('#app');
  let profile=loadProfile(),runId='',day,roundRows=[],setCount=loadSetCount(),phase='home',epoch=0,round=0,memorize=15,countDeadline=0,startTime=0,endTime=0,revealUntil=0,reveals=0,mistakes=0,matched=new Set(),cards=[],chosenSign=null,chosenPlanet=null;
@@ -574,7 +574,7 @@ const GameShare=(()=>{
  function getComment(row,key){
   const dayIndex=Math.floor(Date.parse(key+'T00:00:00Z')/86400000),theme=(dayIndex+seed('theme'+row.sign)%4)%4,lead=MESSAGES[row.planet][theme][row.rank>=9?1:0],data=globalThis.HoroCommentData;
   const pick=(items,kind)=>items[seed(key+':'+row.sign+':'+row.planet+':'+kind)%items.length];
-  const paragraphs=data?[lead+' '+data.readings[row.planet][theme],pick(data.actions[theme],'action'),pick(row.rank>=9?data.closings.gentle:data.closings.forward,'closing')]:[lead];
+  const paragraphs=data?[lead+' '+data.readings[row.planet][theme],pick(data.actions[theme],'action')]:[lead];
   return {theme:THEMES[theme],paragraphs,text:paragraphs.join('\n\n')};
  }
 
@@ -596,7 +596,7 @@ const GameShare=(()=>{
   app.append(overlay);const close=()=>{overlay.remove();$('#result-more')?.focus()};$('#close-details').onclick=close;
   overlay.addEventListener('keydown',event=>{if(event.key==='Escape')close();if(event.key==='Tab'){const targets=[...overlay.querySelectorAll('button,summary,a')].filter(e=>!e.closest('details:not([open])')||e.tagName==='SUMMARY');const first=targets[0],last=targets.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}});$('#close-details').focus();
  }
- function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.6" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
+ function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.7" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
  function result(){
   app.dataset.phase='complete';delete app.dataset.playfield;updateViewport();
   const total=elapsed(),row=day.rows.find(r=>r.sign===profile.sign),p=fortune(row),comment=getComment(row,day.key),color=resultColor(row),item=itemFor(row,day.key),recordKey=recordKeyFor(day.key,memorize,roundRows,profile.sign);
