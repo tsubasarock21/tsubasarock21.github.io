@@ -1,5 +1,5 @@
-/* Horopuzzle v0.8.5 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.5"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
+/* Horopuzzle v0.8.6 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.6"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Horopuzzle",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -283,7 +283,7 @@ H.AddAcceleration(b.a,b.r,this.curr.gravitators[m.Uranus].r,1.292024916781969E-8
 return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prototype,{OriginBody:{configurable:!0,enumerable:!0,get:function(){return this.originBody}},Time:{configurable:!0,enumerable:!0,get:function(){return this.curr.time}}});e.GravitySimulator=H;var kd=function(a,b,c){this.time=a;this.gravitators=b;this.bodies=c}},{}]},{},[1])(1)});
 
 ;
-/* 星占いパズル / HOROPUZZLE v0.8.5 — application source */
+/* 星占いパズル / HOROPUZZLE v0.8.6 — application source */
 (() => {
  'use strict';
  const SIGNS=[['牡羊座','♈'],['牡牛座','♉'],['双子座','♊'],['蟹座','♋'],['獅子座','♌'],['乙女座','♍'],['天秤座','♎'],['蠍座','♏'],['射手座','♐'],['山羊座','♑'],['水瓶座','♒'],['魚座','♓']];
@@ -306,13 +306,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
  Jupiter:[['少し視野を広げて、別のやり方も見てみよう。','今日は先を見渡す日に。今後楽しみな予定を一つ考えよう。'],['興味のある分野を、一つのぞいてみよう。','挑戦したいことの入門情報を探すところから始めよう。'],['相手の新しい一面に、興味を向けてみよう。','価値観の違いも発見として。相手の考えを聞いてみよう。'],['将来楽しみたいことのために、予算を考えてみよう。','大きな期待より小さな計画。無理のない予算を組もう。']],
  Saturn:[['続けていることを、今日も一つ丁寧に。','休む時間も予定のうち。無理なく続く形を整えよう。'],['小さな目標を決めて、最初の一回をやってみよう。','長く続けるために、簡単にできる始め方を考えよう。'],['小さな約束を大切に。安心できるやりとりを重ねよう。','無理な約束をせず、できることを誠実に伝えよう。'],['固定費や定期購入を一つ見直してみよう。','支出を一つ記録。未来の自分が助かる習慣を育てよう。']]
  };
- const KEY='starMemory.v1', VERSION='0.8.5', DEFAULT_NAME='星の旅人';
+ const KEY='starMemory.v1', VERSION='0.8.6', DEFAULT_NAME='星の旅人';
  const $=s=>document.querySelector(s);
  const app=$('#app');
  let profile=loadProfile(),runId='',day,roundRows=[],setCount=loadSetCount(),phase='home',epoch=0,round=0,memorize=15,countDeadline=0,startTime=0,endTime=0,revealUntil=0,reveals=0,mistakes=0,matched=new Set(),cards=[],chosenSign=null,chosenPlanet=null;
  let appearance=loadAppearance(),roundAppearance='normal',roundPlanetOwners={};
  function loadAppearance(){try{return JSON.parse(localStorage.getItem(KEY+'.appearance'))==='adult'?'adult':'normal';}catch{return 'normal';}}
- let orientationBlocked=false,orientationPauseStart=0,orientationPausedMs=0,celebrateUntil=0;
+ let orientationBlocked=false,orientationPauseStart=0,orientationPausedMs=0;
  function clock(){return performance.now()-orientationPausedMs-(orientationBlocked?performance.now()-orientationPauseStart:0)}
  function isLandscape(){return window.innerWidth>window.innerHeight}
  function updateViewport(){
@@ -492,7 +492,7 @@ const GameShare=(()=>{
  function footer(){return `<footer>星占いパズル · v${VERSION} / TSUBASA-ROCK</footer>`}
  function cardHtml(type,id,owner){const p=type==='planet'?fortune(day.rows.find(r=>r.sign===owner)):null,name=p?p.name:SIGNS[id][0];return characterMarkup(type,p?p.id:id,roundAppearance,owner)+`<span class="name">${name}</span>`;}
  function reference(rows=day.rows){return `<div class="rank-grid">${rows.map(r=>{const p=fortune(r);return `<div class="rank-slot correct" style="--planet:${p.color}"><span class="rank-number">${r.rank}<small>位</small></span><div class="mini-pair"><div class="card character-card zodiac colored" style="--planet:${p.color}">${cardHtml('sign',r.sign)}</div><div class="card character-card planet" style="--planet:${p.color}">${cardHtml('planet',r.planet,r.sign)}</div></div></div>`}).join('')}</div>`;}
- function rules(){return `<details><summary>占いの仕組み・データについて</summary><p>日本時間の毎日0時の太陽・月・水星・金星・火星・木星・土星の地心黄経を、Astronomy Engineで計算します。太陽と月も含め、ゲーム内では7種類の天体を「惑星カード」と呼びます。</p><p>西洋占星術のアスペクトを参考にした独自ルールです。各星座の5°・15°・25°を代表点とし、合・60°・120°を中心に加点、90°・180°を中心に減点。火星・土星の合は控えめな減点とし、月の重みを大きくしています。合計点で順位、調和側の寄与が最大の1天体でゲームの組み合わせを決めます。ゲーム中の色は天体ごとの固定色です。</p><p>結果画面のラッキーカラーだけ、最も強い調和側の寄与の75%以上がある天体を最大3つ候補にします。天体の基本色と、候補同士を寄与の比率で混ぜた色から、寄与が強い色ほど選ばれやすい日替わり抽選を行います。ほかにも候補がある場合は、前日と同じ色の抽選の重みを18%に下げます。同じ日・同じ星座では結果は固定され、天体が一つだけ強い日は同じ色が続く場合もあります。結果用の基本色は太陽＝ゴールド、月＝シルバー、水星＝ミント、金星＝ローズ、火星＝レッド、木星＝バイオレット、土星＝ブルーとし、20色の候補で最も近い色を表示します。統一された占星術の色規則ではありません。色とアイテムは同じ日・同じ星座では固定される抽選で、色を取り入れるヒントです。順位・色・一言は娯楽として楽しむ独自の占いで、幸運を科学的に予測するものではありません。</p><p>選んだ星座・設定・記録はこのブラウザ内に保存します。誕生日の入力は不要です。ランキングはこの端末内の記録です。名前は記録するときだけ入力でき、未入力なら「星の旅人」になります。サイトのアクセス解析にはCloudflare Web Analyticsを利用しています。</p><p>お姉さん版は12星座と7つの天体、計19種類。開始画面の「通常／お姉さん」で絵柄を選べます。選んだ絵柄は暗記・回答・再オープン・結果まで統一され、確率での切り替えはありません。順位や正解、タイムへの補正はありません。図鑑では両方の絵柄を見比べられます。</p><p>天体計算：Astronomy Engine 2.1.19 / Don Cross / MIT License。本文のソースにライセンス全文を同梱しています。</p></details>`}
+ function rules(){return `<details><summary>占いの仕組み・データについて</summary><p>日本時間の毎日0時の太陽・月・水星・金星・火星・木星・土星の地心黄経を、Astronomy Engineで計算します。太陽と月も含め、ゲーム内では7種類の天体を「惑星カード」と呼びます。</p><p>西洋占星術のアスペクトを参考にした独自ルールです。各星座の5°・15°・25°を代表点とし、合・60°・120°を中心に加点、90°・180°を中心に減点。火星・土星の合は控えめな減点とし、月の重みを大きくしています。合計点で順位、調和側の寄与が最大の1天体でゲームの組み合わせを決めます。ゲーム中の色は天体ごとの固定色です。</p><p>結果画面のラッキーカラーだけ、最も強い調和側の寄与の75%以上がある天体を最大3つ候補にします。天体の基本色と、候補同士を寄与の比率で混ぜた色から、寄与が強い色ほど選ばれやすい日替わり抽選を行います。ほかにも候補がある場合は、前日と同じ色の抽選の重みを18%に下げます。同じ日・同じ星座では結果は固定され、天体が一つだけ強い日は同じ色が続く場合もあります。結果用の基本色は太陽＝ゴールド、月＝シルバー、水星＝ミント、金星＝ローズ、火星＝レッド、木星＝バイオレット、土星＝ブルーとし、20色の候補で最も近い色を表示します。統一された占星術の色規則ではありません。色とアイテムは同じ日・同じ星座では固定される抽選で、色を取り入れるヒントです。順位・色・一言は娯楽として楽しむ独自の占いで、幸運を科学的に予測するものではありません。</p><p>選んだ星座・設定・記録はこのブラウザ内に保存します。誕生日の入力は不要です。ランキングはこの端末内の記録です。名前は記録するときだけ入力でき、未入力なら「星の旅人」になります。サイトのアクセス解析にはCloudflare Web Analyticsを利用しています。</p><p>お姉さん版は12星座と7つの天体、計19種類。開始画面の「通常／お姉さん」で絵柄を選べます。選んだ絵柄は暗記・回答・再オープン・結果まで統一され、確率での切り替えはありません。順位や正解、タイムへの補正はありません。図鑑では両方の絵柄を見比べられます。</p><p>運勢コメントは天体・星座・順位・日付をもとに選ぶ、娯楽用の読み物です。同じ日の同じ星座では固定され、日ごとにテーマや行動の提案が変わります。パズルの速さや絵柄で内容は変わりません。</p><p>天体計算：Astronomy Engine 2.1.19 / Don Cross / MIT License。本文のソースにライセンス全文を同梱しています。</p></details>`}
  function tutorial(){
   const mars=planet('Mars'),moon=planet('Moon');
   const sample=(glyph,name,kind,color,selected=false)=>{const sign=SIGNS.findIndex(s=>s[0]===name),type=sign>=0?'sign':'planet',id=sign>=0?sign:PLANETS.find(p=>p.name===name).id;return `<span class="card character-card ${kind} ${selected?'selected':''}" style="--planet:${color}">${characterMarkup(type,id)}<span class="name">${name}</span></span>`;};
@@ -571,15 +571,14 @@ const GameShare=(()=>{
  function canPlace(rank){const s=cards.find(c=>c.key===chosenSign),p=cards.find(c=>c.key===chosenPlanet),row=roundRows.find(r=>r.rank===rank);return !!(s&&p&&row&&!s.taken&&!p.taken&&s.id===row.sign&&p.id===pairing(row)&&!matched.has(row.sign))}
  function place(rank){if(phase!=='play')return;if(!chosenSign||!chosenPlanet){setStatus('先に星座と惑星を1枚ずつ選んでください。');return}if(!canPlace(rank)){mistakes++;setStatus('もう一度。組み合わせか順位を確認しよう。');const slot=document.querySelector(`[data-rank="${rank}"]`);slot?.classList.remove('flash');requestAnimationFrame(()=>slot?.classList.add('flash'));return}const s=cards.find(c=>c.key===chosenSign),p=cards.find(c=>c.key===chosenPlanet);matched.add(s.id);globalThis.HoroAudio?.correct(matched.size===roundRows.length);roundPlanetOwners[s.id]=p.owner;s.taken=p.taken=true;chosenSign=chosenPlanet=null;renderRanks();renderPool();updateControls();$('#progress').textContent=matched.size+' / '+roundRows.length;setStatus('正解。色が戻りました。');if(matched.size===roundRows.length){endTime=clock();celebrate()}}
  function reopen(){if(phase!=='play')return;reveals++;phase='reveal';revealUntil=clock()+3000;const overlay=document.createElement('div');overlay.className='overlay';overlay.id='reference-overlay';overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','今日の組み合わせを再表示');overlay.innerHTML=`<div class="overlay-inner"><div class="hud-top"><h2 class="phase-title">もう一度、星を見よう。</h2><span class="timer count" id="reveal-count">3.0</span></div><p class="small">3秒後に戻ります · 時計は進行中 · ＋5秒</p>${reference()}</div>`;app.append(overlay);updateControls()}
- function getComment(row,key){const dayIndex=Math.floor(Date.parse(key+'T00:00:00Z')/86400000),theme=(dayIndex+seed('theme'+row.sign)%4)%4;return{theme:THEMES[theme],text:MESSAGES[row.planet][theme][row.rank>=9?1:0]}}
- function celebrate(){globalThis.LabMetrics?.end('clear');
-  phase='celebrate';app.dataset.phase='celebrate';epoch++;updateControls();
-  const reduced=globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  celebrateUntil=clock()+(reduced?900:1350);
-  const overlay=document.createElement('div');overlay.className='celebration';overlay.id='celebration';overlay.setAttribute('role','status');overlay.innerHTML=`<div class="celebration-message"><div class="celebration-word">Congratulations!</div><p>${roundRows.length}セット、完成！</p></div>`;
-  if(!reduced){const width=Math.min(window.innerWidth,600),colors=PLANETS.map(p=>p.color);for(let i=0;i<48;i++){const left=i%2===0,dx=(left?1:-1)*(45+Math.random()*width*.86),particle=document.createElement('i');particle.className='confetti '+(i%4===0?'round':'');particle.setAttribute('aria-hidden','true');particle.style.cssText=`--origin:${left?'0%':'100%'};--dx:${dx}px;--mid-x:${dx*.64}px;--rise:${-70-Math.random()*210}px;--fall:${60+Math.random()*160}px;--spin:${(left?1:-1)*(160+Math.random()*500)}deg;--delay:${Math.random()*120}ms;--confetti-color:${colors[i%colors.length]};--piece-size:${5+Math.random()*4}px`;overlay.append(particle)}}
-  app.append(overlay);window.scrollTo?.(0,0);
+ function getComment(row,key){
+  const dayIndex=Math.floor(Date.parse(key+'T00:00:00Z')/86400000),theme=(dayIndex+seed('theme'+row.sign)%4)%4,lead=MESSAGES[row.planet][theme][row.rank>=9?1:0],data=globalThis.HoroCommentData;
+  const pick=(items,kind)=>items[seed(key+':'+row.sign+':'+row.planet+':'+kind)%items.length];
+  const paragraphs=data?[lead+' '+data.readings[row.planet][theme],pick(data.actions[theme],'action'),pick(row.rank>=9?data.closings.gentle:data.closings.forward,'closing')]:[lead];
+  return {theme:THEMES[theme],paragraphs,text:paragraphs.join('\n\n')};
  }
+
+ function celebrate(){globalThis.LabMetrics?.end('clear');phase='complete';epoch++;result();}
  function colorText(hex){const rgb=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4);return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]>.179?'#101522':'#ffffff'}
  function productSearch(row,key,store='amazon'){
   const color=resultColor(row,key),item=itemFor(row,key),query=encodeURIComponent(color.name+' '+item.name);
@@ -597,15 +596,14 @@ const GameShare=(()=>{
   app.append(overlay);const close=()=>{overlay.remove();$('#result-more')?.focus()};$('#close-details').onclick=close;
   overlay.addEventListener('keydown',event=>{if(event.key==='Escape')close();if(event.key==='Tab'){const targets=[...overlay.querySelectorAll('button,summary,a')].filter(e=>!e.closest('details:not([open])')||e.tagName==='SUMMARY');const first=targets[0],last=targets.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}});$('#close-details').focus();
  }
- function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.5" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
+ function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.6" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
  function result(){
   app.dataset.phase='complete';delete app.dataset.playfield;updateViewport();
   const total=elapsed(),row=day.rows.find(r=>r.sign===profile.sign),p=fortune(row),comment=getComment(row,day.key),color=resultColor(row),item=itemFor(row,day.key),recordKey=recordKeyFor(day.key,memorize,roundRows,profile.sign);
   let best=null;try{best=JSON.parse(localStorage.getItem(recordKey))}catch{}if(best===null||total<best){best=total;try{localStorage.setItem(recordKey,JSON.stringify(best))}catch{}}
   app.innerHTML=header()+`<section class="result result-compact">
    <div class="result-summary"><div class="result-sign-row"><span class="result-sign" aria-hidden="true">${SIGNS[row.sign][1]}</span><h1 class="fortune-name">${SIGNS[row.sign][0]}</h1><span class="fortune-rank">今日の <b>${row.rank}</b>位</span></div><div class="result-time-row"><span class="result-time">${formatTime(total)}</span><span class="result-label">CLEAR TIME</span><button class="ghost" id="result-more">詳細</button></div></div>
-   ${celebrationMarkup(row,p)}
-   <section class="fortune compact-fortune" style="--planet:${p.color};--lucky:${color.hex};--lucky-ink:${colorText(color.hex)}"><div class="compact-message"><span class="theme">${comment.theme}</span><p class="message">${comment.text}</p></div><div class="lucky-color-line"><span class="lucky-swatch" style="--lucky:${color.hex}" role="img" aria-label="${color.name}の色見本"></span><div><span class="lucky-label">今日のラッキーカラー</span><h2>${color.name}</h2></div><span class="compact-planet">${p.glyph} ${p.name}</span></div><div class="compact-item-row"><div class="lucky-item" style="--lucky:${color.hex}">${itemSvg(item,color)}</div><div class="compact-shopping"><p class="item-label">今日の色でアイテムを探す<br><strong>${color.name} × ${item.name}</strong></p>${shoppingButtons(row,day.key)}</div></div></section>
+   <section class="fortune compact-fortune" style="--planet:${p.color};--lucky:${color.hex};--lucky-ink:${colorText(color.hex)}"><div class="compact-message"><span class="theme">${comment.theme}</span><div class="message">${comment.paragraphs.map(p=>`<p>${html(p)}</p>`).join('')}</div></div><div class="lucky-color-line"><span class="lucky-swatch" style="--lucky:${color.hex}" role="img" aria-label="${color.name}の色見本"></span><div><span class="lucky-label">今日のラッキーカラー</span><h2>${color.name}</h2></div><span class="compact-planet">${p.glyph} ${p.name}</span></div><div class="compact-item-row"><div class="lucky-item" style="--lucky:${color.hex}">${itemSvg(item,color)}</div><div class="compact-shopping"><p class="item-label">今日の色でアイテムを探す<br><strong>${color.name} × ${item.name}</strong></p>${shoppingButtons(row,day.key)}</div></div></section>
    <button type="button" class="primary" id="record-ranking">ランキングに記録</button><div class="result-actions"><button class="ghost" id="share" data-lab-share>シェア</button><button class="ghost" id="again">もう一度</button><button class="ghost" id="back-home">ホーム</button></div><p id="share-note" class="result-feedback" role="status"></p><p id="day-note" class="day-note">${dayKey()!==day.key?'この回は開始日の占いです。':''}</p>
   </section>${resultAdMarkup()}`;
 
@@ -614,7 +612,7 @@ const GameShare=(()=>{
   $('#share').textContent='シェア';$('#share').onclick=()=>{const text=GameShare.build(`星占い×パズル？ありそうでなかったゲーム"ホロパズル"クリアして今日の運勢を確認しよう！\n${day.key} ${SIGNS[row.sign][0]} ${row.rank}位\nラッキーカラー：${color.name}\n${roundRows.length}セット・${formatTime(total)}・ミス${mistakes}回・再表示${reveals}回`,['ホロパズル','星占い','パズルゲーム']);$('#share-note').textContent=GameShare.note();void GameShare.share(text,{status:$('#share-note')})};
   window.scrollTo?.(0,0);
  }
- function tick(){if(orientationBlocked)return;const now=clock();if(phase==='celebrate'&&now>=celebrateUntil){phase='complete';result()}if(phase==='memorize'){const remaining=Math.max(0,countDeadline-now);if($('#count'))$('#count').textContent=(remaining/1000).toFixed(1);if($('#count-fill'))$('#count-fill').style.width=remaining/(memorize*1000)*100+'%';if(remaining===0)startShuffle()}if(phase==='play'||phase==='reveal'){if($('#timer'))$('#timer').textContent=formatTime(elapsed());if(phase==='reveal'){const remaining=Math.max(0,revealUntil-now);if($('#reveal-count'))$('#reveal-count').textContent=(remaining/1000).toFixed(1);if(remaining===0){$('#reference-overlay')?.remove();phase='play';updateControls();$('#reopen')?.focus()}}}if(phase==='home'&&day.key!==dayKey())home();if(phase==='complete'&&$('#day-note')&&day.key!==dayKey())$('#day-note').textContent='日付が変わりました。この結果は開始日の占いです。';}
+ function tick(){if(orientationBlocked)return;const now=clock();if(phase==='memorize'){const remaining=Math.max(0,countDeadline-now);if($('#count'))$('#count').textContent=(remaining/1000).toFixed(1);if($('#count-fill'))$('#count-fill').style.width=remaining/(memorize*1000)*100+'%';if(remaining===0)startShuffle()}if(phase==='play'||phase==='reveal'){if($('#timer'))$('#timer').textContent=formatTime(elapsed());if(phase==='reveal'){const remaining=Math.max(0,revealUntil-now);if($('#reveal-count'))$('#reveal-count').textContent=(remaining/1000).toFixed(1);if(remaining===0){$('#reference-overlay')?.remove();phase='play';updateControls();$('#reopen')?.focus()}}}if(phase==='home'&&day.key!==dayKey())home();if(phase==='complete'&&$('#day-note')&&day.key!==dayKey())$('#day-note').textContent='日付が変わりました。この結果は開始日の占いです。';}
  // Game logic and result adapter used by the shared ranking UI.
  globalThis.StarMemoryCore={rareName,characterMarkup,cleanPlayerName,loadProfile,loadAppearance,loadRankings,saveRanking,rankingDifficulty,rankingRecord,celebrationMarkup,SIGNS,PLANETS,dayKey,calculateDay,zodiac,validBirth,getComment,formatTime,aspect,delta,blendColors,luckyColor,pairing,fortune,PALETTE,resultColor,nearestColor,colorCandidates,chooseColor,colorUnit,originalResultColor,ITEMS,itemFor,itemSvg,colorPanel,productSearch,selectRows,recordKeyFor};
  if(!app)return;
