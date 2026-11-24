@@ -113,83 +113,11 @@ function refreshCatalog(){if(catalogBusy||document.visibilityState==='hidden'||D
 fetch('/lab-system/published-v1.json',{cache:'no-store',credentials:'omit'}).then(r=>{if(!r.ok)throw Error('catalog');return r.json()}).then(data=>{if(!Array.isArray(data.items))return;records=data.items.filter(x=>x&&typeof x.slug==='string'&&/^[A-Za-z][A-Za-z0-9_-]{0,47}$/.test(x.slug)&&typeof x.name==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x.published)&&/^\d{4}-\d{2}-\d{2}$/.test(x.updated));sync();window.dispatchEvent(new CustomEvent('lab:catalog',{detail:records}))}).catch(()=>{}).finally(()=>{catalogBusy=false})}
 window.addEventListener('pageshow',refreshCatalog);window.addEventListener('online',refreshCatalog);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshCatalog()});refreshCatalog();
 // Already published app: keep it visible even if the metadata endpoint is unavailable.
-records=[{"slug": "Process_Quest", "name": "TR-LAB学習アプリ", "version": "0.18.1", "published": "2026-10-24", "updated": "2026-10-31", "description": ""}, {"slug": "Street_Hunter", "name": "街角ハンター", "version": "0.5.12", "published": "2026-10-26", "updated": "2026-11-01", "description": ""}, {"slug": "Inkstrike", "name": "INKSTRIKE", "version": "0.5.0", "published": "2026-10-27", "updated": "2026-11-15", "description": ""}, {"slug": "Pyramid", "name": "石を積む", "version": "0.7.0", "published": "2026-10-27", "updated": "2026-11-14", "description": ""}, {"slug": "Horopuzzle", "name": "ホロパズル", "version": "0.8.0", "published": "2026-10-30", "updated": "2026-11-15", "description": ""}, {"slug": "Form_Clash", "name": "プチキャラバトル", "version": "0.8.5", "published": "2026-10-30", "updated": "2026-11-01", "description": ""}, {"slug": "After_Line", "name": "動的迷路", "version": "0.3.6", "published": "2026-10-30", "updated": "2026-10-31", "description": ""}, {"slug": "Yuru_Maze", "name": "ゆる迷路", "version": "0.4.2", "published": "2026-11-06", "updated": "2026-11-11", "description": ""}];sync();
+records=[{"slug": "Process_Quest", "name": "TR-LAB学習アプリ", "version": "0.18.1", "published": "2026-10-24", "updated": "2026-10-31", "description": ""}, {"slug": "Street_Hunter", "name": "街角ハンター", "version": "0.5.12", "published": "2026-10-26", "updated": "2026-11-01", "description": ""}, {"slug": "Inkstrike", "name": "INKSTRIKE", "version": "0.5.0", "published": "2026-10-27", "updated": "2026-11-15", "description": ""}, {"slug": "Pyramid", "name": "石を積む", "version": "0.7.1", "published": "2026-10-27", "updated": "2026-11-19", "description": ""}, {"slug": "Horopuzzle", "name": "ホロパズル", "version": "0.8.5", "published": "2026-10-30", "updated": "2026-11-25", "description": ""}, {"slug": "Form_Clash", "name": "プチキャラバトル", "version": "0.8.5", "published": "2026-10-30", "updated": "2026-11-01", "description": ""}, {"slug": "After_Line", "name": "動的迷路", "version": "0.3.6", "published": "2026-10-30", "updated": "2026-10-31", "description": ""}, {"slug": "Yuru_Maze", "name": "ゆる迷路", "version": "0.4.2", "published": "2026-11-06", "updated": "2026-11-11", "description": ""}, {"slug": "Armonia_Story", "name": "アルモニアストーリー I", "version": "0.5.1", "published": "2026-11-22", "updated": "2026-11-22", "description": "登場人物の配役を決めて、自動で進む物語を観察する実験版。"}];sync();
 })();
 
 </script>
 
-<script>
-// Read versions from published metadata, then from public game files. Never execute fetched code.
-(()=>{'use strict';
-const grid=document.getElementById('grid');if(!grid)return;
-const versions=new Map(),authoritative=new Set(),attempts=new Map();
-const valid=v=>typeof v==='string'&&/^[0-9A-Za-z][0-9A-Za-z._+-]{0,63}$/.test(v);
-let running=false,scheduled=false,lastCatalog=-Infinity;
-function slugOf(card){try{return new URL(card.querySelector('a[href]').href,location.href).pathname.match(/^\/games\/([A-Za-z][A-Za-z0-9_-]{0,47})\/(?:index\.html)?$/)?.[1]||''}catch{return ''}}
-function broadcast(){window.dispatchEvent(new CustomEvent('lab:public-versions',{detail:[...versions].map(([slug,version])=>({slug,version}))}))}
-function render(){for(const card of grid.querySelectorAll('.game')){
- const slug=slugOf(card),dates=card.querySelector('.dates');if(!slug||!dates)continue;
- // Remove old hard-coded version text so the current build has a single badge.
- for(const old of dates.children)if(!old.classList.contains('game-version')&&/^v\d[0-9A-Za-z._+-]*$/.test(old.textContent.trim()))old.remove();
- let badge=dates.querySelector('.game-version');if(!badge){badge=document.createElement('span');badge.className='game-version';dates.appendChild(badge)}
- const v=versions.get(slug),text=v?'v'+v.replace(/^v(?=\d)/,''):(document.documentElement.lang==='en'?'Version unavailable':'バージョン未取得');
- if(badge.textContent!==text)badge.textContent=text;
-}}
-function accept(items){let changed=false;if(!Array.isArray(items))return;
- for(const item of items)if(item&&typeof item.slug==='string'&&/^[A-Za-z][A-Za-z0-9_-]{0,47}$/.test(item.slug)&&valid(item.version)){
-  if(versions.get(item.slug)!==item.version){versions.set(item.slug,item.version);changed=true}authoritative.add(item.slug);
- }
- if(changed){render();broadcast()}
-}
-function configVersion(text,slug){
- for(const m of text.matchAll(/LabPageConfig\s*=\s*\{([^}]{1,4096})\}/g)){
-  const game=m[1].match(/(?:^|,)\s*["']?game["']?\s*:\s*(["'])([^"']+)\1/),
-   version=m[1].match(/(?:^|,)\s*["']?version["']?\s*:\s*(["'])([^"']+)\1/);
-  if(game?.[2]===slug&&valid(version?.[2]))return version[2];
- }return '';
-}
-async function textAt(url){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);
- try{const r=await fetch(url,{cache:'no-store',credentials:'omit',signal:controller.signal});if(!r.ok)return '';
-  const text=await r.text();return text.length<=2097152?text:'';
- }catch{return ''}finally{clearTimeout(timer)}
-}
-async function readPublic(slug){
- const base=new URL('/games/'+encodeURIComponent(slug)+'/',location.origin),html=await textAt(new URL('index.html',base));
- let version=configVersion(html,slug);if(version)return version;
- const doc=new DOMParser().parseFromString(html,'text/html'),sources=[];
- for(const script of doc.querySelectorAll('script[src]')){
-  try{const url=new URL(script.getAttribute('src'),base);
-   if(url.origin!==base.origin||!url.pathname.startsWith(base.pathname)||!url.pathname.endsWith('.js'))continue;
-   if(!sources.some(s=>s.href===url.href))sources.push(url);
-  }catch{}
- }
- // Old builds keep LabPageConfig in script.js; newer games may use game.js.
- sources.sort((a,b)=>Number(!/\/(script|game)\.js$/.test(a.pathname))-Number(!/\/(script|game)\.js$/.test(b.pathname)));
- for(const url of sources.slice(0,4)){version=configVersion(await textAt(url),slug);if(version)return version}
- return '';
-}
-async function resolveMissing(){if(running||document.visibilityState==='hidden')return;running=true;
- try{const now=Date.now(),slugs=[...new Set([...grid.querySelectorAll('.game')].map(slugOf))].filter(slug=>slug&&!authoritative.has(slug)&&now-(attempts.get(slug)||-Infinity)>=60000);
-  for(const slug of slugs)attempts.set(slug,now);
-  let cursor=0;
-  async function worker(){while(cursor<slugs.length){const slug=slugs[cursor++],version=await readPublic(slug);
-   if(version&&!authoritative.has(slug)){versions.set(slug,version);render();broadcast()}
-  }}
-  await Promise.all(Array.from({length:Math.min(3,slugs.length)},worker));
- }finally{running=false}
-}
-function schedule(){render();if(scheduled)return;scheduled=true;queueMicrotask(()=>{scheduled=false;void resolveMissing()})}
-async function refresh(){schedule();if(document.visibilityState==='hidden'||Date.now()-lastCatalog<15000)return;lastCatalog=Date.now();
- try{const text=await textAt('/lab-system/published-v1.json');accept(JSON.parse(text).items)}catch{}
-}
-window.addEventListener('lab:catalog',e=>{accept(e.detail);schedule()});
-new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
-new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-window.addEventListener('pageshow',refresh);window.addEventListener('online',refresh);
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')void refresh()});
-void refresh();
-})();
-
-</script>
+<script src="/lab-system/public-versions.js?v=20261125-1"></script>
 <style>.game[hidden]{display:none!important}</style>
 </body></html>

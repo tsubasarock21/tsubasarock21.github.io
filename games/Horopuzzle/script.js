@@ -1,5 +1,5 @@
-/* Horopuzzle v0.8.4 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.4"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
+/* Horopuzzle v0.8.5 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.5"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Horopuzzle",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -283,7 +283,7 @@ H.AddAcceleration(b.a,b.r,this.curr.gravitators[m.Uranus].r,1.292024916781969E-8
 return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prototype,{OriginBody:{configurable:!0,enumerable:!0,get:function(){return this.originBody}},Time:{configurable:!0,enumerable:!0,get:function(){return this.curr.time}}});e.GravitySimulator=H;var kd=function(a,b,c){this.time=a;this.gravitators=b;this.bodies=c}},{}]},{},[1])(1)});
 
 ;
-/* 星占いパズル / HOROPUZZLE v0.8.4 — application source */
+/* 星占いパズル / HOROPUZZLE v0.8.5 — application source */
 (() => {
  'use strict';
  const SIGNS=[['牡羊座','♈'],['牡牛座','♉'],['双子座','♊'],['蟹座','♋'],['獅子座','♌'],['乙女座','♍'],['天秤座','♎'],['蠍座','♏'],['射手座','♐'],['山羊座','♑'],['水瓶座','♒'],['魚座','♓']];
@@ -306,7 +306,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
  Jupiter:[['少し視野を広げて、別のやり方も見てみよう。','今日は先を見渡す日に。今後楽しみな予定を一つ考えよう。'],['興味のある分野を、一つのぞいてみよう。','挑戦したいことの入門情報を探すところから始めよう。'],['相手の新しい一面に、興味を向けてみよう。','価値観の違いも発見として。相手の考えを聞いてみよう。'],['将来楽しみたいことのために、予算を考えてみよう。','大きな期待より小さな計画。無理のない予算を組もう。']],
  Saturn:[['続けていることを、今日も一つ丁寧に。','休む時間も予定のうち。無理なく続く形を整えよう。'],['小さな目標を決めて、最初の一回をやってみよう。','長く続けるために、簡単にできる始め方を考えよう。'],['小さな約束を大切に。安心できるやりとりを重ねよう。','無理な約束をせず、できることを誠実に伝えよう。'],['固定費や定期購入を一つ見直してみよう。','支出を一つ記録。未来の自分が助かる習慣を育てよう。']]
  };
- const KEY='starMemory.v1', VERSION='0.8.4', DEFAULT_NAME='星の旅人';
+ const KEY='starMemory.v1', VERSION='0.8.5', DEFAULT_NAME='星の旅人';
  const $=s=>document.querySelector(s);
  const app=$('#app');
  let profile=loadProfile(),runId='',day,roundRows=[],setCount=loadSetCount(),phase='home',epoch=0,round=0,memorize=15,countDeadline=0,startTime=0,endTime=0,revealUntil=0,reveals=0,mistakes=0,matched=new Set(),cards=[],chosenSign=null,chosenPlanet=null;
@@ -461,7 +461,7 @@ const GameShare=(()=>{
  function formatTime(ms){const t=Math.max(0,ms)/1000;return String(Math.floor(t/60)).padStart(2,'0')+':'+(t%60).toFixed(1).padStart(4,'0')}
  function elapsed(){return Math.max(0,(endTime||clock())-startTime)+reveals*5000}
  function shuffle(array){const out=array.slice();for(let i=out.length-1;i>0;i--){let value;if(globalThis.crypto?.getRandomValues){let n=new Uint32Array(1);crypto.getRandomValues(n);value=n[0]/4294967296}else value=Math.random();const j=Math.floor(value*(i+1));[out[i],out[j]]=[out[j],out[i]]}return out}
- function loadSetCount(){try{const n=Number(JSON.parse(localStorage.getItem(KEY+'.setCount')));return Number.isInteger(n)&&n>=1&&n<=12?n:3}catch{return 3}}
+ function loadSetCount(){try{const n=Number(JSON.parse(localStorage.getItem(KEY+'.setCount.v2')));return Number.isInteger(n)&&n>=1&&n<=12?n:3}catch{return 3}}
  function selectRows(rows,own,count,random=Math.random){
   const n=Math.max(1,Math.min(12,Math.floor(Number(count)||12))),mine=rows.find(r=>r.sign===own)||rows[0];
   const rest=rows.filter(r=>r.sign!==mine.sign).slice();for(let i=rest.length-1;i>0;i--){const j=Math.floor(Math.max(0,Math.min(.999999999999,random()))*(i+1));[rest[i],rest[j]]=[rest[j],rest[i]];}
@@ -522,7 +522,7 @@ const GameShare=(()=>{
   $('#open-gallery').onclick=()=>openGallery();$('#open-ranking').onclick=()=>openRanking();
   for(const b of document.querySelectorAll('[data-profile-sign]'))b.onclick=()=>{profile.sign=Number(b.dataset.profileSign);persist('profile',profile);for(const x of document.querySelectorAll('[data-profile-sign]'))x.setAttribute('aria-pressed',String(x===b));$('#start').disabled=false;$('#start').textContent=SIGNS[profile.sign][0]+'で遊ぶ';};
   const updateSetHint=()=>{$('#set-hint').textContent=setCount+'セット・'+(setCount*2)+'枚。'+(setCount===1?'あなたの星座だけをシャッフルします。':'あなたの星座＋残り'+(setCount-1)+'星座をランダムに選んでシャッフルします。')+' 残りは並んだ状態で始めます。';$('#settings-summary').textContent=setCount+'セット / '+$('#memory-time').value+'秒';};
-  for(const b of document.querySelectorAll('.set-numbers [data-set-count]'))b.onclick=()=>{setCount=Number(b.dataset.setCount);persist('setCount',setCount);for(const x of document.querySelectorAll('.set-numbers [data-set-count]'))x.setAttribute('aria-pressed',String(x===b));updateSetHint();};$('#memory-time').onchange=updateSetHint;updateSetHint();
+  for(const b of document.querySelectorAll('.set-numbers [data-set-count]'))b.onclick=()=>{setCount=Number(b.dataset.setCount);persist('setCount.v2',setCount);for(const x of document.querySelectorAll('.set-numbers [data-set-count]'))x.setAttribute('aria-pressed',String(x===b));updateSetHint();};$('#memory-time').onchange=updateSetHint;updateSetHint();
   $('#start').onclick=()=>{if(profile.sign===null)return;persist('profile',profile);memorize=Number($('#memory-time').value);begin();};
  }
  function loadRankings(){try{const rows=JSON.parse(localStorage.getItem(KEY+'.rankings'));return Array.isArray(rows)?rows.filter(r=>r&&typeof r.run==='string'&&typeof r.day==='string'&&typeof r.difficulty==='string'&&Number.isFinite(r.score)&&r.score>=0&&Number.isInteger(r.sign)&&r.sign>=0&&r.sign<12).map(r=>({...r,name:cleanPlayerName(r.name)||DEFAULT_NAME})):[];}catch{return [];}}
@@ -597,7 +597,7 @@ const GameShare=(()=>{
   app.append(overlay);const close=()=>{overlay.remove();$('#result-more')?.focus()};$('#close-details').onclick=close;
   overlay.addEventListener('keydown',event=>{if(event.key==='Escape')close();if(event.key==='Tab'){const targets=[...overlay.querySelectorAll('button,summary,a')].filter(e=>!e.closest('details:not([open])')||e.tagName==='SUMMARY');const first=targets[0],last=targets.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}});$('#close-details').focus();
  }
- function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.4" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
+ function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.5" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
  function result(){
   app.dataset.phase='complete';delete app.dataset.playfield;updateViewport();
   const total=elapsed(),row=day.rows.find(r=>r.sign===profile.sign),p=fortune(row),comment=getComment(row,day.key),color=resultColor(row),item=itemFor(row,day.key),recordKey=recordKeyFor(day.key,memorize,roundRows,profile.sign);

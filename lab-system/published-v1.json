@@ -36,9 +36,9 @@
     {
       "slug": "Horopuzzle",
       "name": "ホロパズル",
-      "version": "0.8.0",
+      "version": "0.8.5",
       "published": "2026-10-30",
-      "updated": "2026-11-15",
+      "updated": "2026-11-25",
       "description": ""
     },
     {
@@ -64,6 +64,14 @@
       "published": "2026-11-06",
       "updated": "2026-11-11",
       "description": ""
+    },
+    {
+      "slug": "Armonia_Story",
+      "name": "アルモニアストーリー I",
+      "version": "0.5.1",
+      "published": "2026-11-22",
+      "updated": "2026-11-22",
+      "description": "登場人物の配役を決めて、自動で進む物語を観察する実験版。"
     }
   ]
 }
