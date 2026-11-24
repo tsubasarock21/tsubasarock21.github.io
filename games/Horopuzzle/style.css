@@ -352,3 +352,21 @@ select,.player-name-label input,#gallery-select,.horo-ranking-dialog select{bord
 .rare-result h2{font-size:16px;margin:4px 0 12px}.rare-result .eyebrow{margin:0 0 6px}
 .rare-result-card{display:flex;flex-direction:column;align-items:center;gap:9px;margin:auto;width:min(100%,260px);padding:0 0 10px;border:1px solid #9c885e;border-radius:7px;background:#081226;color:#edcf91;font-size:11px;overflow:hidden}
 .rare-result-card .character-art{display:block;width:100%;height:auto;aspect-ratio:2/3;filter:none;flex:none}
+
+/* Quick entry: choose a familiar, full-colour zodiac character. */
+.quick-intro{padding:0 0 14px}.quick-intro h1{font-size:28px;font-weight:700;margin:0 0 7px;letter-spacing:.08em}.quick-intro .lead{font-size:13px}
+#app[data-phase="home"]>header{margin-bottom:16px}
+.sign-picker{margin:0 0 16px}.sign-picker h2{font-size:16px;font-weight:700;margin:0 0 12px;text-align:center}
+.sign-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.sign-button{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;padding:6px 2px 7px;border:2px solid #7e8ba9;border-radius:10px;background:#fff9ec;color:#3b3150;box-shadow:0 3px 0 #02081999;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.sign-button .character-art{width:51px;max-width:100%;border-radius:5px;filter:none}
+.sign-button-name{font-size:13px;line-height:1.5;font-weight:700;white-space:nowrap}
+.sign-check{display:none;position:absolute;top:3px;right:3px;width:19px;height:19px;line-height:19px;border-radius:50%;background:#665129;color:white;font-size:12px;font-weight:700}
+.sign-button[aria-pressed="true"]{border-color:#ffdc83;background:#fff0c5;box-shadow:0 0 0 2px #efcf8980,0 3px 0 #02081999}.sign-button[aria-pressed="true"] .sign-check{display:block}
+#app[data-phase="home"]>#start{width:100%;margin:0 0 12px;min-height:50px;font-size:17px}
+.play-settings{margin:0 0 14px;border:1px solid #627795;border-radius:10px;background:#0d192de8;padding:12px}.play-settings summary{font-size:14px;cursor:pointer}.play-settings summary span{float:right;color:var(--muted);font-size:12px}.play-settings .set-selector{margin:16px 0;border:none;padding:0;background:none!important;box-shadow:none}.play-settings .settings{margin-bottom:0}
+.home-links{display:flex;gap:10px}.home-links button{flex:1;min-height:44px}
+.ranking-dialog{color:var(--ink);background:#101b30;border:2px solid #8b9bb4;border-radius:12px;width:min(94vw,480px);max-height:90dvh;padding:20px;overflow:auto}.ranking-dialog::backdrop{background:#020819d9}.ranking-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}.ranking-heading h2{font-size:20px;margin:0}.ranking-dialog .small{font-size:13px;line-height:1.7}.ranking-dialog form{margin:20px 0}.ranking-dialog label{display:block;font-size:15px;margin-bottom:8px}.ranking-dialog input{box-sizing:border-box;width:100%;font-size:16px;color:#f5f7fc;background:#070e20;border:1px solid #8b9bb4;border-radius:7px;padding:12px}.ranking-dialog .primary{width:100%;min-height:48px}.ranking-entries{padding:0 0 0 25px}.ranking-entries li{padding:10px 0 10px 5px;border-bottom:1px solid #617493}.ranking-player{display:inline-block;width:65%;overflow-wrap:anywhere;font-size:15px}.ranking-player small{display:block;font-size:12px;color:var(--muted)}.ranking-entries strong{font-variant-numeric:tabular-nums;font-size:15px;white-space:nowrap}.ranking-dialog #ranking-status{font-size:14px;color:var(--gold)}
+#record-ranking{width:100%;margin-top:16px;min-height:46px}
+@media(min-width:600px){.sign-buttons{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.sign-button .character-art{width:68px}.sign-button-name{font-size:14px}}
+@media(max-width:350px){.sign-buttons{gap:6px}.sign-button-name{font-size:12px}.sign-button .character-art{width:45px}}
