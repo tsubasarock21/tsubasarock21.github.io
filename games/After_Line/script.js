@@ -1,5 +1,5 @@
-/* After_Line v0.3.6 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "After_Line", "version": "0.3.6"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/After_Line/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/After_Line/";
+/* After_Line v0.3.7 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "After_Line", "version": "0.3.7"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/After_Line/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/After_Line/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"After_Line",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -22,7 +22,7 @@ function init(){label();new MutationObserver(label).observe(document.documentEle
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();}
 
-/* 動的迷路 v0.3.6 | 2026-10-22 */
+/* 動的迷路 v0.3.7 | 2026-10-22 */
 (() => {
 'use strict';
 
@@ -224,9 +224,9 @@ const TRANSLATIONS={
   "ja": "描いた未来を、走り抜けろ。",
   "en": "Draw your future. Run it."
  },
- "#動的迷路  #ブラウザゲーム": {
-  "ja": "#動的迷路  #ブラウザゲーム",
-  "en": "#AFTERLINE  #BrowserGame"
+ "#AFTERLINE #迷路ゲーム #自作ゲーム #個人開発 #ブラウザゲーム": {
+  "ja": "#AFTERLINE #迷路ゲーム #自作ゲーム #個人開発 #ブラウザゲーム",
+  "en": "#AFTERLINE #迷路ゲーム #自作ゲーム #個人開発 #ブラウザゲーム"
  },
  "ルート画像を準備しています…": {
   "ja": "ルート画像を準備しています…",
@@ -273,8 +273,8 @@ const TRANSLATIONS={
   "en": "Share text copied. Use Save image if you want to include the picture."
  },
  "share.body": {
-  "ja": "動的迷路 AFTERLINE\n描いた速さで未来を走るパズル。\n{stage} {outcome} {time}秒\n#動的迷路 #ブラウザゲーム #パズルゲーム",
-  "en": "AFTERLINE\nDraw your route. Run it at the speed you drew it.\n{stage} {outcome} {time} s\n#AFTERLINE #BrowserGame #PuzzleGame"
+  "ja": "動的迷路 AFTERLINE\n描いた速さで未来を走るパズル。\n{stage} {outcome} {time}秒\n#AFTERLINE #迷路ゲーム #自作ゲーム #個人開発 #ブラウザゲーム",
+  "en": "AFTERLINE\nDraw your route. Run it at the speed you drew it.\n{stage} {outcome} {time} s\n#AFTERLINE #迷路ゲーム #自作ゲーム #個人開発 #ブラウザゲーム"
  },
  "share.stage": {
   "ja": "ステージ{count}",
@@ -562,7 +562,7 @@ function prepareRouteResult(){const token=++resultShareEpoch,card=$('routeCard')
  const plot=(points,color,width,dash=[])=>{paint.beginPath();paint.setLineDash(dash);paint.lineWidth=width;paint.lineJoin='round';paint.lineCap='round';paint.strokeStyle=color;points.forEach((p,i)=>i?paint.lineTo(p.x,p.y):paint.moveTo(p.x,p.y));paint.stroke();paint.setLineDash([]);};
  plot(record.route,'#668195',.004,[.008,.012]);const traveled=record.route.filter(p=>p.t<=record.end);const stop=pointAt(record.route,record.end);traveled.push(stop);plot(traveled,record.clear?'#7cf0cc':'#ffa1b6',.008);
  for(const [p,label,color]of[[currentStart(),'START','#7cf0cc'],[currentGoal(),'GOAL','#ffe5a1']]){paint.beginPath();paint.arc(p.x,p.y,.045,0,Math.PI*2);paint.strokeStyle=color;paint.lineWidth=.004;paint.stroke();paint.fillStyle=color;paint.font='600 .023px sans-serif';paint.textAlign='center';paint.fillText(label,p.x,clamp(p.y+.075,.025,.97));}
- if(!record.clear){paint.strokeStyle='#ff769c';paint.lineWidth=.009;paint.beginPath();paint.moveTo(stop.x-.018,stop.y-.018);paint.lineTo(stop.x+.018,stop.y+.018);paint.moveTo(stop.x+.018,stop.y-.018);paint.lineTo(stop.x-.018,stop.y+.018);paint.stroke();}else{paint.beginPath();paint.arc(stop.x,stop.y,.017,0,Math.PI*2);paint.fillStyle='#e7fff5';paint.fill();}paint.restore();paint.textAlign='left';paint.fillStyle='#d3e8f2';paint.font='26px sans-serif';paint.fillText(tr('描いた未来を、走り抜けろ。'),80,1216);paint.fillStyle='#7fa1b9';paint.font='21px sans-serif';paint.fillText((shareUrl()||tr('#動的迷路  #ブラウザゲーム')).slice(0,75),80,1278);
+ if(!record.clear){paint.strokeStyle='#ff769c';paint.lineWidth=.009;paint.beginPath();paint.moveTo(stop.x-.018,stop.y-.018);paint.lineTo(stop.x+.018,stop.y+.018);paint.moveTo(stop.x+.018,stop.y-.018);paint.lineTo(stop.x-.018,stop.y+.018);paint.stroke();}else{paint.beginPath();paint.arc(stop.x,stop.y,.017,0,Math.PI*2);paint.fillStyle='#e7fff5';paint.fill();}paint.restore();paint.textAlign='left';paint.fillStyle='#d3e8f2';paint.font='26px sans-serif';paint.fillText(tr('描いた未来を、走り抜けろ。'),80,1216);paint.fillStyle='#7fa1b9';paint.font='21px sans-serif';paint.fillText((shareUrl()||tr('#AFTERLINE #迷路ゲーム #自作ゲーム #個人開発 #ブラウザゲーム')).slice(0,75),80,1278);
  $('routeResult').hidden=false;card.hidden=false;$('routePreview').hidden=true;$('saveRoute').hidden=true;$('share').disabled=true;$('routeNote').textContent=tr('ルート画像を準備しています…');
  const finish=blob=>{if(token!==resultShareEpoch)return;$('share').disabled=false;if(!blob){$('routeNote').textContent=tr('画像を生成できなかったため、文章でシェアできます。');return;}try{S.shareFile=new File([blob],'afterline-'+(S.mode==='trial'?'trial':S.stage)+'.png',{type:'image/png'});}catch(_){S.shareFile=null;}if(resultImageUrl)URL.revokeObjectURL?.(resultImageUrl);resultImageUrl=URL.createObjectURL?.(blob)||'';if(resultImageUrl){$('routePreview').src=resultImageUrl;$('routePreview').hidden=false;card.hidden=true;$('saveRoute').href=resultImageUrl;$('saveRoute').download=S.shareFile?.name||'afterline-route.png';$('saveRoute').hidden=false;}$('routeNote').textContent=tr('対応する共有先には画像も添付します。画像の長押し保存もできます。');};
  try{if(!card.toBlob)throw Error('unsupported');card.toBlob(finish,'image/png');}catch(_){finish(null);}

@@ -103,7 +103,7 @@
     try{await PyramidShare.share();}finally{A.nextAt=A.state.mode==='timer'?null:performance.now()+5000;if(A.state.mode==='timer')$('nextCountdown').textContent='次のタイマーは、準備ができたら始めてください。';}
   };
   $("shareGame").onclick = async () => {
-    const s=A.state, text=`${s.mode==='timer'?'ピラミッドタイマー。':'石を積む。'}おっさん${fmt(s.workers)}人と、ピラミッド建設中。\n完成度 ${(s.stones/M.TARGET*100).toFixed(2)}%\n#石を積む #放置ゲーム`,
+    const s=A.state, text=`${s.mode==='timer'?'ピラミッドタイマー。':'石を積む。'}おっさん${fmt(s.workers)}人と、ピラミッド建設中。\n完成度 ${(s.stones/M.TARGET*100).toFixed(2)}%\n#石を積む #放置ゲーム #自作ゲーム #個人開発 #ブラウザゲーム`,
       url="https://tsubasarock21.github.io/games/Pyramid/";
     try {
       if(navigator.share) await navigator.share({title:"石を積む",text,url});

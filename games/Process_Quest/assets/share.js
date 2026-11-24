@@ -1,7 +1,7 @@
 // Share the public app URL, including when the button is used in a trial build.
 (()=>{
  const button=document.getElementById('shareStudy'),status=document.getElementById('studyShareStatus');
- const text='TR-LAB学習アプリ\n解き方を選んで、図や式で確かめる。中学数学の学習アプリ。\nhttps://tsubasarock21.github.io/games/Process_Quest/\n#TsubasaRockLAB #高校受験 #数学';
+ const text='TR-LAB学習アプリ\n解き方を選んで、図や式で確かめる。中学数学の学習アプリ。\nhttps://tsubasarock21.github.io/games/Process_Quest/\n#中学数学 #学習アプリ #無料教材 #個人開発 #ブラウザ学習';
  let sharing=false,hideTimer=0;
  function notice(message){clearTimeout(hideTimer);status.textContent=message;hideTimer=setTimeout(()=>status.textContent='',3500)}
  button.addEventListener('click',async()=>{

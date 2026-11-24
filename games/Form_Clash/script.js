@@ -1,5 +1,5 @@
-/* Form_Clash v0.8.5 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Form_Clash", "version": "0.8.5"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Form_Clash/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Form_Clash/";
+/* Form_Clash v0.8.6 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Form_Clash", "version": "0.8.6"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Form_Clash/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Form_Clash/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Form_Clash",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -22,7 +22,7 @@ function init(){label();new MutationObserver(label).observe(document.documentEle
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();}
 
-/* FORM CLASH / script.js / v0.8.5 */
+/* FORM CLASH / script.js / v0.8.6 */
 
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 // Self-contained chiptune SFX. No downloaded assets, timers, or game RNG use.
@@ -899,7 +899,7 @@ function createShareCanvas(data){
   const c=canvas.getContext("2d");if(!c)throw new Error("Canvas unavailable");
   const bg=c.createLinearGradient(0,0,900,1160);bg.addColorStop(0,"#152941");bg.addColorStop(1,"#080e18");c.fillStyle=bg;c.fillRect(0,0,900,1160);
   const text=(t,x,y,size=22,color="#edf4ff",weight="normal")=>{c.fillStyle=color;c.font=`${weight} ${size}px sans-serif`;c.fillText(t,x,y)};
-  text("FORM CLASH",48,76,42,"#fff","bold");text(`プチキャラバトル  /  ${data.difficulty.toUpperCase()}  /  ${data.duration}秒  /  v0.8.5`,48,116,19,"#9bb0c9");
+  text("FORM CLASH",48,76,42,"#fff","bold");text(`プチキャラバトル  /  ${data.difficulty.toUpperCase()}  /  ${data.duration}秒  /  v0.8.6`,48,116,19,"#9bb0c9");
   text(data.title,48,198,58,data.result==="loss"?"#ff9c9c":"#80ceff","bold");
   text(`RANK ${data.rank}`,610,198,46,"#f4d883","bold");
   text(data.result==="loss"?"PLAYER TOWER DESTROYED":`TOTAL  ${data.total.toFixed(1)}`,48,251,30,"#fff","bold");
@@ -927,7 +927,7 @@ function prepareResultShare(result,r,rank){
   const data={result,title:result==="loss"?"DEFEAT":result==="draw"?"DRAW":"VICTORY",rank,total:displayedScore(r.score),difficulty:currentDifficulty,duration:battleDuration,playerPower:playerDeployedPoints,enemyPower:enemyDeployedPoints,hp:r.playerTowerHP,enemyHP:r.enemyTowerHP,units:clone(savedUnits)};
   const summary=`バランス調整が自由にできるバトルゲーム\nFORM CLASH｜プチキャラバトル｜${data.title}\n${data.difficulty.toUpperCase()} / ${data.duration}秒 / RANK ${rank}${result==="loss"?"":` / TOTAL ${data.total.toFixed(1)}`}\n自軍戦力 ${data.playerPower} / 敵戦力 ${data.enemyPower}`;
   const lineup=data.units.map((u,i)=>{const s=shareUnitStats(u);return `UNIT 0${i+1}${specialId(u)?" "+specialId(u).toUpperCase():""}: HP ${s.hp.toFixed(1)} / MOVE ${s.move.toFixed(3)} / SPD ${s.speed.toFixed(3)} / ATK ${s.atk.toFixed(1)} / RANGE ${s.range.toFixed(1)} / BOOST ${u.boost.join("+")||"NONE"}`}).join("\n");
-  const tags=['プチキャラバトル','戦略ゲーム','ブラウザゲーム'];resultShare={text:GameShare.build(summary+"\n"+lineup,tags),summary:GameShare.build(summary+"\n編成は画像に！",tags),xtext:GameShare.build(summary,tags),file:null};
+  const tags=["FORMCLASH", "戦略ゲーム", "自作ゲーム", "個人開発", "ブラウザゲーム"];resultShare={text:GameShare.build(summary+"\n"+lineup,tags),summary:GameShare.build(summary+"\n編成は画像に！",tags),xtext:GameShare.build(summary,tags),file:null};
   const ready=()=>{if(generation!==shareGeneration)return;button.disabled=false;$("#shareGameButton").disabled=false;$("#shareStatus").textContent=""};
   try{createShareCanvas(data).toBlob(blob=>{
     if(generation!==shareGeneration)return;

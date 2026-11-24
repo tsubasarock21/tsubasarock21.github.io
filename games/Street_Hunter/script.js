@@ -1,5 +1,5 @@
-/* Street_Hunter v0.5.12 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Street_Hunter", "version": "0.5.12"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Street_Hunter/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Street_Hunter/";
+/* Street_Hunter v0.5.13 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Street_Hunter", "version": "0.5.13"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Street_Hunter/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Street_Hunter/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Street_Hunter",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -22,7 +22,7 @@ function init(){label();new MutationObserver(label).observe(document.documentEle
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();}
 
-/* 街角ハンター / TRANQUILIZER GUN / script.js / v0.5.12 */
+/* 街角ハンター / TRANQUILIZER GUN / script.js / v0.5.13 */
 (()=>{'use strict';
 const $=s=>document.querySelector(s),canvas=$('#scene'),ctx=canvas.getContext('2d'),source=document.createElement('canvas'),art=document.createElement('canvas');
 const sc=source.getContext('2d',{willReadFrequently:true}),ac=art.getContext('2d',{willReadFrequently:true});
@@ -62,7 +62,7 @@ const GameShare=(()=>{
 S.shareStats={shots:0,hits:0,targets:0};let sharedTargets=new WeakSet();
 function resetShareStats(){S.shareStats={shots:0,hits:0,targets:0};sharedTargets=new WeakSet();$('#shareNote').textContent=''}
 function updateShareButton(){const b=$('#shareGame');if(b)b.disabled=!S.loaded||S.busy}
-function shareText(){return GameShare.build('いつもの写真が、ゆるい射的ゲームに。\n街角ハンター｜ぽすっと撃って、Zzz。\n命中した対象：'+S.shareStats.targets+'体／合計命中：'+S.shareStats.hits+'回',['街角ハンター','写真で遊ぶ','ブラウザゲーム'])}
+function shareText(){return GameShare.build('いつもの写真が、ゆるい射的ゲームに。\n街角ハンター｜ぽすっと撃って、Zzz。\n命中した対象：'+S.shareStats.targets+'体／合計命中：'+S.shareStats.hits+'回',["街角ハンター", "写真ゲーム", "自作ゲーム", "個人開発", "ブラウザゲーム"])}
 $('#shareGame').onclick=()=>{if(!S.loaded||S.busy)return;$('#shareNote').textContent=GameShare.note();void GameShare.share(shareText(),{status:$('#shareNote')})};
 S.zoom=1;S.photoBusy=false;
 S.visitors=[];S.nextCat=5;S.nextSpider=2;
@@ -159,7 +159,7 @@ function timeout(p,ms=45000){return new Promise((resolve,reject)=>{const t=setTi
 let tensorflowPromise=null;
 async function ensureTensorflow(){
  if(!tensorflowPromise)tensorflowPromise=(async()=>{
-  if(!window.tf)await loadScript('vendor/tf.min.js?v=0.5.12');
+  if(!window.tf)await loadScript('vendor/tf.min.js?v=0.5.13');
   try{if(/iPad|iPhone|iPod/.test(navigator.userAgent||'')||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))await window.tf.setBackend('cpu');await window.tf.ready()}catch{await window.tf.setBackend('cpu');await window.tf.ready()}
   return window.tf;
  })().catch(e=>{tensorflowPromise=null;throw e});
@@ -190,7 +190,7 @@ const detectorLoads=new Map();
 function getDetector(base='mobilenet_v2'){
  if(!detectorLoads.has(base))detectorLoads.set(base,(async()=>{
   await ensureTensorflow();
-  if(!window.cocoSsd)await loadScript('vendor/coco-ssd.min.js?v=0.5.12');
+  if(!window.cocoSsd)await loadScript('vendor/coco-ssd.min.js?v=0.5.13');
   return window.cocoSsd.load(base==='mobilenet_v2'?{base,modelUrl:jsonWeightModel('models/detector/model.json')}:{base});
  })().catch(e=>{detectorLoads.delete(base);throw e}));
  return detectorLoads.get(base);
@@ -214,11 +214,11 @@ async function detectWithRecovery(id,input,issues){
 function aiError(e){return String(e?.message||e||'原因不明').replace(/https?:\/\/[^\s]+/g,'[配信先]').slice(0,180)}
 function getFaceDetector(){
  if(!facePromise)facePromise=(async()=>{await ensureTensorflow();
-  if(!window.faceDetection)await loadScript('vendor/face-detection.min.js?v=0.5.12');
+  if(!window.faceDetection)await loadScript('vendor/face-detection.min.js?v=0.5.13');
   return window.faceDetection.createDetector(window.faceDetection.SupportedModels.MediaPipeFaceDetector,{runtime:'tfjs',maxFaces:10,modelType:'short'});
  })().catch(e=>{facePromise=null;throw e});return facePromise;
 }
-function getSegmenter(){if(!segmentPromise)segmentPromise=(async()=>{await ensureTensorflow();if(!window.bodyPix&&!window['body-pix'])await loadScript('vendor/body-pix.min.umd.js?v=0.5.12');const body=window.bodyPix||window['body-pix'];if(!body?.load)throw Error('人物用ライブラリを初期化できません');return body.load({architecture:'MobileNetV1',outputStride:16,multiplier:.75,quantBytes:1,modelUrl:jsonWeightModel('models/people/model.json')})})().catch(e=>{segmentPromise=null;throw e});return segmentPromise}
+function getSegmenter(){if(!segmentPromise)segmentPromise=(async()=>{await ensureTensorflow();if(!window.bodyPix&&!window['body-pix'])await loadScript('vendor/body-pix.min.umd.js?v=0.5.13');const body=window.bodyPix||window['body-pix'];if(!body?.load)throw Error('人物用ライブラリを初期化できません');return body.load({architecture:'MobileNetV1',outputStride:16,multiplier:.75,quantBytes:1,modelUrl:jsonWeightModel('models/people/model.json')})})().catch(e=>{segmentPromise=null;throw e});return segmentPromise}
 function buildCutout(t,mask,box=t){
  const width=Math.ceil(box.w),height=Math.ceil(box.h);if(mask.width!==width||mask.height!==height){t.cutoutReason='輪郭サイズが一致しません';return false}
  const count=mask.data.reduce((n,v)=>n+(v===1),0);if(count<width*height*.025||count>width*height*.995){t.cutoutReason='輪郭を十分に判別できません';return false}
@@ -227,7 +227,7 @@ function buildCutout(t,mask,box=t){
  t.mask=matte;t.maskData=mask.data;t.cutBox={x:box.x,y:box.y,w:box.w,h:box.h};t.cutoutReason='切り抜き成功';refreshCutout(t);return true;
 }
 function refreshCutout(t){if(!t.mask)return;const cut=document.createElement('canvas');cut.width=t.mask.width;cut.height=t.mask.height;const b=t.cutBox||t,c=cut.getContext('2d');c.drawImage(art,b.x,b.y,b.w,b.h,0,0,cut.width,cut.height);c.globalCompositeOperation='destination-in';c.drawImage(t.mask,0,0);t.cutout=cut;t.hitAlpha=t.mask.getContext('2d').getImageData(0,0,t.mask.width,t.mask.height).data;makeBackfill(t)}
-// ---- 人物の切り抜き（v0.5.12）----
+// ---- 人物の切り抜き（v0.5.13）----
 // 1) 写真全体で人物を個別に分離 2) 各人物を拡大して再推論 3) 他の人を除外し、連結成分の選別・穴埋め・ソフトエッジ
 function regionsOf(m,w,h,want){
  const lab=new Int32Array(w*h).fill(-1),areas=[],stack=new Int32Array(w*h);let n=0;
@@ -374,7 +374,7 @@ function stopCutoutWorker(){if(cutoutWorker)cutoutWorker.terminate();cutoutWorke
 function requestCutout(bitmap,x,y){return new Promise((resolve,reject)=>{
  if(cutoutPending){bitmap.close();reject(Error('輪郭処理中です'));return}
  try{
-  if(!cutoutWorker){cutoutWorker=new Worker('cutout-worker.js?v=0.5.12');
+  if(!cutoutWorker){cutoutWorker=new Worker('cutout-worker.js?v=0.5.13');
    cutoutWorker.onmessage=({data})=>{const p=cutoutPending;if(!p||p.request!==data.request)return;cutoutPending=null;clearTimeout(p.timer);data.error?p.reject(Error(data.error)):p.resolve({width:data.width,height:data.height,data:new Uint8Array(data.buffer)})};
    cutoutWorker.onerror=()=>stopCutoutWorker();
   }

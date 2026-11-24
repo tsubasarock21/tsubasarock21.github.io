@@ -1,5 +1,5 @@
-/* Horopuzzle v0.8.7 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.7"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
+/* Horopuzzle v0.8.8 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.8"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Horopuzzle",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -283,7 +283,7 @@ H.AddAcceleration(b.a,b.r,this.curr.gravitators[m.Uranus].r,1.292024916781969E-8
 return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prototype,{OriginBody:{configurable:!0,enumerable:!0,get:function(){return this.originBody}},Time:{configurable:!0,enumerable:!0,get:function(){return this.curr.time}}});e.GravitySimulator=H;var kd=function(a,b,c){this.time=a;this.gravitators=b;this.bodies=c}},{}]},{},[1])(1)});
 
 ;
-/* 星占いパズル / HOROPUZZLE v0.8.7 — application source */
+/* 星占いパズル / HOROPUZZLE v0.8.8 — application source */
 (() => {
  'use strict';
  const SIGNS=[['牡羊座','♈'],['牡牛座','♉'],['双子座','♊'],['蟹座','♋'],['獅子座','♌'],['乙女座','♍'],['天秤座','♎'],['蠍座','♏'],['射手座','♐'],['山羊座','♑'],['水瓶座','♒'],['魚座','♓']];
@@ -306,7 +306,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
  Jupiter:[['少し視野を広げて、別のやり方も見てみよう。','今日は先を見渡す日に。今後楽しみな予定を一つ考えよう。'],['興味のある分野を、一つのぞいてみよう。','挑戦したいことの入門情報を探すところから始めよう。'],['相手の新しい一面に、興味を向けてみよう。','価値観の違いも発見として。相手の考えを聞いてみよう。'],['将来楽しみたいことのために、予算を考えてみよう。','大きな期待より小さな計画。無理のない予算を組もう。']],
  Saturn:[['続けていることを、今日も一つ丁寧に。','休む時間も予定のうち。無理なく続く形を整えよう。'],['小さな目標を決めて、最初の一回をやってみよう。','長く続けるために、簡単にできる始め方を考えよう。'],['小さな約束を大切に。安心できるやりとりを重ねよう。','無理な約束をせず、できることを誠実に伝えよう。'],['固定費や定期購入を一つ見直してみよう。','支出を一つ記録。未来の自分が助かる習慣を育てよう。']]
  };
- const KEY='starMemory.v1', VERSION='0.8.7', DEFAULT_NAME='星の旅人';
+ const KEY='starMemory.v1', VERSION='0.8.8', DEFAULT_NAME='星の旅人';
  const $=s=>document.querySelector(s);
  const app=$('#app');
  let profile=loadProfile(),runId='',day,roundRows=[],setCount=loadSetCount(),phase='home',epoch=0,round=0,memorize=15,countDeadline=0,startTime=0,endTime=0,revealUntil=0,reveals=0,mistakes=0,matched=new Set(),cards=[],chosenSign=null,chosenPlanet=null;
@@ -596,7 +596,7 @@ const GameShare=(()=>{
   app.append(overlay);const close=()=>{overlay.remove();$('#result-more')?.focus()};$('#close-details').onclick=close;
   overlay.addEventListener('keydown',event=>{if(event.key==='Escape')close();if(event.key==='Tab'){const targets=[...overlay.querySelectorAll('button,summary,a')].filter(e=>!e.closest('details:not([open])')||e.tagName==='SUMMARY');const first=targets[0],last=targets.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}});$('#close-details').focus();
  }
- function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.7" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
+ function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.8" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
  function result(){
   app.dataset.phase='complete';delete app.dataset.playfield;updateViewport();
   const total=elapsed(),row=day.rows.find(r=>r.sign===profile.sign),p=fortune(row),comment=getComment(row,day.key),color=resultColor(row),item=itemFor(row,day.key),recordKey=recordKeyFor(day.key,memorize,roundRows,profile.sign);
@@ -609,7 +609,7 @@ const GameShare=(()=>{
 
   $('#record-ranking').onclick=()=>{const record=rankingRecord();if(record)openRanking(record);};
   $('#result-more').onclick=()=>resultDetails(total,best);$('#again').onclick=begin;$('#back-home').onclick=home;
-  $('#share').textContent='シェア';$('#share').onclick=()=>{const text=GameShare.build(`星占い×パズル？ありそうでなかったゲーム"ホロパズル"クリアして今日の運勢を確認しよう！\n${day.key} ${SIGNS[row.sign][0]} ${row.rank}位\nラッキーカラー：${color.name}\n${roundRows.length}セット・${formatTime(total)}・ミス${mistakes}回・再表示${reveals}回`,['ホロパズル','星占い','パズルゲーム']);$('#share-note').textContent=GameShare.note();void GameShare.share(text,{status:$('#share-note')})};
+  $('#share').textContent='シェア';$('#share').onclick=()=>{const text=GameShare.build(`星占い×パズル？ありそうでなかったゲーム"ホロパズル"クリアして今日の運勢を確認しよう！\n${day.key} ${SIGNS[row.sign][0]} ${row.rank}位\nラッキーカラー：${color.name}\n${roundRows.length}セット・${formatTime(total)}・ミス${mistakes}回・再表示${reveals}回`,["ホロパズル", "星占い", "自作ゲーム", "個人開発", "ブラウザゲーム"]);$('#share-note').textContent=GameShare.note();void GameShare.share(text,{status:$('#share-note')})};
   window.scrollTo?.(0,0);
  }
  function tick(){if(orientationBlocked)return;const now=clock();if(phase==='memorize'){const remaining=Math.max(0,countDeadline-now);if($('#count'))$('#count').textContent=(remaining/1000).toFixed(1);if($('#count-fill'))$('#count-fill').style.width=remaining/(memorize*1000)*100+'%';if(remaining===0)startShuffle()}if(phase==='play'||phase==='reveal'){if($('#timer'))$('#timer').textContent=formatTime(elapsed());if(phase==='reveal'){const remaining=Math.max(0,revealUntil-now);if($('#reveal-count'))$('#reveal-count').textContent=(remaining/1000).toFixed(1);if(remaining===0){$('#reference-overlay')?.remove();phase='play';updateControls();$('#reopen')?.focus()}}}if(phase==='home'&&day.key!==dayKey())home();if(phase==='complete'&&$('#day-note')&&day.key!==dayKey())$('#day-note').textContent='日付が変わりました。この結果は開始日の占いです。';}

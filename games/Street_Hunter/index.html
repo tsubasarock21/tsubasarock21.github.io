@@ -1,7 +1,7 @@
-<!-- Street_Hunter v0.5.12 | 2026-10-28 | 認識モデル同梱・人物ライブラリの配信先修正 -->
+<!-- Street_Hunter v0.5.13 | 2026-10-28 | 認識モデル同梱・人物ライブラリの配信先修正 -->
 
-<!-- 街角ハンター / TRANQUILIZER GUN / index.html / v0.5.12 -->
-<!doctype html><html lang="ja"><head><script src="/lab-system/metrics-v2.js?v=2.0.0&_metrics=2"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>街角ハンター｜写真の中を狙って遊ぶ無料カメラゲーム｜Tsubasa_Rock_LAB</title><link rel="stylesheet" href="style.css?v=0.5.12">
+<!-- 街角ハンター / TRANQUILIZER GUN / index.html / v0.5.13 -->
+<!doctype html><html lang="ja"><head><script src="/lab-system/metrics-v2.js?v=2.0.0&_metrics=2"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>街角ハンター｜写真の中を狙って遊ぶ無料カメラゲーム｜Tsubasa_Rock_LAB</title><link rel="stylesheet" href="style.css?v=0.5.13">
 <meta name="description" content="自分の写真が漫画風の遊び場に。照準を動かして、人や動物には眠りの演出、物には漫画の弾痕を付けて遊ぶ写真ゲームです。クリアも制限時間もなく、サンプル写真でも楽しめます。">
 <link rel="canonical" href="https://tsubasarock21.github.io/games/Street_Hunter/">
 <meta property="og:title" content="街角ハンター｜写真の中を狙って遊ぶ無料カメラゲーム｜Tsubasa_Rock_LAB">
@@ -11,7 +11,7 @@
 <meta name="twitter:title" content="街角ハンター｜写真の中を狙って遊ぶ無料カメラゲーム｜Tsubasa_Rock_LAB">
 <meta name="twitter:description" content="自分の写真が漫画風の遊び場に。照準を動かして、人や動物には眠りの演出、物には漫画の弾痕を付けて遊ぶ写真ゲームです。クリアも制限時間もなく、サンプル写真でも楽しめます。">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"街角ハンター","url":"https://tsubasarock21.github.io/games/Street_Hunter/","description":"自分の写真が漫画風の遊び場に。照準を動かして、人や動物には眠りの演出、物には漫画の弾痕を付けて遊ぶ写真ゲームです。クリアも制限時間もなく、サンプル写真でも楽しめます。","applicationCategory":"GameApplication","operatingSystem":"Web browser","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"author":{"@type":"Person","name":"Tsubasa-Rock"}}</script>
-<meta property="og:image" content="https://tsubasarock21.github.io/games/Street_Hunter/thumbnail.jpg?v=0.5.12"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://tsubasarock21.github.io/games/Street_Hunter/thumbnail.jpg?v=0.5.12"></head><body>
+<meta property="og:image" content="https://tsubasarock21.github.io/games/Street_Hunter/thumbnail.jpg?v=0.5.13"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://tsubasarock21.github.io/games/Street_Hunter/thumbnail.jpg?v=0.5.13"></head><body>
 <aside class="lab-ad-slot" data-ad-position="top" aria-label="広告"><div class="lab-ad-content"><!-- admax -->
 <script src="https://adm.shinobi.jp/s/b9de21441f6c26fbd75b5f98578aec13"></script>
 <!-- admax --></div></aside>
@@ -27,9 +27,9 @@
  <button id="retryRecognition" class="recognition-retry" hidden>認識を再試行</button>
  <section class="controls" aria-label="ゲーム操作"><div class="dpad-and-share"><div class="dpad"><button data-dir="up" aria-label="上">▲</button><button data-dir="left" aria-label="左">◀</button><div class="pad-center"></div><button data-dir="right" aria-label="右">▶</button><button data-dir="down" aria-label="下">▼</button></div><button id="shareGame" data-lab-share class="share-game" disabled>シェア</button></div><div class="middle-controls"><section class="target-roster" aria-label="認識した対象と命中履歴"><div class="roster-heading"><span id="targetCount">対象 0 · 命中 0</span><small id="zoomIndicator">1.0×</small></div><ul id="targetList"><li class="target-empty">写真を選ぶと表示</li></ul></section></div><div class="trigger"><button id="fire" aria-label="発射">◎</button><span>FIRE</span></div><div class="utility"><button id="select">SELECT</button><small>操作切替</small><button id="start">HOME</button><small>写真選択へ</small></div></section>
  <details id="settings"><summary>写真・認識の設定</summary><div class="tools"><button id="replacePhoto">写真を変える</button><button id="reset">命中・穴・眠りをリセット</button></div><button id="refineCutout">照準の対象を切り抜き直す</button><label><input id="shakeEnabled" type="checkbox" checked> 命中した人・動物を揺らす</label><label><input id="showBoxes" type="checkbox"> 認識した範囲を見る</label><label><input id="simplify" type="checkbox" checked> 目・鼻の簡易加工（試作）</label><p class="note">メガネ・マスクの保持は不完全です。加工が崩れる場合はOFFにしてください。人・動物・物の輪郭を抽出します。うまく抜けないときは対象の内側に照準を合わせて「切り抜き直す」を押してください。輪郭未取得の人・動物はZzzのみ。物は弾痕が付きます。来訪ネコ・クモはビクッと眠ります。</p><div class="manual"><select id="targetType" aria-label="追加する対象"><option value="person">人</option><option value="animal">動物</option><option value="object">物</option></select><button id="addTarget">範囲を手動追加</button></div><p class="note">追加ボタンを押して写真上をドラッグ。認識に失敗しても手動で遊べます。</p><p id="aiStatus" class="note">写真を選ぶとAIを読み込みます（初回は通信が必要）。対応する約80種類を探します。小さすぎる対象や対応外の物は手動追加できます。</p></details>
- <nav class="lab-navigation" aria-label="Tsubasa_Rock_LAB"><a class="lab-return" data-lab-return href="https://tsubasarock21.github.io/">← ラボへ戻る</a></nav><footer>TRANQUILIZER GUN <span>v0.5.12</span></footer>
+ <nav class="lab-navigation" aria-label="Tsubasa_Rock_LAB"><a class="lab-return" data-lab-return href="https://tsubasarock21.github.io/">← ラボへ戻る</a></nav><footer>TRANQUILIZER GUN <span>v0.5.13</span></footer>
 </main>
 <aside class="lab-ad-slot" data-ad-position="bottom" aria-label="広告"><div class="lab-ad-content"><!-- admax -->
 <script src="https://adm.shinobi.jp/s/09464fb46c48df2904506b1d0e986f28"></script>
 <!-- admax --></div></aside>
-<input type="file" id="cameraInput" accept="image/*" capture="environment" hidden><input type="file" id="fileInput" accept="image/*" hidden><script src="script.js?v=0.5.12&_metrics=2&_metrics=2"></script></body></html>
+<input type="file" id="cameraInput" accept="image/*" capture="environment" hidden><input type="file" id="fileInput" accept="image/*" hidden><script src="script.js?v=0.5.13&_metrics=2&_metrics=2"></script></body></html>

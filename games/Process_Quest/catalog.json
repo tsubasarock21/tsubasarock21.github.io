@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "version": "0.18.1",
+  "version": "0.18.2",
   "packs": [
     {
       "path": "data/addition.json?v=7eb70bf44cfdb192"
@@ -111,7 +111,7 @@
     "assets/geometry.js?v=440fa663aeff961c",
     "assets/navigation.js?v=26dd267deef6f92f",
     "assets/expressions.js?v=eb89ec2c6f3ebcb1",
-    "assets/share.js?v=ae0f9d0d572485c4",
+    "assets/share.js?v=dbc3a430c8140a65",
     "assets/systems.js?v=483a23fb1798a044",
     "assets/direct.js?v=9211d6a57f725ec0",
     "assets/authored.js?v=0b5fb1a18fe86cba",
