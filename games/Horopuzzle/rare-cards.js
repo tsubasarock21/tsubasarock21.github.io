@@ -1,13 +1,8 @@
-/* Adult alternate artwork: one physical card per round, appearance only. */
+/* Adult alternate artwork: selected explicitly, appearance only. */
 (function(root){'use strict';
-const RATE=.05;
 const cards=[{"id": "aries", "sign": 0, "title": "ふんわりニット", "age": 26, "image": "assets/rare/aries-v080.jpg", "type": "sign"}, {"id": "taurus", "sign": 1, "title": "花とくつろぎ", "age": 29, "image": "assets/rare/taurus-v080.jpg", "type": "sign"}, {"id": "gemini", "title": "鏡合わせの相棒", "age": 28, "type": "sign", "image": "assets/rare/gemini-v080.jpg", "sign": 2}, {"id": "cancer", "title": "潮騒の守り手", "age": 30, "type": "sign", "image": "assets/rare/cancer-v080.jpg", "sign": 3}, {"id": "leo", "sign": 4, "title": "陽だまりの笑顔", "age": 27, "image": "assets/rare/leo-v080.jpg", "type": "sign"}, {"id": "virgo", "sign": 5, "title": "麦穂のひととき", "age": 26, "image": "assets/rare/virgo-v080.jpg", "type": "sign"}, {"id": "libra", "title": "均衡の審判", "age": 32, "type": "sign", "image": "assets/rare/libra-v080.jpg", "sign": 6}, {"id": "scorpio", "sign": 7, "title": "夜の案内人", "age": 30, "image": "assets/rare/scorpio-v080.jpg", "type": "sign"}, {"id": "sagittarius", "title": "星を射る旅人", "age": 27, "type": "sign", "image": "assets/rare/sagittarius.jpg", "sign": 8}, {"id": "capricorn", "title": "岩峰の星守", "age": 34, "type": "sign", "image": "assets/rare/capricorn-v080.jpg", "sign": 9}, {"id": "aquarius", "sign": 10, "title": "星流の旅人", "age": 28, "image": "assets/rare/aquarius-v080.jpg", "type": "sign"}, {"id": "pisces", "title": "双魚の舞い手", "age": 29, "type": "sign", "image": "assets/rare/pisces-v080.jpg", "sign": 11}, {"id": "sun", "title": "暁の女王", "age": 31, "type": "planet", "image": "assets/rare/sun.jpg", "planet": "Sun"}, {"id": "moon", "title": "月影の奏者", "age": 30, "type": "planet", "image": "assets/rare/moon-v080.jpg", "planet": "Moon"}, {"id": "mercury", "title": "翼ある伝令", "age": 26, "type": "planet", "image": "assets/rare/mercury.jpg", "planet": "Mercury"}, {"id": "venus", "title": "宵星の微笑", "age": 33, "type": "planet", "image": "assets/rare/venus-v080.jpg", "planet": "Venus"}, {"id": "mars", "title": "赤砂の戦姫", "age": 32, "type": "planet", "image": "assets/rare/mars.jpg", "planet": "Mars"}, {"id": "jupiter", "title": "雷雲の統率者", "age": 35, "type": "planet", "image": "assets/rare/jupiter-v080.jpg", "planet": "Jupiter"}, {"id": "saturn", "title": "環を読む賢者", "age": 34, "type": "planet", "image": "assets/rare/saturn-v080.jpg", "planet": "Saturn"}].map(c=>Object.freeze(c));Object.freeze(cards);
 function matches(c,type,id,owner){return !!c&&c.type===type&&(type==='sign'?c.sign===Number(id):c.planet===id&&(c.owner===undefined||c.owner===owner));}
-function roll(rows,random=Math.random){
- const eligible=rows.flatMap(r=>cards.filter(c=>c.type==='sign'?c.sign===r.sign:c.planet===r.planet).map(c=>({...c,owner:r.sign})));
- if(!eligible.length||random()>=RATE)return null;
- return Object.freeze(eligible[Math.min(eligible.length-1,Math.floor(Math.max(0,Math.min(.999999999999,random()))*eligible.length))]);
-}
-const api=Object.freeze({rate:RATE,cards,roll,matches});root.HoroRareCards=api;
+function find(type,id){return cards.find(c=>c.type===type&&(type==='sign'?c.sign===Number(id):c.planet===id))||null;}
+const api=Object.freeze({cards,find,matches});root.HoroRareCards=api;
 if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(globalThis);
