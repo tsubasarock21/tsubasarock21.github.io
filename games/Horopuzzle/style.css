@@ -378,3 +378,17 @@ select,.player-name-label input,#gallery-select,.horo-ranking-dialog select{bord
 
 /* Reading-first results: two concise paragraphs, without the congratulation block. */
 #app[data-phase="complete"] .compact-message .message{font-size:14px;line-height:1.8;margin:12px 0 0;overflow-wrap:anywhere}#app[data-phase="complete"] .message>p{margin:0 0 10px}#app[data-phase="complete"] .message>p:last-child{margin-bottom:0}#app[data-phase="complete"] .compact-message .theme{font-size:12px;padding:5px 10px}
+
+/* A compact personal note separate from the daily horoscope. */
+.affinity-message{display:flex;align-items:center;gap:10px;min-width:0;padding:0 2px}
+.affinity-avatar{width:62px;flex:0 0 62px}
+.affinity-avatar .character-art{width:100%;height:auto;aspect-ratio:3/4;border-radius:9px}
+.affinity-avatar .rare-star{display:none}
+.affinity-bubble{flex:1;min-width:0;position:relative;background:#261e38;border:1px solid #b69bc7;border-radius:12px;padding:9px 11px;color:#fff3fb}
+.affinity-bubble:before{content:"";position:absolute;left:-6px;top:27px;width:9px;height:9px;background:#261e38;border-left:1px solid #b69bc7;border-bottom:1px solid #b69bc7;transform:rotate(45deg)}
+.affinity-label{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:3px;font-size:10px;color:#e5c9f4}
+.affinity-stars{color:#f8d27e;white-space:nowrap;font-size:13px;letter-spacing:1px}
+.affinity-special{font-size:10px;color:#ffdaa2;font-weight:700}
+.affinity-bubble p{font-size:13px;line-height:1.55;margin:4px 0 0}
+.sign-affinity{font-size:11px;line-height:1;letter-spacing:.3px;color:#9b8b78;white-space:nowrap}
+.sign-affinity>span{color:#8d6315}
