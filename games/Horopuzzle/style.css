@@ -392,3 +392,7 @@ select,.player-name-label input,#gallery-select,.horo-ranking-dialog select{bord
 .affinity-bubble p{font-size:13px;line-height:1.55;margin:4px 0 0}
 .sign-affinity{font-size:11px;line-height:1;letter-spacing:.3px;color:#9b8b78;white-space:nowrap}
 .sign-affinity>span{color:#8d6315}
+.planet-guest .affinity-bubble{background:#172940;border-color:#8baed8;color:#f3f9ff}
+.planet-guest .affinity-bubble:before{background:#172940;border-color:#8baed8}
+.planet-guest .affinity-label{color:#bcd6f6}
+.planet-lucky-word{display:block;color:#ffe0a3;font-size:18px;line-height:1.35;margin-top:4px;letter-spacing:.035em}

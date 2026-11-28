@@ -1,5 +1,5 @@
-/* Horopuzzle v0.8.9 | 2026-10-23 | LAB navigation + anonymous event counts */
-globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.8.9"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
+/* Horopuzzle v0.9.0 | 2026-10-23 | LAB navigation + anonymous event counts */
+globalThis.LabPageConfig={"game": "Horopuzzle", "version": "0.9.0"};globalThis.GAME_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";globalThis.PICTO_PUBLIC_URL="https://tsubasarock21.github.io/games/Horopuzzle/";
 /* Tsubasa_Rock_LAB shared navigation / anonymous counters v1.0.0 | 2026-10-23 */
 if(globalThis.LabMetricsV2){globalThis.LabMetricsV2.install({game:"Horopuzzle",version:globalThis.LabPageConfig?.version||'unknown'});}else{(()=>{'use strict';
 const tag=document.currentScript,game=globalThis.LabPageConfig?.game||tag?.dataset.game||'lab',version=globalThis.LabPageConfig?.version||tag?.dataset.version||'1.0.0';
@@ -283,7 +283,7 @@ H.AddAcceleration(b.a,b.r,this.curr.gravitators[m.Uranus].r,1.292024916781969E-8
 return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prototype,{OriginBody:{configurable:!0,enumerable:!0,get:function(){return this.originBody}},Time:{configurable:!0,enumerable:!0,get:function(){return this.curr.time}}});e.GravitySimulator=H;var kd=function(a,b,c){this.time=a;this.gravitators=b;this.bodies=c}},{}]},{},[1])(1)});
 
 ;
-/* 星占いパズル / HOROPUZZLE v0.8.9 — application source */
+/* 星占いパズル / HOROPUZZLE v0.9.0 — application source */
 (() => {
  'use strict';
  const SIGNS=[['牡羊座','♈'],['牡牛座','♉'],['双子座','♊'],['蟹座','♋'],['獅子座','♌'],['乙女座','♍'],['天秤座','♎'],['蠍座','♏'],['射手座','♐'],['山羊座','♑'],['水瓶座','♒'],['魚座','♓']];
@@ -306,7 +306,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
  Jupiter:[['少し視野を広げて、別のやり方も見てみよう。','今日は先を見渡す日に。今後楽しみな予定を一つ考えよう。'],['興味のある分野を、一つのぞいてみよう。','挑戦したいことの入門情報を探すところから始めよう。'],['相手の新しい一面に、興味を向けてみよう。','価値観の違いも発見として。相手の考えを聞いてみよう。'],['将来楽しみたいことのために、予算を考えてみよう。','大きな期待より小さな計画。無理のない予算を組もう。']],
  Saturn:[['続けていることを、今日も一つ丁寧に。','休む時間も予定のうち。無理なく続く形を整えよう。'],['小さな目標を決めて、最初の一回をやってみよう。','長く続けるために、簡単にできる始め方を考えよう。'],['小さな約束を大切に。安心できるやりとりを重ねよう。','無理な約束をせず、できることを誠実に伝えよう。'],['固定費や定期購入を一つ見直してみよう。','支出を一つ記録。未来の自分が助かる習慣を育てよう。']]
  };
- const KEY='starMemory.v1', VERSION='0.8.9', DEFAULT_NAME='星の旅人';
+ const KEY='starMemory.v1', VERSION='0.9.0', DEFAULT_NAME='星の旅人';
  const $=s=>document.querySelector(s);
  const app=$('#app');
  let profile=loadProfile(),runId='',day,roundRows=[],setCount=loadSetCount(),phase='home',epoch=0,round=0,memorize=15,countDeadline=0,startTime=0,endTime=0,revealUntil=0,reveals=0,mistakes=0,matched=new Set(),cards=[],chosenSign=null,chosenPlanet=null;
@@ -597,16 +597,17 @@ const GameShare=(()=>{
   app.append(overlay);const close=()=>{overlay.remove();$('#result-more')?.focus()};$('#close-details').onclick=close;
   overlay.addEventListener('keydown',event=>{if(event.key==='Escape')close();if(event.key==='Tab'){const targets=[...overlay.querySelectorAll('button,summary,a')].filter(e=>!e.closest('details:not([open])')||e.tagName==='SUMMARY');const first=targets[0],last=targets.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}});$('#close-details').focus();
  }
- function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.8.9" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
+ function resultAdMarkup(mode=roundAppearance){const file=mode==='adult'?'result-ad-adult.html':'result-ad.html';return `<aside class="ad-area" aria-label="広告"><iframe id="result-ad" class="result-ad-frame" src="${file}?v=0.9.0" title="広告" loading="lazy" scrolling="no" height="100"></iframe></aside>`;}
  function result(){
   app.dataset.phase='complete';delete app.dataset.playfield;updateViewport();
   const total=elapsed(),row=day.rows.find(r=>r.sign===profile.sign),p=fortune(row),comment=getComment(row,day.key),color=resultColor(row),item=itemFor(row,day.key),recordKey=recordKeyFor(day.key,memorize,roundRows,profile.sign);
   let best=null;try{best=JSON.parse(localStorage.getItem(recordKey))}catch{}if(best===null||total<best){best=total;try{localStorage.setItem(recordKey,JSON.stringify(best))}catch{}}
   const bond=globalThis.HoroAffinity.record(row.sign,dayKey(),runId,[...matched]),level=globalThis.HoroAffinity.tier(bond.count),word=globalThis.HoroAffinity.message(row.sign,bond,roundAppearance),specialLabel=({daily:'連日ありがとう',week:'久しぶりの再会',fortnight:'特別な再会'})[bond.event]||'';
+  const planetGuest=globalThis.HoroLuckyWords.appears(runId),gift=planetGuest?globalThis.HoroLuckyWords.encouragement(row,day.key,roundAppearance,bond.event):null;
   app.innerHTML=header()+`<section class="result result-compact">
    <div class="result-summary"><div class="result-sign-row"><span class="result-sign" aria-hidden="true">${SIGNS[row.sign][1]}</span><h1 class="fortune-name">${SIGNS[row.sign][0]}</h1><span class="fortune-rank">今日の <b>${row.rank}</b>位</span></div><div class="result-time-row"><span class="result-time">${formatTime(total)}</span><span class="result-label">CLEAR TIME</span><button class="ghost" id="result-more">詳細</button></div></div>
-   <section class="affinity-message" aria-label="${SIGNS[row.sign][0]}からのメッセージ"><div class="affinity-avatar">${characterMarkup('sign',row.sign,roundAppearance)}</div><div class="affinity-bubble"><div class="affinity-label"><span>${SIGNS[row.sign][0]}からひとこと</span><span class="affinity-stars" aria-label="親密度 ${level} / 5">${'★'.repeat(level)}${'☆'.repeat(5-level)}</span></div>${specialLabel?`<span class="affinity-special">${specialLabel}</span>`:''}<p>${html(word)}</p></div></section>
-   <section class="fortune compact-fortune" style="--planet:${p.color};--lucky:${color.hex};--lucky-ink:${colorText(color.hex)}"><div class="compact-message"><span class="theme">${comment.theme}</span><div class="message">${comment.paragraphs.map(p=>`<p>${html(p)}</p>`).join('')}</div></div><div class="lucky-color-line"><span class="lucky-swatch" style="--lucky:${color.hex}" role="img" aria-label="${color.name}の色見本"></span><div><span class="lucky-label">今日のラッキーカラー</span><h2>${color.name}</h2></div><span class="compact-planet">${p.glyph} ${p.name}</span></div><div class="compact-item-row"><div class="lucky-item" style="--lucky:${color.hex}">${itemSvg(item,color)}</div><div class="compact-shopping"><p class="item-label">今日の色でアイテムを探す<br><strong>${color.name} × ${item.name}</strong></p>${shoppingButtons(row,day.key)}</div></div></section>
+   ${planetGuest?`<section class="affinity-message planet-guest" aria-label="${p.name}からのラッキーワード"><div class="affinity-avatar">${characterMarkup('planet',p.id,roundAppearance,row.sign)}</div><div class="affinity-bubble"><div class="affinity-label"><span>${p.name}からひとこと</span><span class="affinity-special">ラッキーワード</span></div><strong class="planet-lucky-word">${html(gift.word)}</strong><p>${html(gift.message)}</p></div></section>`:`<section class="affinity-message" aria-label="${SIGNS[row.sign][0]}からのメッセージ"><div class="affinity-avatar">${characterMarkup('sign',row.sign,roundAppearance)}</div><div class="affinity-bubble"><div class="affinity-label"><span>${SIGNS[row.sign][0]}からひとこと</span><span class="affinity-stars" aria-label="親密度 ${level} / 5">${'★'.repeat(level)}${'☆'.repeat(5-level)}</span></div>${specialLabel?`<span class="affinity-special">${specialLabel}</span>`:''}<p>${html(word)}</p></div></section>`}
+   <section class="fortune compact-fortune" style="--planet:${p.color};--lucky:${color.hex};--lucky-ink:${colorText(color.hex)}"><div class="compact-message"><span class="theme">${comment.theme}</span><div class="message">${comment.paragraphs.map(p=>`<p>${html(p)}</p>`).join('')}</div></div><div class="lucky-color-line"><span class="lucky-swatch" style="--lucky:${color.hex}" role="img" aria-label="${color.name}の色見本"></span><div><span class="lucky-label">今日のラッキーカラー</span><h2>${color.name}</h2></div><span class="compact-planet">${p.glyph} ${p.name}</span></div>${planetGuest?'':`<div class="compact-item-row"><div class="lucky-item" style="--lucky:${color.hex}">${itemSvg(item,color)}</div><div class="compact-shopping"><p class="item-label">今日の色でアイテムを探す<br><strong>${color.name} × ${item.name}</strong></p>${shoppingButtons(row,day.key)}</div></div>`}</section>
    <button type="button" class="primary" id="record-ranking">ランキングに記録</button><div class="result-actions"><button class="ghost" id="share" data-lab-share>シェア</button><button class="ghost" id="again">もう一度</button><button class="ghost" id="back-home">ホーム</button></div><p id="share-note" class="result-feedback" role="status"></p><p id="day-note" class="day-note">${dayKey()!==day.key?'この回は開始日の占いです。':''}</p>
   </section>${resultAdMarkup()}`;
 
